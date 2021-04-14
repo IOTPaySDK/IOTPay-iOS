@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
 	//var cardInfoView: IOTCardInfoView!
 	var addUserButton: UIButton!
-	let secureId = "secureIdabcabcabc"
+	let secureId = "secureIdabcabcabca"
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
