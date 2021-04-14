@@ -39,6 +39,7 @@ public final class IOTNetworkManager {
 		// insert json data to the request
 		request.httpBody = jsonData
 
+
 		let task = URLSession.shared.dataTask(with: request) { data, response, error in
 				guard let data = data, error == nil else {
 						print("ERROR:", error?.localizedDescription ?? "No data")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A13C68A5A9EC584CF94328CE /* Pods_IOTPay_iOS_nonFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DE0D9E1143E8756E4969D /* Pods_IOTPay_iOS_nonFramework.framework */; };
 		FA2E96C6261FA1DD007A11D7 /* IOTNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2E96C5261FA1DD007A11D7 /* IOTNetworkRequest.swift */; };
 		FA2E96CB261FA693007A11D7 /* IOTNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2E96CA261FA693007A11D7 /* IOTNetworkManager.swift */; };
 		FA2E96CF261FCEF8007A11D7 /* IOTCardInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2E96CE261FCEF8007A11D7 /* IOTCardInfoViewModel.swift */; };
@@ -65,6 +66,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		529DE0D9E1143E8756E4969D /* Pods_IOTPay_iOS_nonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOTPay_iOS_nonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B99D78A4A1C70B3FB13DF21 /* Pods-IOTPay-iOS nonFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTPay-iOS nonFramework.release.xcconfig"; path = "Target Support Files/Pods-IOTPay-iOS nonFramework/Pods-IOTPay-iOS nonFramework.release.xcconfig"; sourceTree = "<group>"; };
+		7EAB95550C011E35B160E004 /* Pods-IOTPay-iOS nonFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTPay-iOS nonFramework.debug.xcconfig"; path = "Target Support Files/Pods-IOTPay-iOS nonFramework/Pods-IOTPay-iOS nonFramework.debug.xcconfig"; sourceTree = "<group>"; };
 		FA2E96C5261FA1DD007A11D7 /* IOTNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTNetworkRequest.swift; sourceTree = "<group>"; };
 		FA2E96CA261FA693007A11D7 /* IOTNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTNetworkManager.swift; sourceTree = "<group>"; };
 		FA2E96CE261FCEF8007A11D7 /* IOTCardInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTCardInfoViewModel.swift; sourceTree = "<group>"; };
@@ -129,12 +133,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A13C68A5A9EC584CF94328CE /* Pods_IOTPay_iOS_nonFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19278FD274180AC066915196 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7EAB95550C011E35B160E004 /* Pods-IOTPay-iOS nonFramework.debug.xcconfig */,
+				7B99D78A4A1C70B3FB13DF21 /* Pods-IOTPay-iOS nonFramework.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BC6E77450A7105B6B782F385 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				529DE0D9E1143E8756E4969D /* Pods_IOTPay_iOS_nonFramework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA2E96C4261FA1B1007A11D7 /* NetworkRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +188,8 @@
 			children = (
 				FAC37533261E68ED00553574 /* IOTPay-iOS nonFramework */,
 				FAC37532261E68ED00553574 /* Products */,
+				19278FD274180AC066915196 /* Pods */,
+				BC6E77450A7105B6B782F385 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -349,6 +374,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAC37545261E68EE00553574 /* Build configuration list for PBXNativeTarget "IOTPay-iOS nonFramework" */;
 			buildPhases = (
+				65C2B69C2A7BBF1996605B52 /* [CP] Check Pods Manifest.lock */,
 				FAC3752D261E68ED00553574 /* Sources */,
 				FAC3752E261E68ED00553574 /* Frameworks */,
 				FAC3752F261E68ED00553574 /* Resources */,
@@ -406,6 +432,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65C2B69C2A7BBF1996605B52 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IOTPay-iOS nonFramework-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FAC3752D261E68ED00553574 /* Sources */ = {
@@ -607,6 +658,7 @@
 		};
 		FAC37546261E68EE00553574 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EAB95550C011E35B160E004 /* Pods-IOTPay-iOS nonFramework.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -626,6 +678,7 @@
 		};
 		FAC37547261E68EE00553574 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B99D78A4A1C70B3FB13DF21 /* Pods-IOTPay-iOS nonFramework.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
