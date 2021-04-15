@@ -111,9 +111,9 @@ public final class IOTNetworkManager {
 
 extension IOTNetworkManager: IOTCardInfoComponentsTransportDelegate {
 	func transport(action: IOTNetworkRequestAction, info: IOTCardInfo) {
-		startSession(request: IOTNetworkRequest(secureId: secureId ?? "",
-																						action: action,
-																						cardInfo: info))
+//		startSession(request: IOTNetworkRequest(secureId: secureId ?? "",
+//																						action: action,
+//																						cardInfo: info))
 	}
 
 
