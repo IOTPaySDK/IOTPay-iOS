@@ -60,7 +60,7 @@ For more usage, such as delegate to let you know user filling the vliad info and
 ```
 enum IOTNetworkRequestAction {
 	case addCard           // add card, you will receive desensitizated card info after the network request.
-	case oneTimePurchase.  // one time payment, without saving user's payment method
+	case oneTimePurchase   // one time payment, without saving user's payment method
 }
 ```
 
@@ -70,7 +70,7 @@ enum IOTNetworkRequestAction {
 enum IOTCardInfoViewStyle {
 	case roundRect
 	case infoLight
-	case infoDark
+	case infoDark   // for nightmode
 }
 ```
 
