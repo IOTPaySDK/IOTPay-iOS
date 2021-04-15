@@ -5,6 +5,8 @@
 
 IOTPay-iOS is a smiple to use yet powerful Framework helps you with the online payment for iOS apps.
 
+![alt text]( "Logo Title Text 1")
+
 <br />      
 
 ## Step 1: Install 
