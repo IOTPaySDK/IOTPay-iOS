@@ -2,14 +2,13 @@
 IOTPay Framework for iOS
 
 
-Step 1: 
-Install IOTPay-iOS form pod
+Step 1: Install IOTPay-iOS form pod.
+
 For Pod reference and how-to, please follow this link:
 https://guides.cocoapods.org/using/the-podfile.html
 
 
-Step 2:
-Declare the view before viewDidLoad:
+Step 2: Declare the view before viewDidLoad:
 ```
 var cardInfoView: IOTCardInfoViewSingleLine!
 ```
