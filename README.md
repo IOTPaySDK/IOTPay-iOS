@@ -88,10 +88,11 @@ You will need a secureId to for "sendRequest".
 
 For production, client should build their own "Merchant Server", which will generate the "secureId". 
 For testing, you can use the following temporary solution to get secureId:    
-- Step 1: Get Merchant Id   
+
+## - Step 1: Get Merchant Id   
 Register an IOTPay account to get the "Merchant Id", "Merchant Key" and "loginName"    
-- 
-- Step 2: Get Temporary secureId   
+
+## - Step 2: Get Temporary secureId   
 For "one time purchase", please visit:   https://develop.iotpay.ca/new/v3dev/purchase.html   
 For "add card", please visit   https://develop.iotpay.ca/new/v3dev/addcard.html    
 Fill in the account info requested on the page, then press "Submit" button. Check the URL in the borwer, it will looks like following:   https://ccdev.iotpaycloud.com/cc/addcard?key=cf383bf97a7288f4a4f6a2741ec56df51a1cacb48a90b77f6b9198d928fc84f2   
