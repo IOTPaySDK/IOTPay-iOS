@@ -1,13 +1,17 @@
 # IOTPay-iOS
 ###### IOTPay Framework for iOS
 
-<-- 2 or more spaces
+
+
+
 ## Step 1: Install IOTPay-iOS form pod.
 
 For Pod reference and how-to, please follow this link:
 https://guides.cocoapods.org/using/the-podfile.html
 
-<-- 2 or more spaces
+
+
+
 ## Step 2: Declare the view before viewDidLoad:
 ```
 var cardInfoView: IOTCardInfoViewSingleLine!
@@ -22,7 +26,9 @@ view.addSubview(cardInfoView)
 ```
 This will start the interface for user to fillin the card info.
 
-<-- 2 or more spaces
+
+
+
 ## Step 3: Once it's done, sending the request by
 ```
 IOTNetworkManager.shared.sendRequest(secureId: "your secureId", cardInfoPrivder: cardInfoView)
