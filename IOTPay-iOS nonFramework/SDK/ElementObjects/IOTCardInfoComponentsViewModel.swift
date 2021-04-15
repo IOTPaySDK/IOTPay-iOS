@@ -126,8 +126,6 @@ extension IOTCardInfoComponentsViewModel: IOTTextFieldDelegate {
 
 		print("onit", nil != nextTextFieldIndex, seletedTextFieldSubject == textField, textField.isPassingFirstResponderToNext)
 	}
-
-
 }
 
 

@@ -19,8 +19,8 @@ final class IOTCardInfoComponentsFacade {
 		viewComponents = IOTCardInfoComponents(action: action, layout: layout, style: style)
 	}
 
-	func setCardView(frame: CGRect) {
-		viewComponents.setCardView(frame: frame)
+	func setIOTCardView(frame: CGRect) {
+		viewComponents.setIOTCardView(frame: frame)
 	}
 
 	func setSegmentModel(config: IOTSegmentModel.IOTSegmentModelConfig) {
@@ -29,6 +29,14 @@ final class IOTCardInfoComponentsFacade {
 
 	func setTextFieldsView(frame: CGRect) {
 		viewComponents.frame = frame
+	}
+
+//	func setLargeCard(width: CGFloat) {
+//		viewComponents.setLargeCard(width: width)
+//	}
+
+	func setFixedViewRects(array: [CGRect]) {
+		viewComponents.setFixedViewRects(array: array)
 	}
 
 	func layoutSubview() {

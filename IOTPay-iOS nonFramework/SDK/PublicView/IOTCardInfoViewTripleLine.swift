@@ -33,7 +33,8 @@ final class IOTCardInfoViewTripleLine: IOTCardInfoView {
 
 	init(action: IOTNetworkRequestAction, style: Style? = nil) {
 		self.style = style ?? .roundRect
-		super.init(action: action, layout: .tripleLineWithLargeCardIconOnTop)
+		super.init(action: action, layout: .tripleLine)
+		
 	}
 
 	required init?(coder: NSCoder) {

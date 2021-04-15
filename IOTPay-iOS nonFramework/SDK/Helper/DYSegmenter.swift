@@ -33,14 +33,14 @@ class DYSegmenter {
 	}
 
 	//MARK: Vertical
-	static func verticalTwo(rect: CGRect, ratios: [CGFloat]? = nil, spaceRatio: CGFloat? = nil, edgeRatio: EdgeRatio? = nil) -> (left: CGRect, right: CGRect) {
+	static func verticalTwo(rect: CGRect, ratios: [CGFloat]? = nil, spaceRatio: CGFloat? = nil, edgeRatio: EdgeRatio? = nil) -> (top: CGRect, bottom: CGRect) {
 		let rectArr = vertical(rect: rect, segmentCount: 2, ratios: ratios, spaceRatio: spaceRatio, edgeRatio: edgeRatio)
-		return (left: rectArr[0], right: rectArr[1])
+		return (top: rectArr[0], bottom: rectArr[1])
 	}
 
-	static func verticalThree(rect: CGRect, ratios: [CGFloat]? = nil, spaceRatio: CGFloat? = nil, edgeRatio: EdgeRatio? = nil) -> (left: CGRect, middle: CGRect, right: CGRect) {
+	static func verticalThree(rect: CGRect, ratios: [CGFloat]? = nil, spaceRatio: CGFloat? = nil, edgeRatio: EdgeRatio? = nil) -> (top: CGRect, middle: CGRect, bottom: CGRect) {
 		let rectArr = vertical(rect: rect, segmentCount: 3, ratios: ratios, spaceRatio: spaceRatio, edgeRatio: edgeRatio)
-		return (left: rectArr[0], middle: rectArr[1], right: rectArr[2])
+		return (top: rectArr[0], middle: rectArr[1], bottom: rectArr[2])
 	}
 
 	static func vertical(rect: CGRect, segmentCount: Int? = nil, ratios: [CGFloat]? = nil, spaceRatio: CGFloat? = nil, edgeRatio: EdgeRatio? = nil) -> [CGRect] {
@@ -60,7 +60,7 @@ class DYSegmenter {
 		let segmentHeights = segmentLengths(afterSpacingLength: afterSpacingHeight, count: count, ratios: ratios)
 		let startX = rect.origin.x + (edgeRatio?.left ?? 0.0) * rect.width
 		let startY = rect.origin.y + (edgeRatio?.top ?? 0.0) * rect.height
-
+		print("aa", body, rect)
 		var result = [CGRect]()
 		var stackY: CGFloat = 0.0
 		segmentHeights.forEach {

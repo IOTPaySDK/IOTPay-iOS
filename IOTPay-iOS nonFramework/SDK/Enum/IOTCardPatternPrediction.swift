@@ -58,6 +58,22 @@ enum IOTCardPatternPrediction {
 		}
 	}
 
+	var cardCulingCycle: CardCulingCycle {
+		switch self {
+			case .unrecognized: return .unrecognized
+		case .visa13: return .visa
+		case .visa16: return .visa
+		case .master: return .master
+		case .americanExpress: return .ame
+		case .discover: return .discover
+		case .dinersClub14: return .diner
+		case .dinersClub16: return .diner
+		case .unionPay: return .unrecognized
+		case .jcb: return .jcb
+			case .error: return .unrecognized
+		}
+	}
+
 	var cardIconDisplayState: IOTCardIconState {
 		switch self {
 		case .unrecognized: return .unrecognized

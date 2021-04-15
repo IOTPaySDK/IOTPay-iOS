@@ -14,19 +14,22 @@ struct IOTDeformConfig {
 	let holderNameRatios: [CGFloat]?
 	let expiryDateRatios: [CGFloat]?
 	let cvvRatios: [CGFloat]?
+	var fixedRects:[CGRect]?
 
 	init(initDisplayState: [IOTTextFieldDisplayState],
 			 nilSeletionRatios: [CGFloat],
 			 cardNumberRatios: [CGFloat]? = nil,
 			 holderNameRatios: [CGFloat]? = nil,
 			 expiryDateRatios: [CGFloat]? = nil,
-			 cvvRatios: [CGFloat]? = nil) {
+			 cvvRatios: [CGFloat]? = nil,
+			 fixedRects: [CGRect]? = nil) {
 		self.initDisplayState = initDisplayState
 		self.nilSeletionRatios = nilSeletionRatios
 		self.holderNameRatios = holderNameRatios
 		self.cardNumberRatios = cardNumberRatios
 		self.expiryDateRatios = expiryDateRatios
 		self.cvvRatios = cvvRatios
+		self.fixedRects = fixedRects
 
 		#if DEBUG
 			let viladLength = IOTTextFieldSubject.allCases.count

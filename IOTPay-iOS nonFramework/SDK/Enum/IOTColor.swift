@@ -13,6 +13,8 @@ enum IOTColor {
 	case validTextColor
 	case placeholderTextColor
 	case system5
+	case roundRectBoderColorBlue
+	case roundRectBoderColorGray
 
 
 	var uiColor: UIColor {
@@ -31,6 +33,10 @@ enum IOTColor {
 				} else {
 					return uiColor255(with: 229, green: 229, blue: 234, alpha: 1.0)
 				}
+			case .roundRectBoderColorBlue:
+				return uiColor255(with: 1, green: 111, blue: 208, alpha: 1.0)
+			case .roundRectBoderColorGray:
+				return uiColor255(with: 229, green: 229, blue: 234, alpha: 1.0)
 		}
 	}
 

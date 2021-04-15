@@ -12,7 +12,7 @@ public class IOTCardInfoView: UIView {
 	//MARK: Constants
 	// init constants
 	let action: IOTNetworkRequestAction
-	let layout: IOTCardInfoViewLayout
+	var layout: IOTCardInfoViewLayout!
 	// default constatns
 
 	// models
@@ -45,7 +45,6 @@ public class IOTCardInfoView: UIView {
 	// MARK: life cycle
 	init(action: IOTNetworkRequestAction, layout: IOTCardInfoViewLayout) {
 		self.action = action
-		self.layout = layout
 		self.viewModel = IOTCardInfoViewModel()
 		super.init(frame: CGRect.zero)
 		commonInit()
@@ -90,6 +89,8 @@ public class IOTCardInfoView: UIView {
 //		addSubview(expiryDateTextField)
 //		addSubview(cvvTextField)
 	}
+
+	
 
 	private func setupUserInputTarget() {
 //		holderNameTextField.addTarget(self, action: #selector(onTextFieldDidSelect(sender:)), for: .editingDidBegin)

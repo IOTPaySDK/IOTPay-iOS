@@ -1,5 +1,5 @@
 //
-//  IOTCardInfoViewSingleLine.swift
+//  IOTCardInfoViewSingleLineNCardIcon.swift
 //  IOTPay-iOS nonFramework
 //
 //  Created by macbook on 2021-04-08.
@@ -14,7 +14,7 @@
 
 import UIKit
 
-class IOTCardInfoViewSingleLine: IOTDeformableCardInfoView {
+class IOTCardInfoViewSingleLineNCardIcon: IOTDeformableCardInfoView {
 
 
 	//var viewComponents: IOTCardInfoComponents!
@@ -38,6 +38,11 @@ class IOTCardInfoViewSingleLine: IOTDeformableCardInfoView {
 		holderNameRatios: [0.3, 0.6, 0.23, 0.17]
 	)
 
+	override var frame: CGRect { didSet {
+		if facade != nil { updateLayout() }
+	}}
+
+
 //	override init(layout: IOTCardInfoViewLayout, action: IOTNetworkRequestAction) {
 //		super.init(layout: layout, action: action)
 //	}
@@ -47,6 +52,7 @@ class IOTCardInfoViewSingleLine: IOTDeformableCardInfoView {
 		self.style = style ?? .roundRect
 		super.init(action: action, layout: .singleLineWithSmallCardIcon,
 							 deformConfig: deformConfig)
+		facade = IOTCardInfoComponentsFacade(action: action, layout: .singleLineWithSmallCardIcon, style: .roundRect)
 
 
 	}
@@ -56,15 +62,16 @@ class IOTCardInfoViewSingleLine: IOTDeformableCardInfoView {
 	}
 
 	override func commonInit() {
-		facade = IOTCardInfoComponentsFacade(action: action, layout: .singleLineWithSmallCardIcon, style: .roundRect)
-		super.commonInit()
 		defaultLayout()
+		super.commonInit()
 	}
 
 	private func defaultLayout() {
 		frame = CGRect(x: 0, y: 0, width: screenW, height: defaultLabelHeight)
 		backgroundColor = IOTColor.system5.uiColor
+	}
 
+	func updateLayout() {
 
 		let labelGridWidthHeight = defaultLabelHeight * 0.1
 		let labelGridWidth = frame.width - labelGridWidthHeight * 2.0
@@ -91,22 +98,6 @@ class IOTCardInfoViewSingleLine: IOTDeformableCardInfoView {
 			)
 		)
 
-		print(cardIconRect)
-
-
-
-//		let uiv = UIView(frame: cardIconRect)
-//		uiv.backgroundColor = .yellow
-//		addSubview(uiv)
-
-//		let textFieldNilSeletionRectArray = DYSegmenter.horizontal(
-//			rect: viewComponentsRect,
-//			ratios: deformConfig.nilSeletionRatios,
-//			spaceRatio: defaultCardTextFieldHorzontalSpaceToParentWidth,
-//			edgeRatio: DYSegmenter.EdgeRatio(horizontal: 0.0, vertical: 0.0)
-//		)
-
-
 
 		let config = IOTSegmentModel.IOTSegmentModelConfig(
 			parentRect: viewComponentsRect,
@@ -117,47 +108,15 @@ class IOTCardInfoViewSingleLine: IOTDeformableCardInfoView {
 
 
 		facade.setTextFieldsView(frame: labelGrid.frame)
-		facade.setCardView(frame: cardIconRect)
+		facade.setIOTCardView(frame: cardIconRect)
 		facade.setSegmentModel(config: config)
 		facade.layoutSubview()
 		addSubview(facade.viewComponents)
-
-		
-
-
-
-//		viewComponents = IOTCardInfoComponents(layout: layout)
-//		viewComponents.frame = frame
-//		viewComponents
-
-//		cardIconView = IOTCardIconView(cardFrame: cardIconRect)
-//		addSubview(cardIconView)
-
-		//viewComponents = IOTCardInfoComponents(layout: .singleLineWithSmallCardIcon)
-//		for (i, textField) in viewComponents.textFields.enumerated() {
-//			textField.displayState = singleLineComponetsWidthRatioAtState.initDisplayState[i]
-//			textField.frame = textFieldnilSeletionRectArray[i]
-//			//textField.backgroundColor = .yellow
-//			addSubview(textField)
-//		}
-
-
-		//viewComponents.delegate = self
-
-		//viewComponents.cardInfo
-
-//		for rect in rectArray {
-//			let view = UIView(frame: rect)
-//			view.backgroundColor = .yellow
-//			addSubview(view)
-//		}
-
-
 	}
 
 }
 
-extension IOTCardInfoViewSingleLine: IOTCardInfoComponentsDelegate {
+extension IOTCardInfoViewSingleLineNCardIcon: IOTCardInfoComponentsDelegate {
 	func onDidComplete(isValid: Bool) {
 		if isValid { print("done and valid") }
 		else { print("done with error") }
@@ -165,7 +124,7 @@ extension IOTCardInfoViewSingleLine: IOTCardInfoComponentsDelegate {
 	
 }
 
-//extension IOTCardInfoViewSingleLine {
+//extension IOTCardInfoViewSingleLineNCardIcon {
 //	enum Style {
 //		case roundRect
 //		case infoLight

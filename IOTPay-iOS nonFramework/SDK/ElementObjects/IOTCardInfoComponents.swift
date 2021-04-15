@@ -32,6 +32,7 @@ public final class IOTCardInfoComponents: UIView {
 
 	private let textFields: [IOTTextField]
 	private let cardIconView: IOTCardIconView?
+	private var cardLargeView: IOTCardView?
 
 	private let action: IOTNetworkRequestAction
 
@@ -43,7 +44,14 @@ public final class IOTCardInfoComponents: UIView {
 		didSet {
 			if oldValue != patternPrediction {
 				textFields.forEach { $0.patternPrediction = patternPrediction }
-				cardIconView?.state = patternPrediction.cardIconDisplayState
+				if cardIconView?.state != nil {
+					cardIconView?.state = patternPrediction.cardIconDisplayState
+				}
+				if let cardLargeView = cardLargeView,
+					 viewModel.layout == .tripleLineWithLargeCardViewOnTop {
+					cardLargeView.playCycleAnimation(till: patternPrediction.cardCulingCycle)
+				}
+
 				//print(cardIconView?.state, patternPrediction, patternPrediction.cardIconDisplayState)
 			}
 		}
@@ -88,12 +96,14 @@ public final class IOTCardInfoComponents: UIView {
 		}
 		for textField in textFields { textField.textFieldDelegate = viewModel }
 
-
-
 		if layout.isDisplayingCardIcon { addSubview(cardIconView!) }
 
 		clipsToBounds = true
+
+
+
 	}
+
 
 //	func textField(subject: IOTTextFieldSubject) -> IOTTextField {
 //		textFields.first { $0.subject == subject }!
@@ -118,7 +128,7 @@ extension IOTCardInfoComponents {
 		viewModel.setupDefromableCapability(segmentModelConfig: config)
 	}
 
-	func setCardView(frame: CGRect) {
+	func setIOTCardView(frame: CGRect) {
 		cardIconView?.frame = frame
 		cardIconView?.updateFrame()
 	}
@@ -141,10 +151,20 @@ extension IOTCardInfoComponents: IOTCardInfoComponentsViewModelDelegate {
 
 
 	func playCardFlipAnimation(to: IOTCardSide) {
-		if to == .back {
-			cardIconView?.state = .back
-		} else {
-			cardIconView?.state = patternPrediction.cardIconDisplayState
+		print("playCardFlipAnimation")
+		if cardIconView != nil && viewModel.layout == .singleLineWithSmallCardIcon {
+			if to == .back {
+				cardIconView?.state = .back
+			} else {
+				cardIconView?.state = patternPrediction.cardIconDisplayState
+			}
+		}
+		if let cardLargeView = cardLargeView, viewModel.layout == .tripleLineWithLargeCardViewOnTop {
+			if to == .back && cardLargeView.side == .front {
+				cardLargeView.playFlipAnimation()
+			} else if to == .front && cardLargeView.side == .back {
+				cardLargeView.playFlipAnimation()
+			}
 		}
 	}
 
@@ -216,5 +236,55 @@ extension IOTCardInfoComponents {
 	}
 
 
+}
+
+//Fixed size layout setting
+extension IOTCardInfoComponents {
+//	func setLargeCard(width: CGFloat) {
+//		cardLargeView = IOTCardView()
+//		cardLargeView!.setView(width: width)
+//		cardLargeView?.center.x = center.x
+//		cardLargeView?.center.y = center.y
+//		cardLargeView?.backgroundColor = .red
+//		print( cardLargeView?.frame)
+//		addSubview(cardLargeView!)
+//	}
+
+	func setFixedViewRects(array: [CGRect]) {
+
+		cardLargeView = IOTCardView(frame: array[4])
+		addSubview(cardLargeView!)
+		frame = array[5]
+
+		setupStyle(array: array)
+	}
+
+	private func setupStyle(array: [CGRect]) {
+		if viewModel.layout == .tripleLineWithLargeCardViewOnTop {
+			for i in 0..<textFields.count {
+				let backRectView = UIView(frame: array[i])
+				backRectView.layer.cornerRadius = 10.0
+				backRectView.layer.borderWidth = 1.0
+				backRectView.layer.borderColor = UIColor.blue.cgColor
+				backRectView.backgroundColor = .white
+				backRectView.alpha = 0.8
+				backRectView.isUserInteractionEnabled = false
+				addSubview(backRectView)
+
+				let leftSpace = array[0].width * 0.05
+				let textFieldsWidth = array[i].width - leftSpace * 2.0
+				textFields[i].frame = CGRect(
+					x: array[i].origin.x + leftSpace, y: array[i].origin.y,
+					width: textFieldsWidth, height: array[i].size.height)
+				addSubview(textFields[i])
+
+				textFields[i].font = UIFont.systemFont(ofSize: 17)
+			}
+			onDidLoad(initDisplayState: [.full, .full, .full, .full])
+		}
+
+
+		
+	}
 }
 

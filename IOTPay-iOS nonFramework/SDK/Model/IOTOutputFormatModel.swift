@@ -54,7 +54,7 @@ final class IOTOutputFormatModel {
 //		}
 	private func expiryDate(text: String) -> String {
 		var arrWithOneForwardSlash = Array(text)
-		guard arrWithOneForwardSlash[0] != "/" else { return "" }
+		guard !arrWithOneForwardSlash.isEmpty, arrWithOneForwardSlash[0] != "/" else { return "" }
 		switch arrWithOneForwardSlash.count {
 			case 0:
 				break

@@ -36,7 +36,7 @@ final class IOTLanguageAndText {
 			.cardNumber: "Card Number",
 			.holderName: "Holder's First & Last Name",
 			.expiryDate: "MM/YY",
-			.cvv: "CVV on the back",
+			.cvv: "CVV on back",
 		],
 		textFieldPlaceHolderAtThumbnailState: [
 			.cardNumber: "Card No.",

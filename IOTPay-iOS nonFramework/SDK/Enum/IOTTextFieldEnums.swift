@@ -32,7 +32,7 @@ extension IOTTextFieldSubject {
 	var normalPlaceholder: String {
 		switch self {
 		case .cardNumber: return "Card number"
-		case .cvv: return "CVV on the back"
+		case .cvv: return "CVV on back"
 		case .expiryDate: return "MM/YY"
 		case .holderName: return "First & Last name of the holder"
 		}
