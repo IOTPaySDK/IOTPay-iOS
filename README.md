@@ -5,7 +5,7 @@
 
 IOTPay-iOS is a smiple to use yet powerful Framework helps you with the online payment for iOS apps.
 
-![alt text]( "Logo Title Text 1")
+![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/simpleGIF.gif "Logo Title Text 1") ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/simpleGIF.gif "Logo Title Text 1")
 
 <br />      
 
