@@ -42,7 +42,8 @@ IOTNetworkManager.shared.sendRequest(secureId: "your secureId", cardInfoPrivder:
 ```
 That's all we need for basic setup to add a card!
 (You will need to set up a button for sendRequest after user filling the info)
-For sample example, please check sampleExample. (NOT YET)
+For sample example, please check sampleExample. 
+- SimpleDemo 
 
 For more usage, such as delegate to let you know user filling the vliad info and complete, or more style/layout settings, please check the other examples:
 - TripleLineDemo (NOT yet)
