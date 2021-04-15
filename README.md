@@ -51,17 +51,28 @@ For more usage, such as delegate to let you know user filling the vliad info and
 
 
 ## Quick Data reference:
-#action: enum
-.addUser to add new user.
-.oneTimePayment for oneTimePament
+#action: 
+```
+enum IOTNetworkRequestAction {
+	case addCard           // add card, you will receive desensitizated card info after the network request.
+	case oneTimePurchase.  // one time payment, without saving user's payment method
+}
+```
 
 
-#style: enum
-.roundRect
-.darkInfo
-.lightInfo
+#style: 
+```
+enum IOTCardInfoViewStyle {
+	case roundRect
+	case infoLight
+	case infoDark
+}
+```
 
-#cardInfoPrivder: IOTCardInfoView
+#cardInfoPrivder: 
+```
+IOTCardInfoView
+```
 Should fill in the name/pointer of the view that user filling in the info, this is required for sending the request.
 
 #secureId:
