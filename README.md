@@ -15,6 +15,7 @@ https://guides.cocoapods.org/using/the-podfile.html
 
 
 
+<br />      
 
 ## Step 2: Setup View
 Declare the view before viewDidLoad. This is not mandatory for display the view, but you will need it for the send request event in step 3.
@@ -32,6 +33,7 @@ This will start the interface for user to fillin the card info.
 
 
 
+<br />      
 
 ## Step 3: Send the Request
 After user filling the card info, sending the request by:
@@ -50,6 +52,7 @@ For more usage, such as delegate to let you know user filling the vliad info and
 
 
 
+<br />      
 
 ## Quick Data reference:
 #action: 
