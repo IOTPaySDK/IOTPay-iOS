@@ -2,6 +2,8 @@
 ###### IOTPay Framework for iOS
 
 
+IOTPay-iOS is a smiple to use yet powerful Framework helps you with the online payment for iOS apps.
+
 
 
 ## Step 1: Install IOTPay-iOS form pod.
@@ -22,7 +24,6 @@ Add following code in ViewController after viewDidLoad
 ```
 cardInfoView = IOTCardInfoViewSingleLine(action: .addUser, style: .roundRect)
 view.addSubview(cardInfoView)
-
 ```
 This will start the interface for user to fillin the card info.
 
@@ -33,7 +34,7 @@ This will start the interface for user to fillin the card info.
 ```
 IOTNetworkManager.shared.sendRequest(secureId: "your secureId", cardInfoPrivder: cardInfoView)
 ```
-
+That's all we need for basic setup to add a card!
 (You will need to set up a button for sendRequest after user filling the info)
 For sample example, please check sampleExample. (NOT YET)
 
@@ -41,7 +42,6 @@ For sample example, please check sampleExample. (NOT YET)
 
 
 
-<-- 2 or more spaces
 ## Data reference:
 action: 
 .addUser to add new user.
