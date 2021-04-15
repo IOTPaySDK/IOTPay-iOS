@@ -8,7 +8,7 @@
 import Foundation
 
 enum IOTNetworkRequestAction {
-	case addUser
+	case addCard
 	case oneTimePurchase
 }
 
@@ -23,7 +23,7 @@ public final class IOTNetworkRequest {
 	let cardInfo: IOTNetworkRequestedInfo
 
 	// var
-	var url: String { action == .addUser ? addUserUrl : oneTimePurchaseUrl }
+	var url: String { action == .addCard ? addUserUrl : oneTimePurchaseUrl }
 
 
 	init(secureId: String, action: IOTNetworkRequestAction, cardInfo: IOTCardInfo) {

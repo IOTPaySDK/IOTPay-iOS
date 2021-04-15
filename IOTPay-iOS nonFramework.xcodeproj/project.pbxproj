@@ -28,7 +28,7 @@
 		FA7E4E4B262778EF003DB2E9 /* DYUIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E4E4A262778EF003DB2E9 /* DYUIHelper.swift */; };
 		FAC37535261E68ED00553574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37534261E68ED00553574 /* AppDelegate.swift */; };
 		FAC37537261E68ED00553574 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37536261E68ED00553574 /* SceneDelegate.swift */; };
-		FAC37539261E68ED00553574 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37538261E68ED00553574 /* ViewController.swift */; };
+		FAC37539261E68ED00553574 /* SimpleDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37538261E68ED00553574 /* SimpleDemo.swift */; };
 		FAC3753C261E68ED00553574 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC3753A261E68ED00553574 /* Main.storyboard */; };
 		FAC3753E261E68EE00553574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC3753D261E68EE00553574 /* Assets.xcassets */; };
 		FAC37541261E68EE00553574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC3753F261E68EE00553574 /* LaunchScreen.storyboard */; };
@@ -90,7 +90,7 @@
 		FAC37531261E68ED00553574 /* IOTPay-iOS nonFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOTPay-iOS nonFramework.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC37534261E68ED00553574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC37536261E68ED00553574 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAC37538261E68ED00553574 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAC37538261E68ED00553574 /* SimpleDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDemo.swift; sourceTree = "<group>"; };
 		FAC3753B261E68ED00553574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAC3753D261E68EE00553574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAC37540261E68EE00553574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -146,7 +146,6 @@
 				7EAB95550C011E35B160E004 /* Pods-IOTPay-iOS nonFramework.debug.xcconfig */,
 				7B99D78A4A1C70B3FB13DF21 /* Pods-IOTPay-iOS nonFramework.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,7 +206,7 @@
 				FAC37549261E692900553574 /* SDK */,
 				FAC37534261E68ED00553574 /* AppDelegate.swift */,
 				FAC37536261E68ED00553574 /* SceneDelegate.swift */,
-				FAC37538261E68ED00553574 /* ViewController.swift */,
+				FAC37538261E68ED00553574 /* SimpleDemo.swift */,
 				FAC3753A261E68ED00553574 /* Main.storyboard */,
 				FAC3753D261E68EE00553574 /* Assets.xcassets */,
 				FAC3753F261E68EE00553574 /* LaunchScreen.storyboard */,
@@ -482,7 +481,7 @@
 				FAEFBE11262228C5000F0584 /* IOTComponetsWidthRatioAtState.swift in Sources */,
 				FAD7933D261F823D00569518 /* IOTOutputFormatModel.swift in Sources */,
 				FA2E97012620EC48007A11D7 /* IOTCardBrand.swift in Sources */,
-				FAC37539261E68ED00553574 /* ViewController.swift in Sources */,
+				FAC37539261E68ED00553574 /* SimpleDemo.swift in Sources */,
 				FAF39EB9262557C700C2F7D9 /* IOTCardIconViewModel.swift in Sources */,
 				FA2E970F2620FA81007A11D7 /* IOTTextFieldValidationState.swift in Sources */,
 				FA2E96CB261FA693007A11D7 /* IOTNetworkManager.swift in Sources */,

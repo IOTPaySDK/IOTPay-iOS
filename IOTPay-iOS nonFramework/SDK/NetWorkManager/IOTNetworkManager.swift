@@ -19,9 +19,11 @@ public final class IOTNetworkManager {
 
 	private var secureId: String?
 
-	public func sendRequest(secureId: String, cardInfoPrivder: IOTCardInfoComponents) {
+	public func sendRequest(secureId: String, cardInfoPrivder: IOTCardInfoView) {
 		self.secureId = secureId
-		cardInfoPrivder.transportDelegate = self
+		let core = cardInfoPrivder.facade.viewComponents
+		core.transportDelegate = self
+		core.transport()
 	}
 
 //	public func confirmAction() {
@@ -51,7 +53,7 @@ public final class IOTNetworkManager {
 					print("got \(action) responseJSON:", responseJSON)
 
 					switch action {
-					case .addUser: break
+					case .addCard: break
 //						if let paramDict = responseJSON["payParams"] as? [String: String],
 //							 let secureId = paramDict["secureID"] {
 //								self.onAddUserResponse(id: secureId)

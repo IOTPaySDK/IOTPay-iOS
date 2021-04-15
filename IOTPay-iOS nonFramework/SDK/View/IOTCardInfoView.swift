@@ -8,7 +8,7 @@
 import UIKit
 
 public class IOTCardInfoView: UIView {
-
+	var facade: IOTCardInfoComponentsFacade!
 	//MARK: Constants
 	// init constants
 	let action: IOTNetworkRequestAction

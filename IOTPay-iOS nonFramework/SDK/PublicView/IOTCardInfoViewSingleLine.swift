@@ -16,7 +16,7 @@ import UIKit
 
 class IOTCardInfoViewSingleLine: IOTDeformableCardInfoView {
 
-	let facade: IOTCardInfoComponentsFacade
+
 	//var viewComponents: IOTCardInfoComponents!
 	//var cardIconView: IOTCardIconView!
 	//var composition: IOTTextFieldCompostition
@@ -45,9 +45,10 @@ class IOTCardInfoViewSingleLine: IOTDeformableCardInfoView {
 
 	init(action: IOTNetworkRequestAction, style: IOTCardInfoViewStyle? = nil) {
 		self.style = style ?? .roundRect
-		facade = IOTCardInfoComponentsFacade(action: action, layout: .singleLineWithSmallCardIcon, style: .roundRect)
 		super.init(action: action, layout: .singleLineWithSmallCardIcon,
 							 deformConfig: deformConfig)
+
+
 	}
 
 	required init?(coder: NSCoder) {
@@ -55,6 +56,7 @@ class IOTCardInfoViewSingleLine: IOTDeformableCardInfoView {
 	}
 
 	override func commonInit() {
+		facade = IOTCardInfoComponentsFacade(action: action, layout: .singleLineWithSmallCardIcon, style: .roundRect)
 		super.commonInit()
 		defaultLayout()
 	}
