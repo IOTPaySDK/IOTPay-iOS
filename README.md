@@ -8,7 +8,7 @@ IOTPay-iOS is a smiple to use yet powerful Framework helps you with the online p
 ##### -Secure
 ##### -Easy to set up
 <br />    
-Quick Start:
+Quick Start:<br />   
 ```
 Swift:
 cardInfoView = IOTCardInfoViewSingleLine(action: .addCard, style: .roundRect)  
