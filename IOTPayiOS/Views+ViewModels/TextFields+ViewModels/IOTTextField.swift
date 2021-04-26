@@ -58,6 +58,7 @@ class IOTTextField: UITextField {
 	}
 
 	private func commonInit() {
+		keyboardType = subject.keyboardType
 		font = UIFont.systemFont(ofSize: 14)
 		autocorrectionType = .no
 	}

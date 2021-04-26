@@ -15,6 +15,7 @@ struct IOTCardInfo {
 	let cvv: String
 }
 
+@objc
 public class IOTDesensitizedCardInfo: NSObject {
 	let cardId: String
 	let cardNumber: String
@@ -35,6 +36,7 @@ public class IOTDesensitizedCardInfo: NSObject {
 		self.holderName = addCardRetData.holder
 	}
 
+	@objc
 	public var info: String {
 		return "cardId: \(cardId), cardNumber: \(cardNumber), holderName: \(holderName)"
 	}

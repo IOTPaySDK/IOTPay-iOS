@@ -110,6 +110,7 @@ public class IOTPurchaseReceipt: NSObject {
 
 	}
 
+	@objc
 	public var info: String {
 		"""
 		amount: \(amount), authorizationNumber: \(authorizationNumber), cardNumber: \(cardNumber),

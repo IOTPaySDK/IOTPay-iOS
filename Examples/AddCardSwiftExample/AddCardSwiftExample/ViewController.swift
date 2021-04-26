@@ -31,7 +31,7 @@ class ViewController: UIViewController {
 		For auto - Nightmode detection, please use .autoNightmode
 		*/
 		cardInfoView = IOTCardInfoViewSingleLineNCardIcon(action: .addCard, style: .roundRect)
-		cardInfoView.center = view.center
+		cardInfoView.frame.origin = CGPoint(x: 0.0, y: 50.0)
 		/* set delegate
 		this is the IOTCardInfoViewDelegate,
 		which will let you know when user the input correctly
@@ -43,7 +43,8 @@ class ViewController: UIViewController {
 		/* make a button for submit network request once user finished input,
 		starts as interation Enabled state
 		*/
-		button = UIButton(frame: CGRect(x: view.frame.width * 0.5 - 150.0, y: view.frame.height - 100.0,
+		button = UIButton(frame: CGRect(x: view.frame.width * 0.5 - 150.0,
+																		y: cardInfoView.frame.height + 50.0 + 100.0,
 																		width: 300.0, height: 50.0))
 		button.setTitleColor(.blue, for: .normal)
 		button.setTitle("Please enter card info", for: .normal)
@@ -62,7 +63,7 @@ class ViewController: UIViewController {
 		*/
 		let shared = IOTNetworkService.shared
 		shared.delegate = self
-		shared.sendRequest(secureId: "caf11c8ee513cd55833217f3cfd2d48872dbc1ec50e192e0bca13b7063259d21",
+		shared.sendRequest(secureId: "Your secureId",
 											 cardInfoView: cardInfoView)
 	}
 
@@ -72,6 +73,7 @@ class ViewController: UIViewController {
 extension ViewController: IOTCardInfoViewDelegate {
 	func onDidCompleteValidately() {
 		// User did complete card info view Validately, we should enable the button
+		button.setTitle("Add Card", for: .normal)
 		button.isUserInteractionEnabled = true
 	}
 

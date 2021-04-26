@@ -32,7 +32,7 @@ class IOTCardView: UIView {
 		IOTCardImageView.logoRect = nil
 		current = makeCard(brand: .unrecognized, side: .front)
 		addSubview(current)
-		backgroundColor = .red
+		//backgroundColor = .red
 
 //		markView.frame = CGRect(origin: CGPoint.zero, size: frame.size)
 //		markView.layoutRect()

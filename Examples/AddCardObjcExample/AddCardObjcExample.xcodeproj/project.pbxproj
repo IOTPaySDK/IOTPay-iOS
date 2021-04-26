@@ -14,7 +14,23 @@
 		FA3431982636512B009A17C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3431972636512B009A17C0 /* Assets.xcassets */; };
 		FA34319B2636512B009A17C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3431992636512B009A17C0 /* LaunchScreen.storyboard */; };
 		FA34319E2636512B009A17C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA34319D2636512B009A17C0 /* main.m */; };
+		FA38C9262636EB65001D65FE /* IOTPayiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA38C9252636EB65001D65FE /* IOTPayiOS.framework */; };
+		FA38C9272636EB65001D65FE /* IOTPayiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA38C9252636EB65001D65FE /* IOTPayiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FA38C9282636EB65001D65FE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA38C9272636EB65001D65FE /* IOTPayiOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FA34318826365129009A17C0 /* AddCardObjcExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddCardObjcExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +45,7 @@
 		FA34319A2636512B009A17C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA34319C2636512B009A17C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA34319D2636512B009A17C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA38C9252636EB65001D65FE /* IOTPayiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IOTPayiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA38C9262636EB65001D65FE /* IOTPayiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +65,7 @@
 			children = (
 				FA34318A26365129009A17C0 /* AddCardObjcExample */,
 				FA34318926365129009A17C0 /* Products */,
+				FA38C9242636EB65001D65FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +95,14 @@
 			path = AddCardObjcExample;
 			sourceTree = "<group>";
 		};
+		FA38C9242636EB65001D65FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA38C9252636EB65001D65FE /* IOTPayiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,6 +113,7 @@
 				FA34318426365129009A17C0 /* Sources */,
 				FA34318526365129009A17C0 /* Frameworks */,
 				FA34318626365129009A17C0 /* Resources */,
+				FA38C9282636EB65001D65FE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

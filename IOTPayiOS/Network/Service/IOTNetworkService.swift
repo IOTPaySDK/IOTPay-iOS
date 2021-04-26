@@ -31,6 +31,16 @@ public class IOTNetworkService: NSObject {
 
 	@objc
 	public func sendRequest(secureId: String, cardInfoView: IOTCardInfoView) {
+		guard secureId != "Your secureId" && secureId.count >= 20 else {
+			#if DEBUG
+				fatalError("""
+								You secureId is invalid, please check Github guide,
+								https://github.com/IOTPaySDK/IOTPay-iOS
+								""")
+			#else
+				return
+			#endif
+		}
 		self.secureId = secureId
 		let viewComponents = cardInfoView.facade.viewComponents
 		viewComponents.transportDelegate = self
