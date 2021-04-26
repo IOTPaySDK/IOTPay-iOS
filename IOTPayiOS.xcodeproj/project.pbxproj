@@ -12,6 +12,68 @@
 		FA758C5126365F5E00D85998 /* IOTPayiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA758C4726365F5E00D85998 /* IOTPayiOS.framework */; };
 		FA758C5626365F5E00D85998 /* IOTPayiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758C5526365F5E00D85998 /* IOTPayiOSTests.swift */; };
 		FA758C5826365F5E00D85998 /* IOTPayiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = FA758C4A26365F5E00D85998 /* IOTPayiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA758CEF2636626500D85998 /* IOTCvvTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CA32636626500D85998 /* IOTCvvTextField.swift */; };
+		FA758CF02636626500D85998 /* IOTCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CA42636626500D85998 /* IOTCardView.swift */; };
+		FA758CF12636626500D85998 /* IOTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CA52636626500D85998 /* IOTTextField.swift */; };
+		FA758CF22636626500D85998 /* IOTCardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CA62636626500D85998 /* IOTCardImageView.swift */; };
+		FA758CF32636626500D85998 /* IOTCardInfoViewTripleLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CA72636626500D85998 /* IOTCardInfoViewTripleLine.swift */; };
+		FA758CF42636626500D85998 /* IOTCardInfoViewTripleLineNCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CA82636626500D85998 /* IOTCardInfoViewTripleLineNCardView.swift */; };
+		FA758CF52636626500D85998 /* IOTHolderNameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CA92636626500D85998 /* IOTHolderNameTextField.swift */; };
+		FA758CF62636626500D85998 /* IOTCardNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CAA2636626500D85998 /* IOTCardNumberTextField.swift */; };
+		FA758CF72636626500D85998 /* IOTCardIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CAB2636626500D85998 /* IOTCardIconView.swift */; };
+		FA758CF82636626500D85998 /* IOTCardInfoComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CAC2636626500D85998 /* IOTCardInfoComponents.swift */; };
+		FA758CF92636626500D85998 /* IOTDeformableCardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CAD2636626500D85998 /* IOTDeformableCardInfoView.swift */; };
+		FA758CFA2636626500D85998 /* IOTDeformableTextFieldAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CAE2636626500D85998 /* IOTDeformableTextFieldAbstract.swift */; };
+		FA758CFB2636626500D85998 /* IOTCardInfoViewSingleLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CAF2636626500D85998 /* IOTCardInfoViewSingleLine.swift */; };
+		FA758CFC2636626500D85998 /* IOTCardInfoComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CB02636626500D85998 /* IOTCardInfoComponentsView.swift */; };
+		FA758CFD2636626500D85998 /* IOTExpiryDateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CB12636626500D85998 /* IOTExpiryDateTextField.swift */; };
+		FA758CFE2636626500D85998 /* IOTCardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CB22636626500D85998 /* IOTCardInfoView.swift */; };
+		FA758CFF2636626500D85998 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CB82636626500D85998 /* Loader.swift */; };
+		FA758D002636626500D85998 /* DYUIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CB92636626500D85998 /* DYUIHelper.swift */; };
+		FA758D012636626500D85998 /* DYSegmenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CBA2636626500D85998 /* DYSegmenter.swift */; };
+		FA758D022636626500D85998 /* IOTCardBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CBC2636626500D85998 /* IOTCardBrand.swift */; };
+		FA758D032636626500D85998 /* IOTSegmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CBD2636626500D85998 /* IOTSegmentModel.swift */; };
+		FA758D042636626500D85998 /* IOTCardTypePerdicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CBE2636626500D85998 /* IOTCardTypePerdicationModel.swift */; };
+		FA758D052636626500D85998 /* IOTOutputFormatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CBF2636626500D85998 /* IOTOutputFormatModel.swift */; };
+		FA758D062636626500D85998 /* IOTCardAnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CC02636626500D85998 /* IOTCardAnimationModel.swift */; };
+		FA758D072636626500D85998 /* IOTTextFieldEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CC12636626500D85998 /* IOTTextFieldEnums.swift */; };
+		FA758D082636626500D85998 /* IOTCardInfoViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CC22636626500D85998 /* IOTCardInfoViewStyle.swift */; };
+		FA758D092636626500D85998 /* IOTInputValidateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CC32636626500D85998 /* IOTInputValidateModel.swift */; };
+		FA758D0A2636626500D85998 /* IOTCardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CC42636626500D85998 /* IOTCardInfo.swift */; };
+		FA758D0B2636626500D85998 /* IOTCardValidatingRegulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CC52636626500D85998 /* IOTCardValidatingRegulation.swift */; };
+		FA758D0C2636626500D85998 /* IOTTextFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CC62636626500D85998 /* IOTTextFieldFactory.swift */; };
+		FA758D0D2636626500D85998 /* IOTComponetsWidthRatioAtState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CC72636626500D85998 /* IOTComponetsWidthRatioAtState.swift */; };
+		FA758D0E2636626500D85998 /* IOTCardInfoValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CC82636626500D85998 /* IOTCardInfoValidationError.swift */; };
+		FA758D0F2636626500D85998 /* IOTInputFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CC92636626500D85998 /* IOTInputFilterModel.swift */; };
+		FA758D102636626500D85998 /* IOTColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CCA2636626500D85998 /* IOTColor.swift */; };
+		FA758D112636626500D85998 /* IOTCardPatternPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CCB2636626500D85998 /* IOTCardPatternPrediction.swift */; };
+		FA758D122636626500D85998 /* IOTCardInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CCC2636626500D85998 /* IOTCardInfoViewModel.swift */; };
+		FA758D132636626500D85998 /* IOTTextFieldAnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CCD2636626500D85998 /* IOTTextFieldAnimationModel.swift */; };
+		FA758D142636626500D85998 /* IOTCardIconState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CCE2636626500D85998 /* IOTCardIconState.swift */; };
+		FA758D152636626500D85998 /* IOTTextFieldValidationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CCF2636626500D85998 /* IOTTextFieldValidationState.swift */; };
+		FA758D162636626500D85998 /* IOTCardInfoViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CD02636626500D85998 /* IOTCardInfoViewLayout.swift */; };
+		FA758D172636626500D85998 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA758CD22636626500D85998 /* Assets.xcassets */; };
+		FA758D182636626500D85998 /* IOTRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CD52636626500D85998 /* IOTRequestData.swift */; };
+		FA758D192636626500D85998 /* IOTResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CD62636626500D85998 /* IOTResponseData.swift */; };
+		FA758D1A2636626500D85998 /* IOTNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CD82636626500D85998 /* IOTNetworkRequest.swift */; };
+		FA758D1B2636626500D85998 /* HTTPURLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CDA2636626500D85998 /* HTTPURLEncoder.swift */; };
+		FA758D1C2636626500D85998 /* HTTPResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CDB2636626500D85998 /* HTTPResult.swift */; };
+		FA758D1D2636626500D85998 /* HTTPRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CDC2636626500D85998 /* HTTPRoute.swift */; };
+		FA758D1E2636626500D85998 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CDD2636626500D85998 /* HTTPRequest.swift */; };
+		FA758D1F2636626500D85998 /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CDE2636626500D85998 /* HTTPResponse.swift */; };
+		FA758D202636626500D85998 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CDF2636626500D85998 /* HTTPMethod.swift */; };
+		FA758D212636626500D85998 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CE02636626500D85998 /* HTTPError.swift */; };
+		FA758D222636626500D85998 /* IOTNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CE22636626500D85998 /* IOTNetworkService.swift */; };
+		FA758D232636626500D85998 /* IOTCardIconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CE42636626500D85998 /* IOTCardIconViewModel.swift */; };
+		FA758D242636626500D85998 /* IOTExpiryDateTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CE52636626500D85998 /* IOTExpiryDateTextFieldViewModel.swift */; };
+		FA758D252636626500D85998 /* IOTTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CE62636626500D85998 /* IOTTextFieldViewModel.swift */; };
+		FA758D262636626500D85998 /* IOTDeformableCardInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CE72636626500D85998 /* IOTDeformableCardInfoViewModel.swift */; };
+		FA758D272636626500D85998 /* IOTCvvTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CE82636626500D85998 /* IOTCvvTextFieldViewModel.swift */; };
+		FA758D282636626500D85998 /* IOTCardNumberTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CE92636626500D85998 /* IOTCardNumberTextFieldViewModel.swift */; };
+		FA758D292636626500D85998 /* IOTTextFiledsViewFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CEA2636626500D85998 /* IOTTextFiledsViewFacade.swift */; };
+		FA758D2A2636626500D85998 /* IOTHolderNameTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CEB2636626500D85998 /* IOTHolderNameTextFieldViewModel.swift */; };
+		FA758D2B2636626500D85998 /* IOTCardInfoComponentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CEC2636626500D85998 /* IOTCardInfoComponentsViewModel.swift */; };
+		FA758D2C2636626500D85998 /* IOTLanguageAndText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758CEE2636626500D85998 /* IOTLanguageAndText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +131,68 @@
 		FA758C79263660D300D85998 /* AddCardObjcExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AddCardObjcExample.xcodeproj; path = AddCardObjcExample/AddCardObjcExample.xcodeproj; sourceTree = "<group>"; };
 		FA758C82263660E000D85998 /* OneTimePurchaseSwiftExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OneTimePurchaseSwiftExample.xcodeproj; path = OneTimePurchaseSwiftExample/OneTimePurchaseSwiftExample.xcodeproj; sourceTree = "<group>"; };
 		FA758C8B263660ED00D85998 /* AddCardSwiftExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AddCardSwiftExample.xcodeproj; path = AddCardSwiftExample/AddCardSwiftExample.xcodeproj; sourceTree = "<group>"; };
+		FA758CA32636626500D85998 /* IOTCvvTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCvvTextField.swift; sourceTree = "<group>"; };
+		FA758CA42636626500D85998 /* IOTCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardView.swift; sourceTree = "<group>"; };
+		FA758CA52636626500D85998 /* IOTTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTTextField.swift; sourceTree = "<group>"; };
+		FA758CA62636626500D85998 /* IOTCardImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardImageView.swift; sourceTree = "<group>"; };
+		FA758CA72636626500D85998 /* IOTCardInfoViewTripleLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardInfoViewTripleLine.swift; sourceTree = "<group>"; };
+		FA758CA82636626500D85998 /* IOTCardInfoViewTripleLineNCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardInfoViewTripleLineNCardView.swift; sourceTree = "<group>"; };
+		FA758CA92636626500D85998 /* IOTHolderNameTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTHolderNameTextField.swift; sourceTree = "<group>"; };
+		FA758CAA2636626500D85998 /* IOTCardNumberTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardNumberTextField.swift; sourceTree = "<group>"; };
+		FA758CAB2636626500D85998 /* IOTCardIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardIconView.swift; sourceTree = "<group>"; };
+		FA758CAC2636626500D85998 /* IOTCardInfoComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardInfoComponents.swift; sourceTree = "<group>"; };
+		FA758CAD2636626500D85998 /* IOTDeformableCardInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTDeformableCardInfoView.swift; sourceTree = "<group>"; };
+		FA758CAE2636626500D85998 /* IOTDeformableTextFieldAbstract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTDeformableTextFieldAbstract.swift; sourceTree = "<group>"; };
+		FA758CAF2636626500D85998 /* IOTCardInfoViewSingleLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardInfoViewSingleLine.swift; sourceTree = "<group>"; };
+		FA758CB02636626500D85998 /* IOTCardInfoComponentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardInfoComponentsView.swift; sourceTree = "<group>"; };
+		FA758CB12636626500D85998 /* IOTExpiryDateTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTExpiryDateTextField.swift; sourceTree = "<group>"; };
+		FA758CB22636626500D85998 /* IOTCardInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardInfoView.swift; sourceTree = "<group>"; };
+		FA758CB82636626500D85998 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		FA758CB92636626500D85998 /* DYUIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYUIHelper.swift; sourceTree = "<group>"; };
+		FA758CBA2636626500D85998 /* DYSegmenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYSegmenter.swift; sourceTree = "<group>"; };
+		FA758CBC2636626500D85998 /* IOTCardBrand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardBrand.swift; sourceTree = "<group>"; };
+		FA758CBD2636626500D85998 /* IOTSegmentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTSegmentModel.swift; sourceTree = "<group>"; };
+		FA758CBE2636626500D85998 /* IOTCardTypePerdicationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardTypePerdicationModel.swift; sourceTree = "<group>"; };
+		FA758CBF2636626500D85998 /* IOTOutputFormatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTOutputFormatModel.swift; sourceTree = "<group>"; };
+		FA758CC02636626500D85998 /* IOTCardAnimationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardAnimationModel.swift; sourceTree = "<group>"; };
+		FA758CC12636626500D85998 /* IOTTextFieldEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTTextFieldEnums.swift; sourceTree = "<group>"; };
+		FA758CC22636626500D85998 /* IOTCardInfoViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardInfoViewStyle.swift; sourceTree = "<group>"; };
+		FA758CC32636626500D85998 /* IOTInputValidateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTInputValidateModel.swift; sourceTree = "<group>"; };
+		FA758CC42636626500D85998 /* IOTCardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardInfo.swift; sourceTree = "<group>"; };
+		FA758CC52636626500D85998 /* IOTCardValidatingRegulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardValidatingRegulation.swift; sourceTree = "<group>"; };
+		FA758CC62636626500D85998 /* IOTTextFieldFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTTextFieldFactory.swift; sourceTree = "<group>"; };
+		FA758CC72636626500D85998 /* IOTComponetsWidthRatioAtState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTComponetsWidthRatioAtState.swift; sourceTree = "<group>"; };
+		FA758CC82636626500D85998 /* IOTCardInfoValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardInfoValidationError.swift; sourceTree = "<group>"; };
+		FA758CC92636626500D85998 /* IOTInputFilterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTInputFilterModel.swift; sourceTree = "<group>"; };
+		FA758CCA2636626500D85998 /* IOTColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTColor.swift; sourceTree = "<group>"; };
+		FA758CCB2636626500D85998 /* IOTCardPatternPrediction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardPatternPrediction.swift; sourceTree = "<group>"; };
+		FA758CCC2636626500D85998 /* IOTCardInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardInfoViewModel.swift; sourceTree = "<group>"; };
+		FA758CCD2636626500D85998 /* IOTTextFieldAnimationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTTextFieldAnimationModel.swift; sourceTree = "<group>"; };
+		FA758CCE2636626500D85998 /* IOTCardIconState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardIconState.swift; sourceTree = "<group>"; };
+		FA758CCF2636626500D85998 /* IOTTextFieldValidationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTTextFieldValidationState.swift; sourceTree = "<group>"; };
+		FA758CD02636626500D85998 /* IOTCardInfoViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardInfoViewLayout.swift; sourceTree = "<group>"; };
+		FA758CD22636626500D85998 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA758CD52636626500D85998 /* IOTRequestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTRequestData.swift; sourceTree = "<group>"; };
+		FA758CD62636626500D85998 /* IOTResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTResponseData.swift; sourceTree = "<group>"; };
+		FA758CD82636626500D85998 /* IOTNetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTNetworkRequest.swift; sourceTree = "<group>"; };
+		FA758CDA2636626500D85998 /* HTTPURLEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPURLEncoder.swift; sourceTree = "<group>"; };
+		FA758CDB2636626500D85998 /* HTTPResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResult.swift; sourceTree = "<group>"; };
+		FA758CDC2636626500D85998 /* HTTPRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRoute.swift; sourceTree = "<group>"; };
+		FA758CDD2636626500D85998 /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		FA758CDE2636626500D85998 /* HTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
+		FA758CDF2636626500D85998 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		FA758CE02636626500D85998 /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		FA758CE22636626500D85998 /* IOTNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTNetworkService.swift; sourceTree = "<group>"; };
+		FA758CE42636626500D85998 /* IOTCardIconViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardIconViewModel.swift; sourceTree = "<group>"; };
+		FA758CE52636626500D85998 /* IOTExpiryDateTextFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTExpiryDateTextFieldViewModel.swift; sourceTree = "<group>"; };
+		FA758CE62636626500D85998 /* IOTTextFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTTextFieldViewModel.swift; sourceTree = "<group>"; };
+		FA758CE72636626500D85998 /* IOTDeformableCardInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTDeformableCardInfoViewModel.swift; sourceTree = "<group>"; };
+		FA758CE82636626500D85998 /* IOTCvvTextFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCvvTextFieldViewModel.swift; sourceTree = "<group>"; };
+		FA758CE92636626500D85998 /* IOTCardNumberTextFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardNumberTextFieldViewModel.swift; sourceTree = "<group>"; };
+		FA758CEA2636626500D85998 /* IOTTextFiledsViewFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTTextFiledsViewFacade.swift; sourceTree = "<group>"; };
+		FA758CEB2636626500D85998 /* IOTHolderNameTextFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTHolderNameTextFieldViewModel.swift; sourceTree = "<group>"; };
+		FA758CEC2636626500D85998 /* IOTCardInfoComponentsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardInfoComponentsViewModel.swift; sourceTree = "<group>"; };
+		FA758CEE2636626500D85998 /* IOTLanguageAndText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTLanguageAndText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +236,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FA38C9122636B183001D65FE /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CA92636626500D85998 /* IOTHolderNameTextField.swift */,
+				FA758CEB2636626500D85998 /* IOTHolderNameTextFieldViewModel.swift */,
+				FA758CB12636626500D85998 /* IOTExpiryDateTextField.swift */,
+				FA758CE52636626500D85998 /* IOTExpiryDateTextFieldViewModel.swift */,
+				FA758CA32636626500D85998 /* IOTCvvTextField.swift */,
+				FA758CE82636626500D85998 /* IOTCvvTextFieldViewModel.swift */,
+			);
+			path = Legacy;
+			sourceTree = "<group>";
+		};
 		FA758C3D26365F5D00D85998 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +273,13 @@
 		FA758C4926365F5E00D85998 /* IOTPayiOS */ = {
 			isa = PBXGroup;
 			children = (
+				FA38C9122636B183001D65FE /* Legacy */,
+				FA758D4226366DE700D85998 /* Others */,
+				FA758D3826366D5E00D85998 /* Views+ViewModels */,
+				FA758CBB2636626500D85998 /* Models */,
+				FA758CD32636626500D85998 /* Network */,
+				FA758CD12636626500D85998 /* Resources */,
+				FA758CB72636626500D85998 /* Helpers */,
 				FA758C4A26365F5E00D85998 /* IOTPayiOS.h */,
 				FA758C4B26365F5E00D85998 /* Info.plist */,
 			);
@@ -192,6 +336,256 @@
 				FA758C90263660EE00D85998 /* AddCardSwiftExample.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FA758CB72636626500D85998 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CB82636626500D85998 /* Loader.swift */,
+				FA758CB92636626500D85998 /* DYUIHelper.swift */,
+				FA758CBA2636626500D85998 /* DYSegmenter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FA758CBB2636626500D85998 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA758D682636A58B00D85998 /* Perdication */,
+				FA758D632636A57200D85998 /* StringFormating */,
+				FA758D622636A4D400D85998 /* Animations */,
+				FA758D592636A47800D85998 /* Designs */,
+				FA758D562636A2DF00D85998 /* Validations */,
+				FA758D552636A2D900D85998 /* Structs */,
+				FA758D542636A2C700D85998 /* Enums */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA758CD12636626500D85998 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CD22636626500D85998 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA758CD32636626500D85998 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CD42636626500D85998 /* Codable */,
+				FA758CD72636626500D85998 /* Requests */,
+				FA758CD92636626500D85998 /* HTTP */,
+				FA758CE12636626500D85998 /* Service */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FA758CD42636626500D85998 /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CD52636626500D85998 /* IOTRequestData.swift */,
+				FA758CD62636626500D85998 /* IOTResponseData.swift */,
+			);
+			path = Codable;
+			sourceTree = "<group>";
+		};
+		FA758CD72636626500D85998 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CD82636626500D85998 /* IOTNetworkRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		FA758CD92636626500D85998 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CDA2636626500D85998 /* HTTPURLEncoder.swift */,
+				FA758CDB2636626500D85998 /* HTTPResult.swift */,
+				FA758CDC2636626500D85998 /* HTTPRoute.swift */,
+				FA758CDD2636626500D85998 /* HTTPRequest.swift */,
+				FA758CDE2636626500D85998 /* HTTPResponse.swift */,
+				FA758CDF2636626500D85998 /* HTTPMethod.swift */,
+				FA758CE02636626500D85998 /* HTTPError.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		FA758CE12636626500D85998 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CE22636626500D85998 /* IOTNetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FA758D3826366D5E00D85998 /* Views+ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA758D3C26366D8900D85998 /* CardInfoViews+ViewModels */,
+				FA758D4626366EBB00D85998 /* ComponentsView+ViewModels */,
+				FA758D4526366EA700D85998 /* CardViews+ViewModels */,
+				FA758D4126366DA200D85998 /* TextFields+ViewModels */,
+				FA758D3B26366D7900D85998 /* AbstractView+ViewModels */,
+			);
+			path = "Views+ViewModels";
+			sourceTree = "<group>";
+		};
+		FA758D3B26366D7900D85998 /* AbstractView+ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CB22636626500D85998 /* IOTCardInfoView.swift */,
+				FA758CCC2636626500D85998 /* IOTCardInfoViewModel.swift */,
+				FA758CAD2636626500D85998 /* IOTDeformableCardInfoView.swift */,
+				FA758CE72636626500D85998 /* IOTDeformableCardInfoViewModel.swift */,
+				FA758CAE2636626500D85998 /* IOTDeformableTextFieldAbstract.swift */,
+			);
+			path = "AbstractView+ViewModels";
+			sourceTree = "<group>";
+		};
+		FA758D3C26366D8900D85998 /* CardInfoViews+ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CAF2636626500D85998 /* IOTCardInfoViewSingleLine.swift */,
+				FA758CA72636626500D85998 /* IOTCardInfoViewTripleLine.swift */,
+				FA758CA82636626500D85998 /* IOTCardInfoViewTripleLineNCardView.swift */,
+			);
+			path = "CardInfoViews+ViewModels";
+			sourceTree = "<group>";
+		};
+		FA758D4126366DA200D85998 /* TextFields+ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CA52636626500D85998 /* IOTTextField.swift */,
+				FA758CE62636626500D85998 /* IOTTextFieldViewModel.swift */,
+				FA758CAA2636626500D85998 /* IOTCardNumberTextField.swift */,
+				FA758CE92636626500D85998 /* IOTCardNumberTextFieldViewModel.swift */,
+			);
+			path = "TextFields+ViewModels";
+			sourceTree = "<group>";
+		};
+		FA758D4226366DE700D85998 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				FA758D572636A3A800D85998 /* Factory */,
+				FA758D4426366E3300D85998 /* Facade */,
+				FA758D4326366E1400D85998 /* Localization */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		FA758D4326366E1400D85998 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CEE2636626500D85998 /* IOTLanguageAndText.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		FA758D4426366E3300D85998 /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CEA2636626500D85998 /* IOTTextFiledsViewFacade.swift */,
+			);
+			path = Facade;
+			sourceTree = "<group>";
+		};
+		FA758D4526366EA700D85998 /* CardViews+ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CA42636626500D85998 /* IOTCardView.swift */,
+				FA758CA62636626500D85998 /* IOTCardImageView.swift */,
+				FA758CAB2636626500D85998 /* IOTCardIconView.swift */,
+				FA758CE42636626500D85998 /* IOTCardIconViewModel.swift */,
+			);
+			path = "CardViews+ViewModels";
+			sourceTree = "<group>";
+		};
+		FA758D4626366EBB00D85998 /* ComponentsView+ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CAC2636626500D85998 /* IOTCardInfoComponents.swift */,
+				FA758CEC2636626500D85998 /* IOTCardInfoComponentsViewModel.swift */,
+				FA758CB02636626500D85998 /* IOTCardInfoComponentsView.swift */,
+			);
+			path = "ComponentsView+ViewModels";
+			sourceTree = "<group>";
+		};
+		FA758D542636A2C700D85998 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CCE2636626500D85998 /* IOTCardIconState.swift */,
+				FA758CBC2636626500D85998 /* IOTCardBrand.swift */,
+				FA758CC12636626500D85998 /* IOTTextFieldEnums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		FA758D552636A2D900D85998 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CBD2636626500D85998 /* IOTSegmentModel.swift */,
+				FA758CC72636626500D85998 /* IOTComponetsWidthRatioAtState.swift */,
+				FA758CC42636626500D85998 /* IOTCardInfo.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		FA758D562636A2DF00D85998 /* Validations */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CC82636626500D85998 /* IOTCardInfoValidationError.swift */,
+				FA758CC52636626500D85998 /* IOTCardValidatingRegulation.swift */,
+				FA758CCF2636626500D85998 /* IOTTextFieldValidationState.swift */,
+				FA758CC32636626500D85998 /* IOTInputValidateModel.swift */,
+			);
+			path = Validations;
+			sourceTree = "<group>";
+		};
+		FA758D572636A3A800D85998 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CC62636626500D85998 /* IOTTextFieldFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		FA758D592636A47800D85998 /* Designs */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CCA2636626500D85998 /* IOTColor.swift */,
+				FA758CC22636626500D85998 /* IOTCardInfoViewStyle.swift */,
+				FA758CD02636626500D85998 /* IOTCardInfoViewLayout.swift */,
+			);
+			path = Designs;
+			sourceTree = "<group>";
+		};
+		FA758D622636A4D400D85998 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CC02636626500D85998 /* IOTCardAnimationModel.swift */,
+				FA758CCD2636626500D85998 /* IOTTextFieldAnimationModel.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		FA758D632636A57200D85998 /* StringFormating */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CC92636626500D85998 /* IOTInputFilterModel.swift */,
+				FA758CBF2636626500D85998 /* IOTOutputFormatModel.swift */,
+			);
+			path = StringFormating;
+			sourceTree = "<group>";
+		};
+		FA758D682636A58B00D85998 /* Perdication */ = {
+			isa = PBXGroup;
+			children = (
+				FA758CBE2636626500D85998 /* IOTCardTypePerdicationModel.swift */,
+				FA758CCB2636626500D85998 /* IOTCardPatternPrediction.swift */,
+			);
+			path = Perdication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +730,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA758D172636626500D85998 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +795,67 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA758D182636626500D85998 /* IOTRequestData.swift in Sources */,
+				FA758CF12636626500D85998 /* IOTTextField.swift in Sources */,
+				FA758D012636626500D85998 /* DYSegmenter.swift in Sources */,
+				FA758D282636626500D85998 /* IOTCardNumberTextFieldViewModel.swift in Sources */,
+				FA758D052636626500D85998 /* IOTOutputFormatModel.swift in Sources */,
+				FA758D2C2636626500D85998 /* IOTLanguageAndText.swift in Sources */,
+				FA758D022636626500D85998 /* IOTCardBrand.swift in Sources */,
+				FA758D0E2636626500D85998 /* IOTCardInfoValidationError.swift in Sources */,
+				FA758D1C2636626500D85998 /* HTTPResult.swift in Sources */,
+				FA758D072636626500D85998 /* IOTTextFieldEnums.swift in Sources */,
+				FA758D0B2636626500D85998 /* IOTCardValidatingRegulation.swift in Sources */,
+				FA758D142636626500D85998 /* IOTCardIconState.swift in Sources */,
+				FA758CFC2636626500D85998 /* IOTCardInfoComponentsView.swift in Sources */,
+				FA758D0D2636626500D85998 /* IOTComponetsWidthRatioAtState.swift in Sources */,
+				FA758D1F2636626500D85998 /* HTTPResponse.swift in Sources */,
+				FA758CF42636626500D85998 /* IOTCardInfoViewTripleLineNCardView.swift in Sources */,
+				FA758CF22636626500D85998 /* IOTCardImageView.swift in Sources */,
+				FA758D002636626500D85998 /* DYUIHelper.swift in Sources */,
+				FA758D242636626500D85998 /* IOTExpiryDateTextFieldViewModel.swift in Sources */,
+				FA758D092636626500D85998 /* IOTInputValidateModel.swift in Sources */,
+				FA758D292636626500D85998 /* IOTTextFiledsViewFacade.swift in Sources */,
+				FA758D0A2636626500D85998 /* IOTCardInfo.swift in Sources */,
+				FA758D112636626500D85998 /* IOTCardPatternPrediction.swift in Sources */,
+				FA758D192636626500D85998 /* IOTResponseData.swift in Sources */,
+				FA758D122636626500D85998 /* IOTCardInfoViewModel.swift in Sources */,
+				FA758D162636626500D85998 /* IOTCardInfoViewLayout.swift in Sources */,
+				FA758CF92636626500D85998 /* IOTDeformableCardInfoView.swift in Sources */,
+				FA758CF32636626500D85998 /* IOTCardInfoViewTripleLine.swift in Sources */,
+				FA758D152636626500D85998 /* IOTTextFieldValidationState.swift in Sources */,
+				FA758CFA2636626500D85998 /* IOTDeformableTextFieldAbstract.swift in Sources */,
+				FA758D2A2636626500D85998 /* IOTHolderNameTextFieldViewModel.swift in Sources */,
+				FA758D032636626500D85998 /* IOTSegmentModel.swift in Sources */,
+				FA758D2B2636626500D85998 /* IOTCardInfoComponentsViewModel.swift in Sources */,
+				FA758CFB2636626500D85998 /* IOTCardInfoViewSingleLine.swift in Sources */,
+				FA758D1D2636626500D85998 /* HTTPRoute.swift in Sources */,
+				FA758D1B2636626500D85998 /* HTTPURLEncoder.swift in Sources */,
+				FA758D202636626500D85998 /* HTTPMethod.swift in Sources */,
+				FA758D062636626500D85998 /* IOTCardAnimationModel.swift in Sources */,
+				FA758D252636626500D85998 /* IOTTextFieldViewModel.swift in Sources */,
+				FA758D0F2636626500D85998 /* IOTInputFilterModel.swift in Sources */,
+				FA758CFF2636626500D85998 /* Loader.swift in Sources */,
+				FA758D222636626500D85998 /* IOTNetworkService.swift in Sources */,
+				FA758CFD2636626500D85998 /* IOTExpiryDateTextField.swift in Sources */,
+				FA758CF82636626500D85998 /* IOTCardInfoComponents.swift in Sources */,
+				FA758D102636626500D85998 /* IOTColor.swift in Sources */,
+				FA758D0C2636626500D85998 /* IOTTextFieldFactory.swift in Sources */,
+				FA758D272636626500D85998 /* IOTCvvTextFieldViewModel.swift in Sources */,
+				FA758D212636626500D85998 /* HTTPError.swift in Sources */,
+				FA758D232636626500D85998 /* IOTCardIconViewModel.swift in Sources */,
+				FA758D132636626500D85998 /* IOTTextFieldAnimationModel.swift in Sources */,
+				FA758D042636626500D85998 /* IOTCardTypePerdicationModel.swift in Sources */,
+				FA758CEF2636626500D85998 /* IOTCvvTextField.swift in Sources */,
+				FA758D1A2636626500D85998 /* IOTNetworkRequest.swift in Sources */,
+				FA758CF52636626500D85998 /* IOTHolderNameTextField.swift in Sources */,
+				FA758D1E2636626500D85998 /* HTTPRequest.swift in Sources */,
+				FA758D082636626500D85998 /* IOTCardInfoViewStyle.swift in Sources */,
+				FA758CF02636626500D85998 /* IOTCardView.swift in Sources */,
+				FA758CFE2636626500D85998 /* IOTCardInfoView.swift in Sources */,
+				FA758CF62636626500D85998 /* IOTCardNumberTextField.swift in Sources */,
+				FA758CF72636626500D85998 /* IOTCardIconView.swift in Sources */,
+				FA758D262636626500D85998 /* IOTDeformableCardInfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +1056,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B8E29086E2E4D141062C09FD /* Pods-IOTPayiOS-IOTPayiOSTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG5V7B83H4;
 				INFOPLIST_FILE = IOTPayiOSTests/Info.plist;
@@ -619,6 +1076,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8901EE680E1B21349823F986 /* Pods-IOTPayiOS-IOTPayiOSTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG5V7B83H4;
 				INFOPLIST_FILE = IOTPayiOSTests/Info.plist;
