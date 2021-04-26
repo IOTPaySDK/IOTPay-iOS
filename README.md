@@ -32,8 +32,8 @@ IOTCardInfoViewSingleLine *cardInfoView = [[IOTCardInfoViewTripleLineNCardView a
 <br />  
 <br />  
 
-## 2. Integration walkthrough:
-#### 2.1: Install Framework
+## 2. Integration Walkthrough:
+### 2.1: Install Framework
 The easiset way to install the framework and keep it upon date is using cocoaPod. 
 CocoaPod is one of the most commonly used Xcode library & framework depandency managment software.
 For Pod reference and how-to install pod, please follow this link:
@@ -69,7 +69,7 @@ The cocoaPod will start installing.
 <br />      
 
 
-## 2.1 Import framework
+### 2.2 Import framework
 ```
 Swift:
 import IOTPayiOS
@@ -80,21 +80,24 @@ Objc: (in .h)
 ```
 <br />    
 
-# 2.3 Event Flow and Options
-IOTPay provide two method for the payment, "Simple Purchase" and "Add Card & Purchase with token". Please choose the one based on your needs, or incloud both and let user choose pick their options.
+### 2.3 Event Flow and Options
+IOTPay provide two options for the payment, "Simple Purchase" and "Add Card & Purchase with token". Please choose the one based on your needs, or incloud both and let user choose pick their options.
 <br />  
 "Simple Purchase" Flow:
 <br />  
-![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK0.png "Logo Title Text 3")
-![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK1.png "Logo Title Text 3")
+This is a simpler solution, that user should enter their card info each time for the purchase. This framework should be used/re-init for each simple purchase event.
+
+![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK2.png "Logo Title Text 3")
 
 <br />  
 "Add Card & Purchase with token" Flow:
 <br />  
-![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK2.png "Logo Title Text 3")
+Once the user add a card successcefly, the IOTPay server will send back a response that include desensitized card info. Your app and server should save those desensitized info for users' futrue purchase. Upone recevied the desensitized card info, the App will only need to send request to your own mechant server, which will interact with IOTPay server and get response/receipt to the App. This framework should not be used again, unless user want to add another card, or do a one time purchase with other card.
+![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK0.png "Logo Title Text 3")
+![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK1.png "Logo Title Text 3")
 
 <br />  
-To start this section, you will need:
+To start the next step, you will need:
 - IOTPayiOS Framework Installed  (refer to the first part in this guide)
 - A Merchant account from IOTPay (register @ https://iotpay.ca/1666-2/)
 
@@ -104,10 +107,10 @@ Optional:
 For production, Merchant/client should build their own "Merchant Server", which will generate the "secureId". For testing phase, there is a shortcut to generate testing secureId without Merchant server. Please check 5.1 Temporary solution to get secureId at the end of this guide.    
 <br />  
 
-# 2.3.1 "Add Card" + "Purchase Token" option
+### 2.4 "Add Card" + "Purchase Token" Option/Event
 
-#2.2 Setup View
-Declare the view before viewDidLoad. This is not mandatory for display the view, but you will need it for the send request event in step 3.
+#### 2.4.1 Setup Card Info View
+Declare the view before viewDidLoad. This is not mandatory for display the view, but you will need this view's point to send request in the next step.
 ```
 Swift:
 var cardInfoView: IOTCardInfoViewSingleLine!
@@ -133,11 +136,36 @@ self.cardInfoView.delegate = self;
 This will start the interface for user to fillin the card info.
 <br />    
 
+#### 2.4.2 Card Info View Delegate
+The card Info View delegate (IOTCardInfoViewDelegate) has one func in protocl:  
+func onDidCompleteValidately() { }
+This func will be called once after users' fillin all the required info viliadly, so you know when to make the "Add Card" button to ready for user input.
+```
+Swift
+extension ViewController: IOTCardInfoViewDelegate {
+	func onDidCompleteValidately() {
+		// User did complete card info view Validately, we should enable the button
+		button.setTitle("Add Card", for: .normal)
+		button.isUserInteractionEnabled = true
+	}
+}
+```
+```
+Objc .h
+@interface ViewController : UIViewController <IOTCardInfoViewDelegate>
 
+Objc .m
+- (void)onDidCompleteValidately {
+	// User did complete card info view Validately, we should enable the button
+	[self.button setTitle: @"Add Card" forState: UIControlStateNormal];
+	[self.button setUserInteractionEnabled: true];
+}
+```
+Please don't forget to add "IOTCardInfoViewDelegate" in the previous step.
 <br />      
 
-#2.3: Send the Request
-After user filling the card info, sending the request by:
+#### 2.4.3: Send the Request
+After user filling the card info and tap on the "Add User" sending the request by:
 ```
 Swift
 let shard = IOTNetworkManager.shared
@@ -148,6 +176,8 @@ Objc
 IOTNetworkService *shard = IOTNetworkService.shared;
 shard.delegate = self;
 [shard sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
+```
+
 ```
 That's all we need for basic setup to add a card!
 (You will need to set up a button for sendRequest after user filling the info)
