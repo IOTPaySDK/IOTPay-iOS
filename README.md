@@ -7,6 +7,21 @@ IOTPay-iOS is a smiple to use yet powerful Framework helps you with the online p
 
 ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/simpleGIF.gif "Logo Title Text 1") ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/TripleGif.gif "Logo Title Text 1")
 
+IOTPay is easy to setup. For a simple integration, online two lines are required to send up payment view and sending the request.
+For view:
+cardInfoView = IOTCardInfoViewSingleLine(action: .addUser, style: .roundRect)
+```
+Swift:
+cardInfoView = IOTCardInfoViewSingleLine(action: .addUser, style: .roundRect)  
+
+Objc: 
+IOTCardInfoViewSingleLine *cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase style: IOTCardInfoViewStyleRoundRect];
+```
+For NetworkRequest:
+```
+IOTPay.shared : IOTNetworkRequestActionOneTimePurchase style: IOTCardInfoViewStyleRoundRect];
+```
+
 <br />      
 
 # 1: Install Framework
