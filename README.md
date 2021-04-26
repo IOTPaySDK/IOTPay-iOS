@@ -9,7 +9,7 @@ IOTPay-iOS is a smiple to use yet powerful Framework helps you with the online p
 
 <br />      
 
-## 1.1: Install SDK
+# 1: Install Framework
 First you will need the cocoaPod, a standard Xcode library & framework depandency managment software.
 For Pod reference and how-to, please follow this link:
 https://guides.cocoapods.org/using/the-podfile.html
@@ -32,13 +32,20 @@ pod install
 
 
 
-
-
 <br />      
 
-## 2 Integrade "Add Card" Event
+# 2 Integrade "Add Card" Event
 
-#2.1 Import framework
+What you will need:
+- installed IOTPayiOS Framework 
+	refer to the first part in this guide
+- Merchant account with IOTPay (register @ https://iotpay.ca/1666-2/)
+Optional:
+- Merchant Server (refer to https://develop.iotpay.ca)
+	For production, client should build their own "Merchant Server", which will generate the "secureId". 
+	For testing, you can use the following temporary solution to get secureId:    
+
+## 2.1 Import framework
 ```
 Swift
 import IOTPayiOS
