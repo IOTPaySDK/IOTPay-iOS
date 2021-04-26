@@ -42,8 +42,8 @@ What you will need:
 
 Optional:
 - Merchant Server (refer to https://develop.iotpay.ca)
-	For production, client should build their own "Merchant Server", which will generate the "secureId". 
-	For testing, you can use the following temporary solution to get secureId:    
+	
+For production, client should build their own "Merchant Server", which will generate the "secureId". For testing phase, there is a shortcut to generate testing secureId without Merchant server. Please check 5.1 Temporary solution to get secureId at the end of this guide.    
 
 ## 2.1 Import framework
 ```
