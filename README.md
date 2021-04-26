@@ -1,10 +1,10 @@
-#IOTPay-iOS
+# IOTPay-iOS
 #### Online Credit Card Payment Framework for iOS
 <br />    
 IOTPay-iOS is a smiple to use yet powerful Framework helps you with the online payment for iOS apps.
 
-##1. Features:
-#####-Highly coustomaziable 
+## 1. Features:
+##### -Highly coustomaziable 
 #####-Secure
 #####-Easy to set up
 <br />    
