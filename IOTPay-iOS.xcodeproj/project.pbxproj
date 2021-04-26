@@ -73,6 +73,37 @@
 		FA34332326365845009A17C0 /* IOTLanguageAndText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3432E526365844009A17C0 /* IOTLanguageAndText.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FA5776C826365B9D001E8B91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA5776C426365B9D001E8B91 /* OneTimePurchaseObjcExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA3431AD26365145009A17C0;
+			remoteInfo = OneTimePurchaseObjcExample;
+		};
+		FA5776D026365BAB001E8B91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA5776CC26365BAB001E8B91 /* AddCardObjcExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA34318826365129009A17C0;
+			remoteInfo = AddCardObjcExample;
+		};
+		FA5776D826365BB5001E8B91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA5776D426365BB5001E8B91 /* OneTimePurchaseSwiftExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA3431672636510F009A17C0;
+			remoteInfo = OneTimePurchaseSwiftExample;
+		};
+		FA5776E026365BC3001E8B91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA5776DC26365BC3001E8B91 /* AddCardSwiftExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA343147263650F3009A17C0;
+			remoteInfo = AddCardSwiftExample;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		27259ED13A62AF788F73DB50 /* Pods-IOTPay-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTPay-iOS.release.xcconfig"; path = "Target Support Files/Pods-IOTPay-iOS/Pods-IOTPay-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		8AEF29BE288042DA50F76151 /* Pods_IOTPay_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOTPay_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +173,10 @@
 		FA3432E126365844009A17C0 /* IOTCardInfoComponentsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardInfoComponentsViewModel.swift; sourceTree = "<group>"; };
 		FA3432E326365844009A17C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA3432E526365844009A17C0 /* IOTLanguageAndText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTLanguageAndText.swift; sourceTree = "<group>"; };
+		FA5776C426365B9D001E8B91 /* OneTimePurchaseObjcExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OneTimePurchaseObjcExample.xcodeproj; path = OneTimePurchaseObjcExample/OneTimePurchaseObjcExample.xcodeproj; sourceTree = "<group>"; };
+		FA5776CC26365BAB001E8B91 /* AddCardObjcExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AddCardObjcExample.xcodeproj; path = AddCardObjcExample/AddCardObjcExample.xcodeproj; sourceTree = "<group>"; };
+		FA5776D426365BB5001E8B91 /* OneTimePurchaseSwiftExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OneTimePurchaseSwiftExample.xcodeproj; path = OneTimePurchaseSwiftExample/OneTimePurchaseSwiftExample.xcodeproj; sourceTree = "<group>"; };
+		FA5776DC26365BC3001E8B91 /* AddCardSwiftExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AddCardSwiftExample.xcodeproj; path = AddCardSwiftExample/AddCardSwiftExample.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +211,7 @@
 		FA343281263654F2009A17C0 = {
 			isa = PBXGroup;
 			children = (
+				FA34332B26365B29009A17C0 /* Examples */,
 				FA34328D263654F2009A17C0 /* IOTPay-iOS */,
 				FA34328C263654F2009A17C0 /* Products */,
 				87794DE6E6A101391A8C1EDD /* Pods */,
@@ -350,6 +386,49 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		FA34332B26365B29009A17C0 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				FA5776DC26365BC3001E8B91 /* AddCardSwiftExample.xcodeproj */,
+				FA5776D426365BB5001E8B91 /* OneTimePurchaseSwiftExample.xcodeproj */,
+				FA5776CC26365BAB001E8B91 /* AddCardObjcExample.xcodeproj */,
+				FA5776C426365B9D001E8B91 /* OneTimePurchaseObjcExample.xcodeproj */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		FA5776C526365B9D001E8B91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA5776C926365B9D001E8B91 /* OneTimePurchaseObjcExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA5776CD26365BAB001E8B91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA5776D126365BAB001E8B91 /* AddCardObjcExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA5776D526365BB5001E8B91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA5776D926365BB5001E8B91 /* OneTimePurchaseSwiftExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA5776DD26365BC3001E8B91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA5776E126365BC3001E8B91 /* AddCardSwiftExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -407,12 +486,61 @@
 			mainGroup = FA343281263654F2009A17C0;
 			productRefGroup = FA34328C263654F2009A17C0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FA5776CD26365BAB001E8B91 /* Products */;
+					ProjectRef = FA5776CC26365BAB001E8B91 /* AddCardObjcExample.xcodeproj */;
+				},
+				{
+					ProductGroup = FA5776DD26365BC3001E8B91 /* Products */;
+					ProjectRef = FA5776DC26365BC3001E8B91 /* AddCardSwiftExample.xcodeproj */;
+				},
+				{
+					ProductGroup = FA5776C526365B9D001E8B91 /* Products */;
+					ProjectRef = FA5776C426365B9D001E8B91 /* OneTimePurchaseObjcExample.xcodeproj */;
+				},
+				{
+					ProductGroup = FA5776D526365BB5001E8B91 /* Products */;
+					ProjectRef = FA5776D426365BB5001E8B91 /* OneTimePurchaseSwiftExample.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FA34328A263654F2009A17C0 /* IOTPay-iOS */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FA5776C926365B9D001E8B91 /* OneTimePurchaseObjcExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OneTimePurchaseObjcExample.app;
+			remoteRef = FA5776C826365B9D001E8B91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA5776D126365BAB001E8B91 /* AddCardObjcExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = AddCardObjcExample.app;
+			remoteRef = FA5776D026365BAB001E8B91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA5776D926365BB5001E8B91 /* OneTimePurchaseSwiftExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OneTimePurchaseSwiftExample.app;
+			remoteRef = FA5776D826365BB5001E8B91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA5776E126365BC3001E8B91 /* AddCardSwiftExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = AddCardSwiftExample.app;
+			remoteRef = FA5776E026365BC3001E8B91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FA343289263654F2009A17C0 /* Resources */ = {
