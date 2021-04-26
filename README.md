@@ -42,20 +42,19 @@ pod install
 ```
 Swift
 import IOTPayiOS
-```
+
 Objc (in .h)
-```
 #import <IOTPayiOS/IOTPayiOS-Swift.h>
 ```
+<br />    
 
 #2.2 Setup View
 Declare the view before viewDidLoad. This is not mandatory for display the view, but you will need it for the send request event in step 3.
 ```
 Swift
 var cardInfoView: IOTCardInfoViewSingleLine!
-```
+
 Objc: in .h (Between @interface & @end)
-```
 @property (nonatomic, retain) IOTCardInfoViewTripleLineNCardView *cardInfoView;
 ```
 
@@ -63,18 +62,33 @@ Add following code in ViewController after viewDidLoad
 ```
 Swift:
 cardInfoView = IOTCardInfoViewSingleLine(action: .addUser, style: .roundRect)
+cardInfoView.Delegate = self
 view.addSubview(cardInfoView)
+
+Objc: (in .m)
+self.cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] 
+	initWithAction: IOTNetworkRequestActionOneTimePurchase style: IOTCardInfoViewStyleRoundRect];
+self.cardInfoView.delegate = self;
+[self.view addSubview: self.cardInfoView];
 ```
 This will start the interface for user to fillin the card info.
-
+<br />    
 
 
 <br />      
 
-## Step 3: Send the Request
+#2.3: Send the Request
 After user filling the card info, sending the request by:
 ```
-IOTNetworkManager.shared.sendRequest(secureId: "your secureId", cardInfoPrivder: cardInfoView)
+Swift
+let shard = IOTNetworkManager.shared
+shard.delegate = self
+shard.sendRequest(secureId: "your secureId", cardInfoPrivder: cardInfoView)
+
+Objc
+IOTNetworkService *shard = IOTNetworkService.shared;
+shard.delegate = self;
+[shard sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
 ```
 That's all we need for basic setup to add a card!
 (You will need to set up a button for sendRequest after user filling the info)
@@ -82,8 +96,8 @@ For sample example, please check sampleExample.
 - SimpleDemo 
 
 For more usage, such as delegate to let you know user filling the vliad info and complete, or more style/layout settings, please check the other examples:
-- TripleLineDemo (NOT yet)
-- DelegateDemo (NOT yet)
+- TripleLineDemo
+- DelegateDemo 
 - StylingDemo (NOT yet)
 
 
