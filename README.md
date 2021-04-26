@@ -9,25 +9,59 @@ IOTPay-iOS is a smiple to use yet powerful Framework helps you with the online p
 
 <br />      
 
-## Step 1: Install 
-Intall IOTPay-iOS form pod/github.
-
+## 1.1: Install SDK
+First you will need the cocoaPod, a standard Xcode library & framework depandency managment software.
 For Pod reference and how-to, please follow this link:
 https://guides.cocoapods.org/using/the-podfile.html
+
+Once you have cocoaPod, use command line to enter
+```
+pod init
+```
+This line will add a pod file in the xcode project folder.
+Open the pod file by any text editor, enter the following line between 
+```
+target 'MyApp' do
+    pod 'IOTPayiOS', '~> 4.0'
+end
+```
+And finaly, close the text editor, enter the following command in CMD
+```
+pod install
+```
+
+
 
 
 
 <br />      
 
-## Step 2: Setup View
+## 2 Integrade "Add Card" Event
+
+#2.1 Import framework
+```
+Swift
+import IOTPayiOS
+```
+Objc (in .h)
+```
+#import <IOTPayiOS/IOTPayiOS-Swift.h>
+```
+
+#2.2 Setup View
 Declare the view before viewDidLoad. This is not mandatory for display the view, but you will need it for the send request event in step 3.
 ```
+Swift
 var cardInfoView: IOTCardInfoViewSingleLine!
+```
+Objc: in .h (Between @interface & @end)
+```
+@property (nonatomic, retain) IOTCardInfoViewTripleLineNCardView *cardInfoView;
 ```
 
 Add following code in ViewController after viewDidLoad
-
 ```
+Swift:
 cardInfoView = IOTCardInfoViewSingleLine(action: .addUser, style: .roundRect)
 view.addSubview(cardInfoView)
 ```
