@@ -47,10 +47,11 @@ For production, client should build their own "Merchant Server", which will gene
 
 ## 2.1 Import framework
 ```
-Swift
+Swift:
 import IOTPayiOS
-
-Objc (in .h)
+```
+```
+Objc: (in .h)
 #import <IOTPayiOS/IOTPayiOS-Swift.h>
 ```
 <br />    
@@ -58,10 +59,11 @@ Objc (in .h)
 #2.2 Setup View
 Declare the view before viewDidLoad. This is not mandatory for display the view, but you will need it for the send request event in step 3.
 ```
-Swift
+Swift:
 var cardInfoView: IOTCardInfoViewSingleLine!
-
-Objc: in .h (Between @interface & @end)
+```
+```
+Objc: (in .h, Between @interface & @end)
 @property (nonatomic, retain) IOTCardInfoViewTripleLineNCardView *cardInfoView;
 ```
 
@@ -71,10 +73,10 @@ Swift:
 cardInfoView = IOTCardInfoViewSingleLine(action: .addUser, style: .roundRect)
 cardInfoView.Delegate = self
 view.addSubview(cardInfoView)
-
+```
+```
 Objc: (in .m)
-self.cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] 
-	initWithAction: IOTNetworkRequestActionOneTimePurchase style: IOTCardInfoViewStyleRoundRect];
+self.cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase style: IOTCardInfoViewStyleRoundRect];
 self.cardInfoView.delegate = self;
 [self.view addSubview: self.cardInfoView];
 ```
