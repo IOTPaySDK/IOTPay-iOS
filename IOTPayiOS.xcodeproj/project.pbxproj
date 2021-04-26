@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6089527BEA251DF237C9619 /* Pods_IOTPayiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B90DC3D5A914E7FE33AD42 /* Pods_IOTPayiOS.framework */; };
+		CB0F4F7C7440C72CA794BD23 /* Pods_IOTPayiOS_IOTPayiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A39DD4A32CA751A0DEB85F /* Pods_IOTPayiOS_IOTPayiOSTests.framework */; };
 		FA758C5126365F5E00D85998 /* IOTPayiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA758C4726365F5E00D85998 /* IOTPayiOS.framework */; };
 		FA758C5626365F5E00D85998 /* IOTPayiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA758C5526365F5E00D85998 /* IOTPayiOSTests.swift */; };
 		FA758C5826365F5E00D85998 /* IOTPayiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = FA758C4A26365F5E00D85998 /* IOTPayiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,15 +22,53 @@
 			remoteGlobalIDString = FA758C4626365F5D00D85998;
 			remoteInfo = IOTPayiOS;
 		};
+		FA758C74263660C600D85998 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA758C70263660C600D85998 /* OneTimePurchaseObjcExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA3431AD26365145009A17C0;
+			remoteInfo = OneTimePurchaseObjcExample;
+		};
+		FA758C7D263660D300D85998 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA758C79263660D300D85998 /* AddCardObjcExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA34318826365129009A17C0;
+			remoteInfo = AddCardObjcExample;
+		};
+		FA758C86263660E000D85998 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA758C82263660E000D85998 /* OneTimePurchaseSwiftExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA3431672636510F009A17C0;
+			remoteInfo = OneTimePurchaseSwiftExample;
+		};
+		FA758C8F263660EE00D85998 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA758C8B263660ED00D85998 /* AddCardSwiftExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA343147263650F3009A17C0;
+			remoteInfo = AddCardSwiftExample;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16A39DD4A32CA751A0DEB85F /* Pods_IOTPayiOS_IOTPayiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOTPayiOS_IOTPayiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2231FE8E3DCD160F393C2A6A /* Pods-IOTPayiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTPayiOS.release.xcconfig"; path = "Target Support Files/Pods-IOTPayiOS/Pods-IOTPayiOS.release.xcconfig"; sourceTree = "<group>"; };
+		582E67C72E3BB8107C0B09FF /* Pods-IOTPayiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTPayiOS.debug.xcconfig"; path = "Target Support Files/Pods-IOTPayiOS/Pods-IOTPayiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		8901EE680E1B21349823F986 /* Pods-IOTPayiOS-IOTPayiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTPayiOS-IOTPayiOSTests.release.xcconfig"; path = "Target Support Files/Pods-IOTPayiOS-IOTPayiOSTests/Pods-IOTPayiOS-IOTPayiOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		B8E29086E2E4D141062C09FD /* Pods-IOTPayiOS-IOTPayiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTPayiOS-IOTPayiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-IOTPayiOS-IOTPayiOSTests/Pods-IOTPayiOS-IOTPayiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E2B90DC3D5A914E7FE33AD42 /* Pods_IOTPayiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOTPayiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA758C4726365F5E00D85998 /* IOTPayiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IOTPayiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA758C4A26365F5E00D85998 /* IOTPayiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOTPayiOS.h; sourceTree = "<group>"; };
 		FA758C4B26365F5E00D85998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA758C5026365F5E00D85998 /* IOTPayiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOTPayiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA758C5526365F5E00D85998 /* IOTPayiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTPayiOSTests.swift; sourceTree = "<group>"; };
 		FA758C5726365F5E00D85998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA758C70263660C600D85998 /* OneTimePurchaseObjcExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OneTimePurchaseObjcExample.xcodeproj; path = OneTimePurchaseObjcExample/OneTimePurchaseObjcExample.xcodeproj; sourceTree = "<group>"; };
+		FA758C79263660D300D85998 /* AddCardObjcExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AddCardObjcExample.xcodeproj; path = AddCardObjcExample/AddCardObjcExample.xcodeproj; sourceTree = "<group>"; };
+		FA758C82263660E000D85998 /* OneTimePurchaseSwiftExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OneTimePurchaseSwiftExample.xcodeproj; path = OneTimePurchaseSwiftExample/OneTimePurchaseSwiftExample.xcodeproj; sourceTree = "<group>"; };
+		FA758C8B263660ED00D85998 /* AddCardSwiftExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AddCardSwiftExample.xcodeproj; path = AddCardSwiftExample/AddCardSwiftExample.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6089527BEA251DF237C9619 /* Pods_IOTPayiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +85,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA758C5126365F5E00D85998 /* IOTPayiOS.framework in Frameworks */,
+				CB0F4F7C7440C72CA794BD23 /* Pods_IOTPayiOS_IOTPayiOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		491CD313975C68F8DCC733B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2B90DC3D5A914E7FE33AD42 /* Pods_IOTPayiOS.framework */,
+				16A39DD4A32CA751A0DEB85F /* Pods_IOTPayiOS_IOTPayiOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C580687D73547926FE1CEB1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				582E67C72E3BB8107C0B09FF /* Pods-IOTPayiOS.debug.xcconfig */,
+				2231FE8E3DCD160F393C2A6A /* Pods-IOTPayiOS.release.xcconfig */,
+				B8E29086E2E4D141062C09FD /* Pods-IOTPayiOS-IOTPayiOSTests.debug.xcconfig */,
+				8901EE680E1B21349823F986 /* Pods-IOTPayiOS-IOTPayiOSTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FA758C3D26365F5D00D85998 = {
 			isa = PBXGroup;
 			children = (
+				FA758C6326365F6900D85998 /* Examples */,
 				FA758C4926365F5E00D85998 /* IOTPayiOS */,
 				FA758C5426365F5E00D85998 /* IOTPayiOSTests */,
 				FA758C4826365F5E00D85998 /* Products */,
+				5C580687D73547926FE1CEB1 /* Pods */,
+				491CD313975C68F8DCC733B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +151,49 @@
 			path = IOTPayiOSTests;
 			sourceTree = "<group>";
 		};
+		FA758C6326365F6900D85998 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				FA758C8B263660ED00D85998 /* AddCardSwiftExample.xcodeproj */,
+				FA758C82263660E000D85998 /* OneTimePurchaseSwiftExample.xcodeproj */,
+				FA758C79263660D300D85998 /* AddCardObjcExample.xcodeproj */,
+				FA758C70263660C600D85998 /* OneTimePurchaseObjcExample.xcodeproj */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		FA758C71263660C600D85998 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA758C75263660C600D85998 /* OneTimePurchaseObjcExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA758C7A263660D300D85998 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA758C7E263660D300D85998 /* AddCardObjcExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA758C83263660E000D85998 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA758C87263660E000D85998 /* OneTimePurchaseSwiftExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA758C8C263660ED00D85998 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA758C90263660EE00D85998 /* AddCardSwiftExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -104,6 +212,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA758C5B26365F5E00D85998 /* Build configuration list for PBXNativeTarget "IOTPayiOS" */;
 			buildPhases = (
+				566B26C9ACA87D9B8BBE9727 /* [CP] Check Pods Manifest.lock */,
 				FA758C4226365F5D00D85998 /* Headers */,
 				FA758C4326365F5D00D85998 /* Sources */,
 				FA758C4426365F5D00D85998 /* Frameworks */,
@@ -122,6 +231,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA758C5E26365F5E00D85998 /* Build configuration list for PBXNativeTarget "IOTPayiOSTests" */;
 			buildPhases = (
+				90C0DC532AD8FE3A7F3A0C5C /* [CP] Check Pods Manifest.lock */,
 				FA758C4C26365F5E00D85998 /* Sources */,
 				FA758C4D26365F5E00D85998 /* Frameworks */,
 				FA758C4E26365F5E00D85998 /* Resources */,
@@ -164,6 +274,24 @@
 			mainGroup = FA758C3D26365F5D00D85998;
 			productRefGroup = FA758C4826365F5E00D85998 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FA758C7A263660D300D85998 /* Products */;
+					ProjectRef = FA758C79263660D300D85998 /* AddCardObjcExample.xcodeproj */;
+				},
+				{
+					ProductGroup = FA758C8C263660ED00D85998 /* Products */;
+					ProjectRef = FA758C8B263660ED00D85998 /* AddCardSwiftExample.xcodeproj */;
+				},
+				{
+					ProductGroup = FA758C71263660C600D85998 /* Products */;
+					ProjectRef = FA758C70263660C600D85998 /* OneTimePurchaseObjcExample.xcodeproj */;
+				},
+				{
+					ProductGroup = FA758C83263660E000D85998 /* Products */;
+					ProjectRef = FA758C82263660E000D85998 /* OneTimePurchaseSwiftExample.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FA758C4626365F5D00D85998 /* IOTPayiOS */,
@@ -171,6 +299,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FA758C75263660C600D85998 /* OneTimePurchaseObjcExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OneTimePurchaseObjcExample.app;
+			remoteRef = FA758C74263660C600D85998 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA758C7E263660D300D85998 /* AddCardObjcExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = AddCardObjcExample.app;
+			remoteRef = FA758C7D263660D300D85998 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA758C87263660E000D85998 /* OneTimePurchaseSwiftExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OneTimePurchaseSwiftExample.app;
+			remoteRef = FA758C86263660E000D85998 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA758C90263660EE00D85998 /* AddCardSwiftExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = AddCardSwiftExample.app;
+			remoteRef = FA758C8F263660EE00D85998 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FA758C4526365F5D00D85998 /* Resources */ = {
@@ -188,6 +347,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		566B26C9ACA87D9B8BBE9727 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IOTPayiOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90C0DC532AD8FE3A7F3A0C5C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IOTPayiOS-IOTPayiOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA758C4326365F5D00D85998 /* Sources */ = {
@@ -268,7 +474,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -326,7 +532,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -340,6 +546,7 @@
 		};
 		FA758C5C26365F5E00D85998 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 582E67C72E3BB8107C0B09FF /* Pods-IOTPayiOS.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -349,6 +556,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = IOTPayiOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -364,6 +572,7 @@
 		};
 		FA758C5D26365F5E00D85998 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2231FE8E3DCD160F393C2A6A /* Pods-IOTPayiOS.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -373,6 +582,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = IOTPayiOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -388,6 +598,7 @@
 		};
 		FA758C5F26365F5E00D85998 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8E29086E2E4D141062C09FD /* Pods-IOTPayiOS-IOTPayiOSTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG5V7B83H4;
@@ -406,6 +617,7 @@
 		};
 		FA758C6026365F5E00D85998 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8901EE680E1B21349823F986 /* Pods-IOTPayiOS-IOTPayiOSTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG5V7B83H4;
