@@ -13,13 +13,15 @@ Quick Start:<br />
 ```
 Swift:
 cardInfoView = IOTCardInfoViewSingleLine(action: .addCard, style: .roundRect)  
+
 IOTNetworkService.shared.sendRequest(secureId: "Your secureId", cardInfoView: cardInfoView)
 ```
 ```
 Objc: 
 IOTCardInfoViewSingleLine *cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] 
 	initWithAction: IOTNetworkRequestActionOneTimePurchase style:  IOTCardInfoViewStyleRoundRect];
-[IOTNetworkService.shared sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
+	
+[IOTNetworkService.shared sendRequestWithSecureId: @"Your secureId" cardInfoView: self.cardInfoView];
 ```
 
 <br />  
