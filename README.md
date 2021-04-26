@@ -37,9 +37,9 @@ pod install
 # 2 Integrade "Add Card" Event
 
 What you will need:
-- installed IOTPayiOS Framework 
-	refer to the first part in this guide
+- installed IOTPayiOS Framework  (refer to the first part in this guide)
 - Merchant account with IOTPay (register @ https://iotpay.ca/1666-2/)
+
 Optional:
 - Merchant Server (refer to https://develop.iotpay.ca)
 	For production, client should build their own "Merchant Server", which will generate the "secureId". 
