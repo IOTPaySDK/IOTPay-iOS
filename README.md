@@ -17,7 +17,8 @@ IOTNetworkService.shared.sendRequest(secureId: "Your secureId", cardInfoView: ca
 ```
 ```
 Objc: 
-IOTCardInfoViewSingleLine *cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase style: IOTCardInfoViewStyleRoundRect];
+IOTCardInfoViewSingleLine *cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] 
+	initWithAction: IOTNetworkRequestActionOneTimePurchase style:  IOTCardInfoViewStyleRoundRect];
 [IOTNetworkService.shared sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
 ```
 
