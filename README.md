@@ -5,8 +5,8 @@ IOTPay-iOS is a smiple to use yet powerful Framework helps you with the online p
 
 ## 1. Features:
 ##### -Highly coustomaziable 
-#####-Secure
-#####-Easy to set up
+##### -Secure
+##### -Easy to set up
 <br />    
 Quick Start:
 ```
@@ -27,8 +27,8 @@ IOTCardInfoViewSingleLine *cardInfoView = [[IOTCardInfoViewTripleLineNCardView a
 <br />  
 <br />  
 
-##2. Integration walkthought
-####2.1: Install Framework
+## 2. Integration walkthought
+#### 2.1: Install Framework
 The easiset way to install the framework and keep it upon date is using cocoaPod. 
 CocoaPod is one of the most commonly used Xcode library & framework depandency managment software.
 For Pod reference and how-to install pod, please follow this link:
