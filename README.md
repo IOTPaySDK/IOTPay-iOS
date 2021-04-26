@@ -4,9 +4,9 @@
 IOTPay-iOS is a smiple to use yet powerful Framework helps you with the online payment for iOS apps.
 
 ## 1. Features:
-##### -Highly coustomaziable 
-##### -Secure
-##### -Easy to set up
+#### *-Highly coustomaziable*
+#### *-Secure*
+#### *-Easy to set up*
 <br />    
 Quick Start:<br />   
 
@@ -27,13 +27,12 @@ IOTCardInfoViewSingleLine *cardInfoView = [[IOTCardInfoViewTripleLineNCardView a
 <br />  
 <br />  
 
-![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/simpleGIF.gif "Logo Title Text 1") ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/TripleGif.gif "Logo Title Text 1")
-
+![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/simpleGIF.gif "Logo Title Text 1") ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/TripleGif.gif "Logo Title Text 1")
 <br />  
 <br />  
 <br />  
 
-## 2. Integration walkthought
+## 2. Integration walkthrough:
 #### 2.1: Install Framework
 The easiset way to install the framework and keep it upon date is using cocoaPod. 
 CocoaPod is one of the most commonly used Xcode library & framework depandency managment software.
@@ -69,16 +68,6 @@ The cocoaPod will start installing.
 <br />  
 <br />      
 
-# 2 Integrade "Add Card" Event
-
-What you will need:
-- installed IOTPayiOS Framework  (refer to the first part in this guide)
-- Merchant account with IOTPay (register @ https://iotpay.ca/1666-2/)
-
-Optional:
-- Merchant Server (refer to https://develop.iotpay.ca)
-	
-For production, client should build their own "Merchant Server", which will generate the "secureId". For testing phase, there is a shortcut to generate testing secureId without Merchant server. Please check 5.1 Temporary solution to get secureId at the end of this guide.    
 
 ## 2.1 Import framework
 ```
@@ -90,6 +79,32 @@ Objc: (in .h)
 #import <IOTPayiOS/IOTPayiOS-Swift.h>
 ```
 <br />    
+
+# 2.3 Event Flow and Options
+IOTPay provide two method for the payment, "Simple Purchase" and "Add Card & Purchase with token". Please choose the one based on your needs, or incloud both and let user choose pick their options.
+<br />  
+"Simple Purchase" Flow:
+<br />  
+![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK0.png "Logo Title Text 3")
+![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK1.png "Logo Title Text 3")
+
+<br />  
+"Add Card & Purchase with token" Flow:
+<br />  
+![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK2.png "Logo Title Text 3")
+
+<br />  
+To start this section, you will need:
+- IOTPayiOS Framework Installed  (refer to the first part in this guide)
+- A Merchant account from IOTPay (register @ https://iotpay.ca/1666-2/)
+
+Optional:
+- Merchant Server (refer to https://develop.iotpay.ca)
+	
+For production, Merchant/client should build their own "Merchant Server", which will generate the "secureId". For testing phase, there is a shortcut to generate testing secureId without Merchant server. Please check 5.1 Temporary solution to get secureId at the end of this guide.    
+<br />  
+
+# 2.3.1 "Add Card" + "Purchase Token" option
 
 #2.2 Setup View
 Declare the view before viewDidLoad. This is not mandatory for display the view, but you will need it for the send request event in step 3.
