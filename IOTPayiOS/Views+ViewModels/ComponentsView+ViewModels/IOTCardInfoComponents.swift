@@ -20,14 +20,14 @@ protocol IOTCardInfoComponentsDelegate: AnyObject {
 //	func updateCardIconView(displayState: IOTCardIconState)
 //	func updateCardIconView(temporaryEvent: IOTCardIconTemporaryEvent)
 //	func updateTextFieldSeletedIndex(subject: Int)
-	func onDidComplete(isValid: Bool)
+	func onDidCompleteValidately()
 }
 
 
 public final class IOTCardInfoComponents: UIView {
 
 	weak var transportDelegate: IOTCardInfoComponentsTransportDelegate?
-	weak var delegate: IOTCardInfoComponentsDelegate?
+	weak var componentsDelegate: IOTCardInfoComponentsDelegate?
 
 	private let viewModel: IOTCardInfoComponentsViewModel
 
@@ -74,7 +74,7 @@ public final class IOTCardInfoComponents: UIView {
 
 		super.init(frame: CGRect.zero)
 
-		viewModel.viewModeDelelegate = self
+		viewModel.viewModeDelegate = self
 		viewModel.layout = layout
 		commonInit(layout: layout)
 
@@ -139,6 +139,12 @@ extension IOTCardInfoComponents {
 
 
 extension IOTCardInfoComponents: IOTCardInfoComponentsViewModelDelegate {
+	func onDidFinishCardInfoValidately() {
+		textFields.forEach { $0.resignFirstResponder() }
+		print("all resign")
+		componentsDelegate?.onDidCompleteValidately()
+	}
+
 	func updatePatternPrediction(to patternPrediction: IOTCardPatternPrediction) {
 		self.patternPrediction = patternPrediction
 	}
@@ -279,8 +285,6 @@ extension IOTCardInfoComponents {
 			}
 			onDidLoad(initDisplayState: [.full, .full, .full, .full])
 		}
-
-		print(textFields.count)
 		
 	}
 }

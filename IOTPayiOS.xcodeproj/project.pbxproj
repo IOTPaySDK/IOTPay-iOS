@@ -239,6 +239,7 @@
 		FA38C9122636B183001D65FE /* Legacy */ = {
 			isa = PBXGroup;
 			children = (
+				FA758CB02636626500D85998 /* IOTCardInfoComponentsView.swift */,
 				FA758CA92636626500D85998 /* IOTHolderNameTextField.swift */,
 				FA758CEB2636626500D85998 /* IOTHolderNameTextFieldViewModel.swift */,
 				FA758CB12636626500D85998 /* IOTExpiryDateTextField.swift */,
@@ -507,7 +508,6 @@
 			children = (
 				FA758CAC2636626500D85998 /* IOTCardInfoComponents.swift */,
 				FA758CEC2636626500D85998 /* IOTCardInfoComponentsViewModel.swift */,
-				FA758CB02636626500D85998 /* IOTCardInfoComponentsView.swift */,
 			);
 			path = "ComponentsView+ViewModels";
 			sourceTree = "<group>";

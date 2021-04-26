@@ -48,7 +48,11 @@ class Loader {
 
 	static func assetImage(named: String) -> UIImage? {
 		let bundle = Bundle(for: self)
-		return UIImage(named: named, in: bundle, compatibleWith: nil)!
+		if let uiImage = UIImage(named: named, in: bundle, compatibleWith: nil) {
+			return uiImage
+		}
+		print(named)
+		return nil
 	}
 }
 

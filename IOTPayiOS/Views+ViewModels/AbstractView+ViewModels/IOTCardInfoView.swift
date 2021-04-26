@@ -7,7 +7,15 @@
 
 import UIKit
 
+@objc
+public protocol IOTCardInfoViewDelegate: AnyObject {
+	func onDidCompleteValidately()
+}
+
 public class IOTCardInfoView: UIView {
+
+	@objc
+	public var delegate: IOTCardInfoViewDelegate?
 
 	let facade: IOTCardInfoComponentsFacade
 	//MARK: Constants
@@ -63,6 +71,7 @@ public class IOTCardInfoView: UIView {
 		self.viewModel = IOTCardInfoViewModel()
 		super.init(frame: CGRect.zero)
 		commonInit()
+
 	}
 
 	required init?(coder: NSCoder) {
@@ -76,7 +85,10 @@ public class IOTCardInfoView: UIView {
 //	}
 
 	func commonInit() {
+		setupDismissKeyboardCondition()
+		backgroundColor = .red
 		viewModel.delegate = self
+		facade.delegate = self
 		//textFieldsay = [holderNameTextField, cardNumberTextField, expiryDateTextField, cvvTextField]
 		//viewModel.start()
 		//viewModel.delegate = self
@@ -93,6 +105,15 @@ public class IOTCardInfoView: UIView {
 	}
 
 	deinit {}
+
+	private func setupDismissKeyboardCondition() {
+		let tap = UITapGestureRecognizer(target: self, action: #selector(onHideKeyboard))
+		addGestureRecognizer(tap)
+	}
+
+	@objc func onHideKeyboard() {
+		endEditing(true)
+	}
 
 
 	private func setupView() {
@@ -132,8 +153,15 @@ public class IOTCardInfoView: UIView {
 
 
 
+
+
 }
 
+extension IOTCardInfoView: IOTCardInfoComponentsFacadeDelegate {
+	func onDidCompleteValidately() {
+		delegate?.onDidCompleteValidately()
+	}
+}
 
 
 extension IOTCardInfoView: IOTCardInfoViewModelDelegate {

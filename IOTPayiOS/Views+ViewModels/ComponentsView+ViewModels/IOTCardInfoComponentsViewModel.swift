@@ -14,6 +14,7 @@ protocol IOTCardInfoComponentsViewModelDelegate: AnyObject {
 	func onDidLoad(initDisplayState: [IOTTextFieldDisplayState])
 	func onDidUpdateTextFieldsLayout(rectArray: [CGRect])
 	func onDidUpdateCardIconViewLayout(rect: CGRect)
+	func onDidFinishCardInfoValidately()
 
 	func updateFirstResponder(to textFieldAtIndex: Int)
 	func updatePatternPrediction(to patternPrediction: IOTCardPatternPrediction)
@@ -21,12 +22,12 @@ protocol IOTCardInfoComponentsViewModelDelegate: AnyObject {
 
 	func playTextFieldAnimation(fromPositions: [CGRect], toPosition: [CGRect])
 	func playCardFlipAnimation(to: IOTCardSide)
+
 }
 
 final class IOTCardInfoComponentsViewModel: NSObject, UITextFieldDelegate {
 
-
-	weak var viewModeDelelegate: IOTCardInfoComponentsViewModelDelegate?
+	weak var viewModeDelegate: IOTCardInfoComponentsViewModelDelegate?
 
 	var layout: IOTCardInfoViewLayout!
 
@@ -46,6 +47,8 @@ final class IOTCardInfoComponentsViewModel: NSObject, UITextFieldDelegate {
 			}
 		}
 	}
+
+	var completionArray: [Bool] = [false, false, false, false]
 
 	var seletedTextFieldIndex: Int? { seletedTextFieldSubject?.rawValue }
 
@@ -84,8 +87,8 @@ extension IOTCardInfoComponentsViewModel {
 		segmentModel = IOTSegmentModel()
 		segmentModel!.config = segmentModelConfig
 		let rectArray = segmentModel!.rectArr(for: .none)
-		viewModeDelelegate?.onDidUpdateTextFieldsLayout(rectArray: rectArray)
-		viewModeDelelegate?.onDidLoad(initDisplayState: segmentModelConfig.deformConfig.initDisplayState)
+		viewModeDelegate?.onDidUpdateTextFieldsLayout(rectArray: rectArray)
+		viewModeDelegate?.onDidLoad(initDisplayState: segmentModelConfig.deformConfig.initDisplayState)
 
 		textFieldAnimationModel = IOTTextFieldAnimationModel()
 	}
@@ -93,12 +96,12 @@ extension IOTCardInfoComponentsViewModel {
 	func startTextFieldAnimation(fromSubject: IOTTextFieldSubject?, toSubject: IOTTextFieldSubject?) {
 		let fromRects = segmentModel!.rectArr(for: fromSubject)
 		let toRects = segmentModel!.rectArr(for: toSubject)
-		viewModeDelelegate?.playTextFieldAnimation(fromPositions: fromRects, toPosition:toRects)
+		viewModeDelegate?.playTextFieldAnimation(fromPositions: fromRects, toPosition:toRects)
 	}
 
 	func startCardFlipAnimation(toSubject: IOTTextFieldSubject?) {
 		let side: IOTCardSide = toSubject == .cvv ? .back : .front
-		viewModeDelelegate?.playCardFlipAnimation(to: side)
+		viewModeDelegate?.playCardFlipAnimation(to: side)
 	}
 
 }
@@ -106,7 +109,7 @@ extension IOTCardInfoComponentsViewModel {
 
 extension IOTCardInfoComponentsViewModel: IOTTextFieldDelegate {
 	func onDidPredicate(cardPattern: IOTCardPatternPrediction) {
-		viewModeDelelegate?.updatePatternPrediction(to: cardPattern)
+		viewModeDelegate?.updatePatternPrediction(to: cardPattern)
 	}
 
 	func onDidSelected(textField: IOTTextFieldSubject) {
@@ -118,10 +121,17 @@ extension IOTCardInfoComponentsViewModel: IOTTextFieldDelegate {
 	}
 
 	func onDidComplete(textField: IOTTextFieldSubject, isValid: Bool) {
-		if let nextTextFieldIndex = nextTextFieldIndex,
-			 seletedTextFieldSubject == textField,
-			 textField.isPassingFirstResponderToNext {
-			viewModeDelelegate?.updateFirstResponder(to: nextTextFieldIndex)
+		completionArray[textField.rawValue] = isValid
+		print("onDidComplete", completionArray)
+		if completionArray == [true, true, true, true] {
+			viewModeDelegate?.onDidFinishCardInfoValidately()
+			return
+		}
+
+		if let nextTextFieldIndex = nextTextFieldIndex, seletedTextFieldSubject == textField {
+			if textField.isPassingFirstResponderToNext {
+				viewModeDelegate?.updateFirstResponder(to: nextTextFieldIndex)
+			}
 		}
 	}
 }

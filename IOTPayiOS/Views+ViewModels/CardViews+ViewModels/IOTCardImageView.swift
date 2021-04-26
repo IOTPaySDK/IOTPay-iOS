@@ -36,7 +36,7 @@ class IOTCardImageView: UIImageView {
 	}
 
 	private func setBackground() {
-		image = Loader.bundledImage(named: side.imageName)
+		image = Loader.assetImage(named: side.imageName)
 	}
 
 	private func setLogo() {

@@ -116,13 +116,13 @@ public class IOTCardInfoViewSingleLineNCardIcon: IOTDeformableCardInfoView {
 
 }
 
-extension IOTCardInfoViewSingleLineNCardIcon: IOTCardInfoComponentsDelegate {
-	func onDidComplete(isValid: Bool) {
-		if isValid { print("done and valid") }
-		else { print("done with error") }
-	}
-	
-}
+//extension IOTCardInfoViewSingleLineNCardIcon: IOTCardInfoComponentsDelegate {
+//	func onDidComplete(isValid: Bool) {
+//		if isValid { print("done and valid") }
+//		else { print("done with error") }
+//	}
+//	
+//}
 
 //extension IOTCardInfoViewSingleLineNCardIcon {
 //	enum Style {

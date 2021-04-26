@@ -8,16 +8,19 @@
 import UIKit
 
 protocol IOTCardInfoComponentsFacadeDelegate {
-	func cardInfoDidValidate()
+	func onDidCompleteValidately()
 }
 
 
 final class IOTCardInfoComponentsFacade: NSObject {
 
 	var viewComponents: IOTCardInfoComponents
+	var delegate: IOTCardInfoComponentsFacadeDelegate?
 
 	init(action: IOTNetworkRequestAction, layout: IOTCardInfoViewLayout, style: IOTCardInfoViewStyle){
 		viewComponents = IOTCardInfoComponents(action: action, layout: layout, style: style)
+		super.init()
+		viewComponents.componentsDelegate = self
 	}
 
 	func setIOTCardView(frame: CGRect) {
@@ -45,4 +48,10 @@ final class IOTCardInfoComponentsFacade: NSObject {
 	}
 
 
+}
+
+extension IOTCardInfoComponentsFacade: IOTCardInfoComponentsDelegate {
+	func onDidCompleteValidately() {
+		delegate?.onDidCompleteValidately()
+	}
 }

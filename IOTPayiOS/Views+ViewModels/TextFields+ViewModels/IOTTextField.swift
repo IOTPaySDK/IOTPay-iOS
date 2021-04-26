@@ -70,7 +70,7 @@ extension IOTTextField: IOTTextFieldViewModelDelegate {
 	}
 
 	func onDidComplete(subject: IOTTextFieldSubject) {
-		playSingleTextFieldCompletedAnimation()
+		//playSingleTextFieldCompletedAnimation()
 		textFieldDelegate?.onDidComplete(textField: subject, isValid: true)
 	}
 
