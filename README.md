@@ -1,52 +1,66 @@
-# IOTPay-iOS
-###### IOTPay Framework for iOS
+#IOTPay-iOS
+#### Online Credit Card Payment Framework for iOS
 <br />    
-
-
 IOTPay-iOS is a smiple to use yet powerful Framework helps you with the online payment for iOS apps.
 
-![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/simpleGIF.gif "Logo Title Text 1") ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/TripleGif.gif "Logo Title Text 1")
-
-IOTPay is easy to setup. For a simple integration, online two lines are required to send up payment view and sending the request.
-For view:
-cardInfoView = IOTCardInfoViewSingleLine(action: .addUser, style: .roundRect)
+##1. Features:
+#####-Highly coustomaziable 
+#####-Secure
+#####-Easy to set up
+<br />    
+Quick Start:
 ```
 Swift:
-cardInfoView = IOTCardInfoViewSingleLine(action: .addUser, style: .roundRect)  
-
+cardInfoView = IOTCardInfoViewSingleLine(action: .addCard, style: .roundRect)  
+IOTNetworkService.shared.sendRequest(secureId: "Your secureId", cardInfoView: cardInfoView)
+```
+```
 Objc: 
 IOTCardInfoViewSingleLine *cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase style: IOTCardInfoViewStyleRoundRect];
-```
-For NetworkRequest:
-```
-IOTPay.shared : IOTNetworkRequestActionOneTimePurchase style: IOTCardInfoViewStyleRoundRect];
+[IOTNetworkService.shared sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
 ```
 
-<br />      
+<br />  
+<br />  
+![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/simpleGIF.gif "Logo Title Text 1") ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/TripleGif.gif "Logo Title Text 1")
+<br />  
+<br />  
+<br />  
 
-# 1: Install Framework
-First you will need the cocoaPod, a standard Xcode library & framework depandency managment software.
-For Pod reference and how-to, please follow this link:
+##2. Integration walkthought
+####2.1: Install Framework
+The easiset way to install the framework and keep it upon date is using cocoaPod. 
+CocoaPod is one of the most commonly used Xcode library & framework depandency managment software.
+For Pod reference and how-to install pod, please follow this link:
 https://guides.cocoapods.org/using/the-podfile.html
-
-Once you have cocoaPod, use command line to enter
+<br />  
+Once you have cocoaPod installed, open the Terminal (Mac command line/CLI) and set the directory to your project, one level above the MyProject.xcodeproj file.
+```
+cd ~/Floder/Floder/Floder/MyProject
+```
+A easier way to do so is type cd, space, and drag the project folder to the Terminal, then input enter.
+<br />  
+Once it set to the project directory, enter the follow line to initiate the pod:
 ```
 pod init
 ```
-This line will add a pod file in the xcode project folder.
-Open the pod file by any text editor, enter the following line between 
+The pod init command will make a Podfile in your project folder. This text file is the manager of the framework and libray for you app. Now let's try to editting it by tap on Podfile or type "open Podfile' in Terminal.
+<br />  
+Open the pod file by any text editor, then enter the following lines
 ```
 target 'MyApp' do
     pod 'IOTPayiOS', '~> 4.0'
 end
 ```
-And finaly, close the text editor, enter the following command in CMD
+The first and last line is probolecy be there already, so you will just need to fill in the middle line.
+<br />  
+
+And finaly, save and close the text editor, then enter the following command in Terminal.
 ```
 pod install
 ```
-
-
-
+The cocoaPod will start installing.
+<br />  
 <br />      
 
 # 2 Integrade "Add Card" Event
