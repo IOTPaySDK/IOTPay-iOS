@@ -85,17 +85,17 @@ This framework should be used/re-init for each simple purchase event.
 *This table only shows the data/response between Merchant App/Server and IOT AppSDK/Server. Since either IOT to IOT or Merchant to Merchant is relevant to the topic.*
 ```
 2. Simple Purchase Request:
-name	  required	type			sample			description
-mchId		y	String(30)		10000701		assigned by IOTPay
-mchOrderNo	y	String(30)		1234567890abc		assigned by merchant
-amount		y	Int			1500			in cents
-currency	y	String(3)		CAD			for now only CAD supported
-loginName	y	String(12)		jack123			merchant's login name
-subject		n	String(64)		
-body		n	String(250)		
-notifyUrl	y	String(200)					get notify when success
-returnUrl	y	String(200)					redirect to this url after payment
-sign		y	String(32)	C380BEC2BFD727A4B6845133519F3AD6	Sign algorithm
+name	  	required	type			sample			description
+mchId			y	String(30)		10000701		assigned by IOTPay
+mchOrderNo		y	String(30)		1234567890abc		assigned by merchant
+amount			y	Int			1500			in cents
+currency		y	String(3)		CAD			for now only CAD supported
+loginName		y	String(12)		jack123			merchant's login name
+subject			n	String(64)		
+body			n	String(250)		
+notifyUrl		y	String(200)					get notify when success
+returnUrl		y	String(200)					redirect to this url after payment
+sign			y	String(32)	C380BEC2BFD727A4B6845133519F3AD6	Sign algorithm
 
 3. Secure Id Response:
 name			required	type		sample			description
