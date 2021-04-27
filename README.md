@@ -107,7 +107,7 @@ retData.secureId		y	String					For SDK integration only
 
 5. Merchant App -> App SDK
 name			required	type		sample			description
-retCode				y	String		SUCCESS or FAIL	
+secureId			y	String					For SDK integration
 
 
 
