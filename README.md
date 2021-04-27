@@ -319,7 +319,7 @@ Objc: in .h
 in .m
 - (void)onDidAddCardWithDesensitizedCardInfo:(IOTDesensitizedCardInfo * _Nonnull) desensitizedCardInfo  
 				 redirectUrl:(NSString * _Nonnull)redirectUrl {	
-				 // This is for the AddCard event. You can lease this blank for simplePurchase Event.
+	// This is for the AddCard event. You can lease this blank for simplePurchase Event.
 }
 
 - (void)onDidPurchaseWithPurchaseReceipt:(IOTPurchaseReceipt * _Nonnull) purchaseReceipt  			     
