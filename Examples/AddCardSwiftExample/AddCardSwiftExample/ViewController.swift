@@ -75,8 +75,6 @@ extension ViewController: IOTCardInfoViewDelegate {
 		button.setTitle("Add Card", for: .normal)
 		button.isUserInteractionEnabled = true
 	}
-
-
 }
 
 extension ViewController: IOTNetworkServiceDelegate {
