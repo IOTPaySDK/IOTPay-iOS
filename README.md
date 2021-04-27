@@ -140,9 +140,7 @@ This will start the interface for the user to fill in the card info.<br />    
 
 #### 2.4.2 Card Info View Delegate:
 
-The card Info View delegate (IOTCardInfoViewDelegate) has one func in protocol: 
-<br /> 
-func onDidCompleteValidately() { }
+The card Info View delegate (IOTCardInfoViewDelegate) has one func in protocol:  onDidCompleteValidately()
 
 
 This func will be called once after users' fill in all the required info viliadly, so you know when to make the "Add Card" button ready for user input.
@@ -227,7 +225,7 @@ Please check the AddUserSwiftExample or AddUserObjcExample in the examples folde
 
 
 
-### 2.5 "Simple Purchase" Option/Event 
+### 2.5 "Simple Purchase" Option:
 
 #### 2.5.1 Setup Card Info View:
 Declare the view before viewDidLoad. This is not mandatory for displaying the view, but you will need this view's point to send a request in the next step.
