@@ -81,7 +81,8 @@ This framework should be used/re-init for each simple purchase event.
 
 
 <br />  
-### Option B, "Add Card" & "Purchase with token":
+### Option B, Recuving Purchase
+"Add Card" & "Purchase with token":
 <br />  
 Once the user adds a card successfully, the IOTPay server will send back a response that includes desensitized card info. Your app and server should save those desensitized info for users' future purchase.
 <br /> 
