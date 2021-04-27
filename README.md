@@ -111,7 +111,7 @@ Please check 5.1 Temporary solution to get secureId at the end of this guide.  
 
 
 <br />  
-### 2.4 "Add Card" + "Purchase Token" Option
+### 2.4 "Add Card" + "Purchase Token" Option:
 #### 2.4.1 Setup Card Info View:
 Declare the view before viewDidLoad. 
 This is not mandatory for displaying the view, but you will need this view's point to send a request in the next step.
