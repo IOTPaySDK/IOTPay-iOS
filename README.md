@@ -11,7 +11,8 @@
 
 Quick Start:<br />   
 ```
-For Swift:cardInfoView = IOTCardInfoViewSingleLine(action: .addCard, style: .roundRect)  
+For Swift:
+cardInfoView = IOTCardInfoViewSingleLine(action: .addCard, style: .roundRect)  
 IOTNetworkService.shared.sendRequest(secureId: "Your secureId", cardInfoView: cardInfoView)
 ```
 ```
@@ -35,7 +36,7 @@ The easiest way to install the framework and keep it upon date is using cocoaPod
 <br />  
 Once you have cocoaPod installed, open the Terminal (Mac command line/CLI) and set the directory to your project, one level above the MyProject.xcodeproj file.
 ```
-d ~/Folder/Folder/Folder/MyProject
+cd ~/Path/to/Folder/MyProject
 ```
 A easier way to do so is type cd, space, and drag the project folder to the Terminal, then input enter.<br />  Once it set to the project directory, enter the follow line to initiate the pod:
 ```
@@ -62,16 +63,17 @@ Swift:
 import IOTPayiOS
 ```
 ```
-Objc: (in .h)#import <IOTPayiOS/IOTPayiOS-Swift.h>
+Objc: (in .h)
+#import <IOTPayiOS/IOTPayiOS-Swift.h>
 ```
 <br />    
 
 
 ### 2.3 Event Flow and Options
 <br /> 
-IOTPay provide two options for the payment, "Simple Purchase" and "Add Card & Purchase with token". Please choose the one based on your needs, or incloud both and let user choose pick their options.<br /> 
+IOTPay provide two options for the payment, "Recuring Purchase" and "Simple Purchase". Please choose the one based on your needs.<br /> 
 
-### Option A: "Simple Purchase":
+### Option A, "Simple Purchase":
 This is a simpler solution, that users should enter their card info each time for the purchase. 
 This framework should be used/re-init for each simple purchase event.
 
@@ -79,7 +81,8 @@ This framework should be used/re-init for each simple purchase event.
 
 
 <br />  
-### Option B: "Add Card" & "Purchase with token":
+### Option B, Recuving Purchase
+"Add Card" & "Purchase with token":
 <br />  
 Once the user adds a card successfully, the IOTPay server will send back a response that includes desensitized card info. Your app and server should save those desensitized info for users' future purchase.
 <br /> 
@@ -93,21 +96,24 @@ Upon receiving the desensitized card info, the App will only need to send a requ
 <br />  
 
 To start the next step, you will need:
-- IOTPayiOS Framework Installed  (refer to the first part in this guide)
-- A Merchant account from IOTPay (register @ https://iotpay.ca/1666-2/)
+- IOTPayiOS Framework Installed  (Refer to the first part in this guide)
+- A Merchant account from IOTPay (Register @ https://iotpay.ca/1666-2/)
 
 
 Optional:<br /> 
 
-- Merchant Server (refer to https://develop.iotpay.ca)	For production, Merchant/client should build their own "Merchant Server", 
+- Merchant Server (refer to https://develop.iotpay.ca)	
+<br /> 
+
+For production, Merchant/client should build their own "Merchant Server", 
 which will generate the "secureId". For the testing phase, there is a shortcut to generate Testing secureId without Merchant server. 
 Please check 5.1 Temporary solution to get secureId at the end of this guide.    
 <br />  
 
 
 <br />  
-### 2.4 "Add Card" + "Purchase Token" Option/
-#### 2.4.1, Setup Card Info View:
+### 2.4 "Add Card" + "Purchase Token" Option:
+#### 2.4.1 Setup Card Info View:
 Declare the view before viewDidLoad. 
 This is not mandatory for displaying the view, but you will need this view's point to send a request in the next step.
 ```
@@ -115,7 +121,8 @@ Swift:
 var cardInfoView: IOTCardInfoViewSingleLine!
 ```
 ```
-Objc: (in .h, Between @interface & @end) 
+Objc: 
+(in .h, Between @interface & @end) 
 @property (nonatomic, retain) IOTCardInfoViewTripleLineNCardView *cardInfoView;
 ```
 Add following code in ViewController after viewDidLoad
@@ -132,8 +139,10 @@ self.cardInfoView.delegate = self;[self.view addSubview: self.cardInfoView];
 ```
 This will start the interface for the user to fill in the card info.<br />    
 
-#### 2.4.2, Card Info View Delegate:
-The card Info View delegate (IOTCardInfoViewDelegate) has one func in protocol:  func onDidCompleteValidately() { }
+#### 2.4.2 Card Info View Delegate:
+
+The card Info View delegate (IOTCardInfoViewDelegate) has one func in protocol:  onDidCompleteValidately()
+
 
 This func will be called once after users' fill in all the required info viliadly, so you know when to make the "Add Card" button ready for user input.
 ```
@@ -159,7 +168,7 @@ Objc: .h
 ```
 Please don't forget to add "IOTCardInfoViewDelegate" in the previous step.<br />  
 
-#### 2.4.3, Send the Request
+#### 2.4.3 Send the Request
 After user filling the card info and tap on the "Add User" sending the request by:
 ```
 Swift:
@@ -175,7 +184,7 @@ shard.delegate = self;
 ```
 As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
 
-#### 2.4.4, NetworkService Response Delegate:
+#### 2.4.4 NetworkService Response Delegate:
 ```
 Swift:
 extension ViewController: IOTNetworkServiceDelegate {	
@@ -217,16 +226,17 @@ Please check the AddUserSwiftExample or AddUserObjcExample in the examples folde
 
 
 
-### 2.5 "Simple Purchase" Option/Event 
+### 2.5 "Simple Purchase" Option:
 
-#### 2.5.1, Setup Card Info View:
+#### 2.5.1 Setup Card Info View:
 Declare the view before viewDidLoad. This is not mandatory for displaying the view, but you will need this view's point to send a request in the next step.
 ```
 Swift:
 var cardInfoView: IOTCardInfoViewSingleLine!
 ```
 ```
-Objc: (in .h, Between @interface & @end)
+Objc: 
+(in .h, Between @interface & @end)
 @property (nonatomic, retain) IOTCardInfoViewTripleLineNCardView *cardInfoView;
 ```
 
@@ -244,17 +254,17 @@ self.cardInfoView.delegate = self;[self.view addSubview: self.cardInfoView];
 ```
 This will start the interface for the user to fill in the card info.<br />   
 
-#### 2.5.2, Card Info View Delegate:
+#### 2.5.2 Card Info View Delegate:
 The card Info View delegate (IOTCardInfoViewDelegate) has one func in protocol:  func onDidCompleteValidately() { }
 This func will be called once after users' fill in all the required info viliadly, so you know when to make the "Add Card" button ready for user input.
 ```
 Swift:
 extension ViewController: IOTCardInfoViewDelegate {	
-func onDidCompleteValidately() {		
-// User did complete card info view Validately, we should enable the button		
-button.setTitle("Purchase", for: .normal)		
-button.isUserInteractionEnabled = true	
-}
+	func onDidCompleteValidately() {		
+		// User did complete card info view Validately, we should enable the button		
+		button.setTitle("Purchase", for: .normal)		
+		button.isUserInteractionEnabled = true	
+	}
 }
 ```
 ```
@@ -270,7 +280,7 @@ Objc: .h
 ```
 Please don't forget to add "IOTCardInfoViewDelegate" in the previous step.<br />   
 
-#### 2.5.3, Send the Request
+#### 2.5.3 Send the Request
 After user filling the card info and tap on the "Add User" sending the request by:
 ```
 Swift:
@@ -286,7 +296,7 @@ shard.delegate = self;
 ```
 As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
 
-#### 2.5.4, NetworkService Response Delegate:
+#### 2.5.4 NetworkService Response Delegate:
 ```
 Swift:
 extension ViewController: IOTNetworkServiceDelegate {	
@@ -295,7 +305,7 @@ extension ViewController: IOTNetworkServiceDelegate {
 	}
 	
 	func onDidPurchase(purchaseReceipt: IOTPurchaseReceipt, redirectUrl: String) {		
-	/* 
+		/* 
 		.simplePurchase action's network response if succeeded.		
 		There is a error checklist in the github guide to help you fix the error		
 		*/		
@@ -310,12 +320,15 @@ Objc: in .h
 in .m
 - (void)onDidAddCardWithDesensitizedCardInfo:(IOTDesensitizedCardInfo * _Nonnull) desensitizedCardInfo  
 				 redirectUrl:(NSString * _Nonnull)redirectUrl {	
-				 // This is for the AddCard event. You can lease this blank for simplePurchase Event.
+	// This is for the AddCard event. You can lease this blank for simplePurchase Event.
 }
 
 - (void)onDidPurchaseWithPurchaseReceipt:(IOTPurchaseReceipt * _Nonnull) purchaseReceipt  			     
 			     redirectUrl:(NSString * _Nonnull)redirectUrl {	
-	// .simplePurchase action's network response if succeeded. There is a error checklist in the github guide to help you fix the error
+	/* 
+	.simplePurchase action's network response if succeeded. 
+	There is a error checklist in the github guide to help you fix the error
+	*/
 	NSLog(@"successed %@", purchaseReceipt.info);
 }
 ```
@@ -323,21 +336,22 @@ Please check the SimplePurchaseSwiftExample or SimplePurchaseObjcExample in the 
 
 
 <br />      
-## 3 Data reference:
+## 3 Data Reference:
 #action: 
 ```
 enum IOTNetworkRequestAction {	
-case addCard           // add card, you will receive desensitization card info after the network request.	
-case simplePurchase    // one time payment, without saving user's payment method}
+	case addCard           // add card, you will receive desensitization card info after the network request.	
+	case simplePurchase    // one time payment, without saving user's payment method
+}
 ```
 
 #style: 
 ```
 enum IOTCardInfoViewStyle {	
-case roundRect	
-case infoLight	
-case infoDark   
-case autoDetectDarkMode
+	case roundRect	
+	case infoLight	
+	case infoDark   
+	case autoDetectDarkMode
 }
 ```
 
@@ -349,16 +363,18 @@ Should fill in the name/pointer of the view that the user is filling in the info
 
 
 
-## 4 temporary secureID#secureId:
+## 4 Temporary secureID
+#secureId:
 <br />   
 
 You will need a secureId for "sendRequest".
 For production, clients/Merchant should build their own "Merchant Server", which will generate the "secureId". For testing, you can use the following temporary solution to get secureId:    
-## - Step 1: Get Merchant Id   
+
+### - Step 1: Get Merchant Id
 
 Register an IOTPay account to get the "Merchant Id", "Merchant Key" and "loginName"  
 
-## - Step 2: Get Temporary secureId   
+### - Step 2: Get Temporary secureId
 
 For "one time purchase", please visit:   https://develop.iotpay.ca/new/v3dev/purchase.html   
 
