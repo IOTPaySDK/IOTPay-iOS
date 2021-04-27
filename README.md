@@ -71,7 +71,7 @@ Objc: (in .h)
 
 ### 2.3 Event Flow and Options
 <br /> 
-IOTPay provide two options for the payment, "Recuring Purchase" and "Simple Purchase". Please choose the one based on your needs, or incloud both and let user choose pick their options.<br /> 
+IOTPay provide two options for the payment, "Recuring Purchase" and "Simple Purchase". Please choose the one based on your needs.<br /> 
 
 ### Option A, "Simple Purchase":
 This is a simpler solution, that users should enter their card info each time for the purchase. 
