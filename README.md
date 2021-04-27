@@ -83,7 +83,7 @@ This framework should be used/re-init for each simple purchase event.
 
 ### 2.3.1 Simple Purchase Parameters Table:
 *This table only shows the data/response between Merchant App/Server and IOT AppSDK/Server. Since either IOT to IOT or Merchant to Merchant is relevant to the topic.*
-
+```
 2. Simple Purchase Request:
 name	  required	type			sample			description
 mchId		y	String(30)		10000701		assigned by IOTPay
@@ -108,7 +108,7 @@ retData.secureId		y	String					For SDK integration only
 5. Merchant App -> App SDK
 name			required	type		sample			description
 secureId			y	String					For SDK integration
-
+```
 
 
 
