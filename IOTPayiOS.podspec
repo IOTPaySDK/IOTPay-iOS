@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
 
   spec.license      = { :type => "MIT", :file => "LICENSE" }
 
-  s.swift_version	  = '5.0'
+  spec.swift_version	  = "5.0"
 
 
   spec.author             = { "DanY-Yin" => "dan@iotpay.ca" }
@@ -26,11 +26,13 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "10.0"
 
 
-  spec.source       = { :git => "https://github.com/IOTPaySDK/iOSFramewrokInstallerCocoaPod.git", :tag => "#{spec.version}" }
+  #spec.source       = { :git => "https://github.com/IOTPaySDK/iOSFramewrokInstallerCocoaPod.git", :tag => "#{spec.version}" }
+
+  spec.source       = { :git => "https://github.com/IOTPaySDK/IOTPayiOSCocoaPodSource.git", :tag => "#{spec.version}" }
 
 
+  spec.source_files  = "IOTPayiOS/*.swift", "IOTPayiOS/**/*.{swift,h,m}", "IOTPayiOS/**/**/*.{swift,h,m}"
 
-  spec.source_files  = "IOTPayiOS/*.swift", "IOTPay/**/*.{swift,h,m}", "IOTPay/**/**/*.{swift,h,m}"
   spec.ios.resource_bundle   = { 'IOTPayiOS' => 'IOTPayiOS/Resources/**/*.{lproj,json,png,xcassets}' }
 
 end
