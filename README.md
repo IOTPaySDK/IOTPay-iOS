@@ -73,15 +73,47 @@ Objc: (in .h)
 <br /> 
 IOTPay provide two options for the payment, "Recuring Purchase" and "Simple Purchase". Please choose the one based on your needs.<br /> 
 
-### Option A, "Simple Purchase":
+### Option A: "Simple Purchase"
 This is a simpler solution, that users should enter their card info each time for the purchase. 
 This framework should be used/re-init for each simple purchase event.
 
 ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK2.png "Logo Title Text 3")
 
+<br />  
+
+### 2.3.1 Simple Purchase Parameters Table:
+*This table only shows the data/response between Merchant App/Server and IOT AppSDK/Server. Since either IOT to IOT or Merchant to Merchant is relevant to the topic.*
+
+2. Simple Purchase Request:
+name	  required	type			sample			description
+mchId		y	String(30)		10000701		assigned by IOTPay
+mchOrderNo	y	String(30)		1234567890abc		assigned by merchant
+amount		y	Int			1500			in cents
+currency	y	String(3)		CAD			for now only CAD supported
+loginName	y	String(12)		jack123			merchant's login name
+subject		n	String(64)		
+body		n	String(250)		
+notifyUrl	y	String(200)					get notify when success
+returnUrl	y	String(200)					redirect to this url after payment
+sign		y	String(32)	C380BEC2BFD727A4B6845133519F3AD6	Sign algorithm
+
+3. Secure Id Response:
+name			required	type		sample			description
+retCode				y	String		SUCCESS or FAIL	
+retMsg				y	String		
+retData.redirectUrl		y	String					if retCode=SUCCESS, merchant redirect to this url
+retData.secureId		y	String					For SDK integration only
+#
+
+5. Merchant App -> App SDK
+name			required	type		sample			description
+retCode				y	String		SUCCESS or FAIL	
+
+
+
 
 <br />  
-### Option B, Recuving Purchase
+### Option B: "Recurving Purchase"
 "Add Card" & "Purchase with token":
 <br />  
 Once the user adds a card successfully, the IOTPay server will send back a response that includes desensitized card info. Your app and server should save those desensitized info for users' future purchase. After Add card Event, the App will only need to send a request to your own mechant server, which will interact with IOTPay server and get response/receipt to the App. This framework should not be used again, unless the user wants to add another card, or do a one time purchase with another card. 
