@@ -77,6 +77,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FA75518226379C6E002CFF4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA75517C26379C6D002CFF4B /* SimplePurchaseObjcExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA75515D26379C04002CFF4B;
+			remoteInfo = SimplePurchaseObjcExample;
+		};
+		FA75518B26379C88002CFF4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA75518726379C88002CFF4B /* SimplePurchaseSwiftExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA75513C26379BE4002CFF4B;
+			remoteInfo = SimplePurchaseSwiftExample;
+		};
 		FA758C5226365F5E00D85998 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA758C3E26365F5D00D85998 /* Project object */;
@@ -84,26 +98,12 @@
 			remoteGlobalIDString = FA758C4626365F5D00D85998;
 			remoteInfo = IOTPayiOS;
 		};
-		FA758C74263660C600D85998 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA758C70263660C600D85998 /* OneTimePurchaseObjcExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FA3431AD26365145009A17C0;
-			remoteInfo = OneTimePurchaseObjcExample;
-		};
 		FA758C7D263660D300D85998 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA758C79263660D300D85998 /* AddCardObjcExample.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = FA34318826365129009A17C0;
 			remoteInfo = AddCardObjcExample;
-		};
-		FA758C86263660E000D85998 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA758C82263660E000D85998 /* OneTimePurchaseSwiftExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FA3431672636510F009A17C0;
-			remoteInfo = OneTimePurchaseSwiftExample;
 		};
 		FA758C8F263660EE00D85998 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -121,15 +121,15 @@
 		8901EE680E1B21349823F986 /* Pods-IOTPayiOS-IOTPayiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTPayiOS-IOTPayiOSTests.release.xcconfig"; path = "Target Support Files/Pods-IOTPayiOS-IOTPayiOSTests/Pods-IOTPayiOS-IOTPayiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		B8E29086E2E4D141062C09FD /* Pods-IOTPayiOS-IOTPayiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTPayiOS-IOTPayiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-IOTPayiOS-IOTPayiOSTests/Pods-IOTPayiOS-IOTPayiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2B90DC3D5A914E7FE33AD42 /* Pods_IOTPayiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOTPayiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA75517C26379C6D002CFF4B /* SimplePurchaseObjcExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SimplePurchaseObjcExample.xcodeproj; path = SimplePurchaseObjcExample/SimplePurchaseObjcExample.xcodeproj; sourceTree = "<group>"; };
+		FA75518726379C88002CFF4B /* SimplePurchaseSwiftExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SimplePurchaseSwiftExample.xcodeproj; path = SimplePurchaseSwiftExample/SimplePurchaseSwiftExample.xcodeproj; sourceTree = "<group>"; };
 		FA758C4726365F5E00D85998 /* IOTPayiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IOTPayiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA758C4A26365F5E00D85998 /* IOTPayiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOTPayiOS.h; sourceTree = "<group>"; };
 		FA758C4B26365F5E00D85998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA758C5026365F5E00D85998 /* IOTPayiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOTPayiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA758C5526365F5E00D85998 /* IOTPayiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTPayiOSTests.swift; sourceTree = "<group>"; };
 		FA758C5726365F5E00D85998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA758C70263660C600D85998 /* OneTimePurchaseObjcExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OneTimePurchaseObjcExample.xcodeproj; path = OneTimePurchaseObjcExample/OneTimePurchaseObjcExample.xcodeproj; sourceTree = "<group>"; };
 		FA758C79263660D300D85998 /* AddCardObjcExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AddCardObjcExample.xcodeproj; path = AddCardObjcExample/AddCardObjcExample.xcodeproj; sourceTree = "<group>"; };
-		FA758C82263660E000D85998 /* OneTimePurchaseSwiftExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OneTimePurchaseSwiftExample.xcodeproj; path = OneTimePurchaseSwiftExample/OneTimePurchaseSwiftExample.xcodeproj; sourceTree = "<group>"; };
 		FA758C8B263660ED00D85998 /* AddCardSwiftExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AddCardSwiftExample.xcodeproj; path = AddCardSwiftExample/AddCardSwiftExample.xcodeproj; sourceTree = "<group>"; };
 		FA758CA32636626500D85998 /* IOTCvvTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCvvTextField.swift; sourceTree = "<group>"; };
 		FA758CA42636626500D85998 /* IOTCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTCardView.swift; sourceTree = "<group>"; };
@@ -250,6 +250,22 @@
 			path = Legacy;
 			sourceTree = "<group>";
 		};
+		FA75517D26379C6D002CFF4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA75518326379C6E002CFF4B /* SimplePurchaseObjcExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA75518826379C88002CFF4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA75518C26379C88002CFF4B /* SimplePurchaseSwiftExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FA758C3D26365F5D00D85998 = {
 			isa = PBXGroup;
 			children = (
@@ -299,34 +315,18 @@
 		FA758C6326365F6900D85998 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				FA75518726379C88002CFF4B /* SimplePurchaseSwiftExample.xcodeproj */,
+				FA75517C26379C6D002CFF4B /* SimplePurchaseObjcExample.xcodeproj */,
 				FA758C8B263660ED00D85998 /* AddCardSwiftExample.xcodeproj */,
-				FA758C82263660E000D85998 /* OneTimePurchaseSwiftExample.xcodeproj */,
 				FA758C79263660D300D85998 /* AddCardObjcExample.xcodeproj */,
-				FA758C70263660C600D85998 /* OneTimePurchaseObjcExample.xcodeproj */,
 			);
 			path = Examples;
-			sourceTree = "<group>";
-		};
-		FA758C71263660C600D85998 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FA758C75263660C600D85998 /* OneTimePurchaseObjcExample.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		FA758C7A263660D300D85998 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				FA758C7E263660D300D85998 /* AddCardObjcExample.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		FA758C83263660E000D85998 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FA758C87263660E000D85998 /* OneTimePurchaseSwiftExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -678,12 +678,12 @@
 					ProjectRef = FA758C8B263660ED00D85998 /* AddCardSwiftExample.xcodeproj */;
 				},
 				{
-					ProductGroup = FA758C71263660C600D85998 /* Products */;
-					ProjectRef = FA758C70263660C600D85998 /* OneTimePurchaseObjcExample.xcodeproj */;
+					ProductGroup = FA75517D26379C6D002CFF4B /* Products */;
+					ProjectRef = FA75517C26379C6D002CFF4B /* SimplePurchaseObjcExample.xcodeproj */;
 				},
 				{
-					ProductGroup = FA758C83263660E000D85998 /* Products */;
-					ProjectRef = FA758C82263660E000D85998 /* OneTimePurchaseSwiftExample.xcodeproj */;
+					ProductGroup = FA75518826379C88002CFF4B /* Products */;
+					ProjectRef = FA75518726379C88002CFF4B /* SimplePurchaseSwiftExample.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -695,11 +695,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FA758C75263660C600D85998 /* OneTimePurchaseObjcExample.app */ = {
+		FA75518326379C6E002CFF4B /* SimplePurchaseObjcExample.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = OneTimePurchaseObjcExample.app;
-			remoteRef = FA758C74263660C600D85998 /* PBXContainerItemProxy */;
+			path = SimplePurchaseObjcExample.app;
+			remoteRef = FA75518226379C6E002CFF4B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA75518C26379C88002CFF4B /* SimplePurchaseSwiftExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SimplePurchaseSwiftExample.app;
+			remoteRef = FA75518B26379C88002CFF4B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		FA758C7E263660D300D85998 /* AddCardObjcExample.app */ = {
@@ -707,13 +714,6 @@
 			fileType = wrapper.application;
 			path = AddCardObjcExample.app;
 			remoteRef = FA758C7D263660D300D85998 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FA758C87263660E000D85998 /* OneTimePurchaseSwiftExample.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = OneTimePurchaseSwiftExample.app;
-			remoteRef = FA758C86263660E000D85998 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		FA758C90263660EE00D85998 /* AddCardSwiftExample.app */ = {

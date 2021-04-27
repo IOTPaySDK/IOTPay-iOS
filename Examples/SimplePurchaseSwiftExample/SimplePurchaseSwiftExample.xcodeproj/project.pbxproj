@@ -7,25 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA3431B226365145009A17C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3431B126365145009A17C0 /* AppDelegate.m */; };
-		FA3431B526365145009A17C0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3431B426365145009A17C0 /* SceneDelegate.m */; };
-		FA3431B826365145009A17C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3431B726365145009A17C0 /* ViewController.m */; };
-		FA3431BB26365145009A17C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3431B926365145009A17C0 /* Main.storyboard */; };
-		FA3431BD26365146009A17C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3431BC26365146009A17C0 /* Assets.xcassets */; };
-		FA3431C026365146009A17C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3431BE26365146009A17C0 /* LaunchScreen.storyboard */; };
-		FA3431C326365146009A17C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3431C226365146009A17C0 /* main.m */; };
-		FA38C92B2636EB76001D65FE /* IOTPayiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA38C92A2636EB76001D65FE /* IOTPayiOS.framework */; };
-		FA38C92C2636EB76001D65FE /* IOTPayiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA38C92A2636EB76001D65FE /* IOTPayiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA75514026379BE4002CFF4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75513F26379BE4002CFF4B /* AppDelegate.swift */; };
+		FA75514226379BE4002CFF4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75514126379BE4002CFF4B /* SceneDelegate.swift */; };
+		FA75514426379BE4002CFF4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75514326379BE4002CFF4B /* ViewController.swift */; };
+		FA75514726379BE4002CFF4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA75514526379BE4002CFF4B /* Main.storyboard */; };
+		FA75514926379BE5002CFF4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA75514826379BE5002CFF4B /* Assets.xcassets */; };
+		FA75514C26379BE5002CFF4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA75514A26379BE5002CFF4B /* LaunchScreen.storyboard */; };
+		FA75519B26379D33002CFF4B /* IOTPayiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA75519A26379D33002CFF4B /* IOTPayiOS.framework */; };
+		FA75519C26379D33002CFF4B /* IOTPayiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA75519A26379D33002CFF4B /* IOTPayiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FA38C92D2636EB76001D65FE /* Embed Frameworks */ = {
+		FA75519D26379D33002CFF4B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FA38C92C2636EB76001D65FE /* IOTPayiOS.framework in Embed Frameworks */,
+				FA75519C26379D33002CFF4B /* IOTPayiOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,72 +32,64 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FA3431AD26365145009A17C0 /* OneTimePurchaseObjcExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneTimePurchaseObjcExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA3431B026365145009A17C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FA3431B126365145009A17C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FA3431B326365145009A17C0 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		FA3431B426365145009A17C0 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		FA3431B626365145009A17C0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FA3431B726365145009A17C0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FA3431BA26365145009A17C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FA3431BC26365146009A17C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FA3431BF26365146009A17C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FA3431C126365146009A17C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA3431C226365146009A17C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FA38C92A2636EB76001D65FE /* IOTPayiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IOTPayiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA75513C26379BE4002CFF4B /* SimplePurchaseSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplePurchaseSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA75513F26379BE4002CFF4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA75514126379BE4002CFF4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FA75514326379BE4002CFF4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA75514626379BE4002CFF4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA75514826379BE5002CFF4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA75514B26379BE5002CFF4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA75514D26379BE5002CFF4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA75519A26379D33002CFF4B /* IOTPayiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IOTPayiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FA3431AA26365145009A17C0 /* Frameworks */ = {
+		FA75513926379BE4002CFF4B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA38C92B2636EB76001D65FE /* IOTPayiOS.framework in Frameworks */,
+				FA75519B26379D33002CFF4B /* IOTPayiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FA3431A426365145009A17C0 = {
+		FA75513326379BE4002CFF4B = {
 			isa = PBXGroup;
 			children = (
-				FA3431AF26365145009A17C0 /* OneTimePurchaseObjcExample */,
-				FA3431AE26365145009A17C0 /* Products */,
-				FA38C9292636EB76001D65FE /* Frameworks */,
+				FA75513E26379BE4002CFF4B /* SimplePurchaseSwiftExample */,
+				FA75513D26379BE4002CFF4B /* Products */,
+				FA75519926379D33002CFF4B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		FA3431AE26365145009A17C0 /* Products */ = {
+		FA75513D26379BE4002CFF4B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA3431AD26365145009A17C0 /* OneTimePurchaseObjcExample.app */,
+				FA75513C26379BE4002CFF4B /* SimplePurchaseSwiftExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FA3431AF26365145009A17C0 /* OneTimePurchaseObjcExample */ = {
+		FA75513E26379BE4002CFF4B /* SimplePurchaseSwiftExample */ = {
 			isa = PBXGroup;
 			children = (
-				FA3431B026365145009A17C0 /* AppDelegate.h */,
-				FA3431B126365145009A17C0 /* AppDelegate.m */,
-				FA3431B326365145009A17C0 /* SceneDelegate.h */,
-				FA3431B426365145009A17C0 /* SceneDelegate.m */,
-				FA3431B626365145009A17C0 /* ViewController.h */,
-				FA3431B726365145009A17C0 /* ViewController.m */,
-				FA3431B926365145009A17C0 /* Main.storyboard */,
-				FA3431BC26365146009A17C0 /* Assets.xcassets */,
-				FA3431BE26365146009A17C0 /* LaunchScreen.storyboard */,
-				FA3431C126365146009A17C0 /* Info.plist */,
-				FA3431C226365146009A17C0 /* main.m */,
+				FA75513F26379BE4002CFF4B /* AppDelegate.swift */,
+				FA75514126379BE4002CFF4B /* SceneDelegate.swift */,
+				FA75514326379BE4002CFF4B /* ViewController.swift */,
+				FA75514526379BE4002CFF4B /* Main.storyboard */,
+				FA75514826379BE5002CFF4B /* Assets.xcassets */,
+				FA75514A26379BE5002CFF4B /* LaunchScreen.storyboard */,
+				FA75514D26379BE5002CFF4B /* Info.plist */,
 			);
-			path = OneTimePurchaseObjcExample;
+			path = SimplePurchaseSwiftExample;
 			sourceTree = "<group>";
 		};
-		FA38C9292636EB76001D65FE /* Frameworks */ = {
+		FA75519926379D33002CFF4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FA38C92A2636EB76001D65FE /* IOTPayiOS.framework */,
+				FA75519A26379D33002CFF4B /* IOTPayiOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,38 +97,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FA3431AC26365145009A17C0 /* OneTimePurchaseObjcExample */ = {
+		FA75513B26379BE4002CFF4B /* SimplePurchaseSwiftExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA3431C626365146009A17C0 /* Build configuration list for PBXNativeTarget "OneTimePurchaseObjcExample" */;
+			buildConfigurationList = FA75515026379BE5002CFF4B /* Build configuration list for PBXNativeTarget "SimplePurchaseSwiftExample" */;
 			buildPhases = (
-				FA3431A926365145009A17C0 /* Sources */,
-				FA3431AA26365145009A17C0 /* Frameworks */,
-				FA3431AB26365145009A17C0 /* Resources */,
-				FA38C92D2636EB76001D65FE /* Embed Frameworks */,
+				FA75513826379BE4002CFF4B /* Sources */,
+				FA75513926379BE4002CFF4B /* Frameworks */,
+				FA75513A26379BE4002CFF4B /* Resources */,
+				FA75519D26379D33002CFF4B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = OneTimePurchaseObjcExample;
-			productName = OneTimePurchaseObjcExample;
-			productReference = FA3431AD26365145009A17C0 /* OneTimePurchaseObjcExample.app */;
+			name = SimplePurchaseSwiftExample;
+			productName = SimplePurchaseSwiftExample;
+			productReference = FA75513C26379BE4002CFF4B /* SimplePurchaseSwiftExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FA3431A526365145009A17C0 /* Project object */ = {
+		FA75513426379BE4002CFF4B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					FA3431AC26365145009A17C0 = {
+					FA75513B26379BE4002CFF4B = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = FA3431A826365145009A17C0 /* Build configuration list for PBXProject "OneTimePurchaseObjcExample" */;
+			buildConfigurationList = FA75513726379BE4002CFF4B /* Build configuration list for PBXProject "SimplePurchaseSwiftExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -145,56 +137,55 @@
 				en,
 				Base,
 			);
-			mainGroup = FA3431A426365145009A17C0;
-			productRefGroup = FA3431AE26365145009A17C0 /* Products */;
+			mainGroup = FA75513326379BE4002CFF4B;
+			productRefGroup = FA75513D26379BE4002CFF4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FA3431AC26365145009A17C0 /* OneTimePurchaseObjcExample */,
+				FA75513B26379BE4002CFF4B /* SimplePurchaseSwiftExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FA3431AB26365145009A17C0 /* Resources */ = {
+		FA75513A26379BE4002CFF4B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA3431C026365146009A17C0 /* LaunchScreen.storyboard in Resources */,
-				FA3431BD26365146009A17C0 /* Assets.xcassets in Resources */,
-				FA3431BB26365145009A17C0 /* Main.storyboard in Resources */,
+				FA75514C26379BE5002CFF4B /* LaunchScreen.storyboard in Resources */,
+				FA75514926379BE5002CFF4B /* Assets.xcassets in Resources */,
+				FA75514726379BE4002CFF4B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FA3431A926365145009A17C0 /* Sources */ = {
+		FA75513826379BE4002CFF4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA3431B826365145009A17C0 /* ViewController.m in Sources */,
-				FA3431B226365145009A17C0 /* AppDelegate.m in Sources */,
-				FA3431C326365146009A17C0 /* main.m in Sources */,
-				FA3431B526365145009A17C0 /* SceneDelegate.m in Sources */,
+				FA75514426379BE4002CFF4B /* ViewController.swift in Sources */,
+				FA75514026379BE4002CFF4B /* AppDelegate.swift in Sources */,
+				FA75514226379BE4002CFF4B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FA3431B926365145009A17C0 /* Main.storyboard */ = {
+		FA75514526379BE4002CFF4B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FA3431BA26365145009A17C0 /* Base */,
+				FA75514626379BE4002CFF4B /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		FA3431BE26365146009A17C0 /* LaunchScreen.storyboard */ = {
+		FA75514A26379BE5002CFF4B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FA3431BF26365146009A17C0 /* Base */,
+				FA75514B26379BE5002CFF4B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -202,7 +193,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FA3431C426365146009A17C0 /* Debug */ = {
+		FA75514E26379BE5002CFF4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -253,15 +244,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		FA3431C526365146009A17C0 /* Release */ = {
+		FA75514F26379BE5002CFF4B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -306,46 +299,52 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		FA3431C726365146009A17C0 /* Debug */ = {
+		FA75515126379BE5002CFF4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG5V7B83H4;
-				INFOPLIST_FILE = OneTimePurchaseObjcExample/Info.plist;
+				INFOPLIST_FILE = SimplePurchaseSwiftExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ca.iotpay.OneTimePurchaseObjcExample;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.iotpay.SimplePurchaseSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		FA3431C826365146009A17C0 /* Release */ = {
+		FA75515226379BE5002CFF4B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG5V7B83H4;
-				INFOPLIST_FILE = OneTimePurchaseObjcExample/Info.plist;
+				INFOPLIST_FILE = SimplePurchaseSwiftExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ca.iotpay.OneTimePurchaseObjcExample;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.iotpay.SimplePurchaseSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -353,25 +352,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA3431A826365145009A17C0 /* Build configuration list for PBXProject "OneTimePurchaseObjcExample" */ = {
+		FA75513726379BE4002CFF4B /* Build configuration list for PBXProject "SimplePurchaseSwiftExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA3431C426365146009A17C0 /* Debug */,
-				FA3431C526365146009A17C0 /* Release */,
+				FA75514E26379BE5002CFF4B /* Debug */,
+				FA75514F26379BE5002CFF4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA3431C626365146009A17C0 /* Build configuration list for PBXNativeTarget "OneTimePurchaseObjcExample" */ = {
+		FA75515026379BE5002CFF4B /* Build configuration list for PBXNativeTarget "SimplePurchaseSwiftExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA3431C726365146009A17C0 /* Debug */,
-				FA3431C826365146009A17C0 /* Release */,
+				FA75515126379BE5002CFF4B /* Debug */,
+				FA75515226379BE5002CFF4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FA3431A526365145009A17C0 /* Project object */;
+	rootObject = FA75513426379BE4002CFF4B /* Project object */;
 }
