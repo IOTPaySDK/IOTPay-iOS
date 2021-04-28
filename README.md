@@ -36,6 +36,7 @@ The easiest way to install the IOTPayframework and keep it upon date is using co
 <br /> 
 https://guides.cocoapods.org/using/the-podfile.html
 <br />  
+
 Once you have cocoaPod installed, open the Terminal (Mac command line/CLI) and set the directory to your project, one level above the MyProject.xcodeproj file.
 ```
 cd ~/Path/to/Folder/MyProject
@@ -116,7 +117,8 @@ Please check 5.1 Temporary solution to get secureId at the end of this guide.  
 
 
 <br />  
-### 2.4 "Add Card" + "Purchase Token" Option:
+### 2.4 Option A: Recurring Purchase
+In recurring purchase option, you will use "Add Card" flow to get user's payment info, and then use "Purchaes with Token" flow for the future transitions.
 #### 2.4.1 Setup Card Info View:
 Declare the view before viewDidLoad. 
 This is not mandatory for displaying the view, but you will need this view's point to send a request in the next step.
