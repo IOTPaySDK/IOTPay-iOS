@@ -3,7 +3,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "IOTPayiOS"
-  spec.version      = "6.0.1"
+  spec.version      = "6.0.2"
   spec.summary      = "Online Credit Card Payment Framework for iOS."
 
   spec.description  = <<-DESC
@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
 
   #spec.source       = { :git => "https://github.com/IOTPaySDK/iOSFramewrokInstallerCocoaPod.git", :tag => "#{spec.version}" }
 
-  spec.source       = { :git => "https://github.com/IOTPaySDK/IOTPayiOSCocoaPodSource.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/IOTPaySDK/IOTPay-iOS.git", :tag => "#{spec.version}" }
 
 
   spec.source_files  = "IOTPayiOS/*.swift", "IOTPayiOS/**/*.{swift,h,m}", "IOTPayiOS/**/**/*.{swift,h,m}"
