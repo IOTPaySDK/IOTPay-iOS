@@ -32,7 +32,9 @@ IOTCardInfoViewSingleLine *cardInfoView = [[IOTCardInfoViewTripleLineNCardView a
 
 ## 2. Integration Walkthrough:
 ### 2.1 Install Framework
-The easiest way to install the IOTPayframework and keep it upon date is using cocoaPod. CocoaPod is one of the most commonly used Xcode library & framework dependency management software. For Pod reference and how-to install pod, please follow this link:https://guides.cocoapods.org/using/the-podfile.html
+The easiest way to install the IOTPayframework and keep it upon date is using cocoaPod. CocoaPod is one of the most commonly used Xcode library & framework dependency management software. For Pod reference and how-to install pod, please follow this link:
+<br /> 
+https://guides.cocoapods.org/using/the-podfile.html
 <br />  
 Once you have cocoaPod installed, open the Terminal (Mac command line/CLI) and set the directory to your project, one level above the MyProject.xcodeproj file.
 ```
