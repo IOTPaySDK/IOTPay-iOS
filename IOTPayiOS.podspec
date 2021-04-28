@@ -33,6 +33,6 @@ Pod::Spec.new do |spec|
 
   spec.source_files  = "IOTPayiOS/*.swift", "IOTPayiOS/**/*.{swift,h,m}", "IOTPayiOS/**/**/*.{swift,h,m}"
 
-  spec.ios.resource_bundle   = { 'IOTPayiOS' => 'IOTPayiOS/Resources/**/*.{lproj,json,png,xcassets}' }
+  spec.ios.resource_bundle   = { 'IOTPayiOS' => 'IOTPayiOS/Resources/*.{lproj,json,png,xcassets}' }
 
 end
