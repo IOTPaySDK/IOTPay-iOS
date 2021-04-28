@@ -77,18 +77,18 @@ IOTPay provide two options for the payment, "Recurring Purchase" and "Simple Pur
 This is a simpler solution, that users should enter their card info each time for the purchase. 
 This framework should be used/re-init for each simple purchase event.
 
-![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK2.png "Logo Title Text 3")
+![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK0.png "Logo Title Text 3")
 
 
 <br />  
-### Option B, Recuving Purchase
-"Add Card" & "Purchase with token":
+### Option B: Recurring Purchase
+Recurring Purchase start with "Add Card" to save payment info, and then use "Purchase with token" for future transistion.
 <br />  
 Once the user adds a card successfully, the IOTPay server will send back a response that includes desensitized card info. Your app and server should save those desensitized info for users' future purchase. After Add card Event, the App will only need to send a request to your own mechant server, which will interact with IOTPay server and get response/receipt to the App. This framework should not be used again, unless the user wants to add another card, or do a one time purchase with another card. 
 <br /> 
 
-![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK0.png "Logo Title Text 3")
 ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK1.png "Logo Title Text 3")
+![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK2.png "Logo Title Text 3")
 
 
 
