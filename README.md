@@ -80,7 +80,7 @@ Objc: (in .h)
 <br /> 
 Now IOTPay is installed and imported. Next step is your choice with two options for the payment, "Recurring Purchase" and "Simple Purchase". Please choose the one based on your needs.<br /> 
 
-### Option A, "Simple Purchase":
+### Option A: "Simple Purchase"
 This is a simpler solution, that users should enter their card info each time for the purchase. 
 This framework should be used/re-init for each simple purchase event.
 
