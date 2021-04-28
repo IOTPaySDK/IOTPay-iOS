@@ -46,18 +46,18 @@ Next, enter the follow line to initiate the pod:
 ```
 pod init
 ```
-The pod init command will make a Podfile in your project folder. This text file is the manager of the framework and library for you app. Now let's try to editing it by tap on Podfile or type "open Podfile' in Terminal.<br />  Open the pod file by any text editor, then enter the following lines
+The pod init command will make a Podfile in your project folder. This text file is the manager of the framework and library for you app. Now let's try to editing it by tap on Podfile or type "open Podfile' in Terminal, then enter the following lines:
 ```
 target 'MyApp' do    
 	pod 'IOTPayiOS', '~> 4.0'
 end
 ```
 The first and last line is probably there already, so you will just need to fill in the middle line.<br />  
-And finally, save and close the text editor, then enter the following command in Terminal.
+And finally, save and close the text editor, then enter the following command in the Terminal.
 ```
 pod install
 ```
-The cocoaPod will start installing.
+The cocoaPod will start installing the IOTPayiOS framework.
 <br />  <br />      
 
 
@@ -75,7 +75,7 @@ Objc: (in .h)
 
 ### 2.3 Event Flow and Options
 <br /> 
-IOTPay provide two options for the payment, "Recurring Purchase" and "Simple Purchase". Please choose the one based on your needs.<br /> 
+Now IOTPay is installed and imported. Next step is your choice with two options for the payment, "Recurring Purchase" and "Simple Purchase". Please choose the one based on your needs.<br /> 
 
 ### Option A, "Simple Purchase":
 This is a simpler solution, that users should enter their card info each time for the purchase. 
@@ -94,7 +94,8 @@ Once the user adds a card successfully, the IOTPay server will send back a respo
 ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK1.png "Logo Title Text 3")
 ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK2.png "Logo Title Text 3")
 
-
+Please check this link for detailed explanation and requirements for the parameters.
+https://develop.iotpay.ca/credit_card_v3.html
 
 To start the next step, you will need:
 - IOTPayiOS Framework Installed  (Refer to the first part in this guide)
