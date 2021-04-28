@@ -73,55 +73,240 @@ Objc: (in .h)
 <br /> 
 IOTPay provide two options for the payment, "Recuring Purchase" and "Simple Purchase". Please choose the one based on your needs.<br /> 
 
-### Option A: "Simple Purchase"
-This is a simpler solution, that users should enter their card info each time for the purchase. 
+#### 2.3.1 Option A: "Simple Purchase"
+
+Simple Purchase will ask the user to fill in card info and do a ONE time payment, the card info shouldn't be stored. In the future, users will have to fill in the card info field again to do another purchase.
+
 This framework should be used/re-init for each simple purchase event.
+
+#### 2.3.2 Sample Purchase Flow
 
 ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK2.png "Logo Title Text 3")
 
 <br />  
 
-### 2.3.1 Simple Purchase Parameters Table:
+#### 2.3.3 Simple Purchase Parameters Table:
 *This table only shows the data/response between Merchant App/Server and IOT AppSDK/Server. Since either IOT to IOT or Merchant to Merchant is relevant to the topic.*
+
 ```
 2. Simple Purchase Request:
-name	  	required	type			sample			description
-mchId			y	String(30)		10000701		assigned by IOTPay
-mchOrderNo		y	String(30)		1234567890abc		assigned by merchant
-amount			y	Int			1500			in cents
-currency		y	String(3)		CAD			for now only CAD supported
-loginName		y	String(12)		jack123			merchant's login name
+Merchant Server -> IOT Pay Server
+Parameters
+name	  	required	type		sample				description
+mchId			y	String(30)	10000701			assigned by IOTPay
+mchOrderNo		y	String(30)	1234567890abc			assigned by merchant
+amount			y	Int		1500				in cents
+currency		y	String(3)	CAD				for now only CAD supported
+loginName		y	String(12)	jack123				merchant's login name
 subject			n	String(64)		
 body			n	String(250)		
 notifyUrl		y	String(200)					get notify when success
 returnUrl		y	String(200)					redirect to this url after payment
-sign			y	String(32)	C380BEC2BFD727A4B6845133519F3AD6	Sign algorithm
+sign			y	String(32)	C380BEC2BFD727A4B6845133519F3AD6 Sign algorithm
 
-3. Secure Id Response:
-name			required	type		sample			description
-retCode				y	String		SUCCESS or FAIL	
-retMsg				y	String		
-retData.redirectUrl		y	String					if retCode=SUCCESS, merchant redirect to this url
-retData.secureId		y	String					For SDK integration only
-#
+Response
+name		required	type		sample				description
+retCode			y	String		SUCCESS or FAIL	
+retMsg			y	String		
+retData.redirectUrl	y	String		if retCode=SUCCESS, merchant redirect to this url
+retData.secureId	y	String		For SDK integration only
 
-5. Merchant App -> App SDK
-name			required	type		sample			description
-secureId			y	String					For SDK integration
+3. Secure Id Response: 
+IOT Pay Server -> Merchant Server
+name		required	type		sample				description
+retCode			y	String		SUCCESS or FAIL	
+retMsg			y	String		
+retData.redirectUrl	y	String						if retCode=SUCCESS, merchant redirect to this url
+retData.secureId	y	String						For SDK integration only
+
+
+5. Secure ID 
+Merchant App -> App SDK
+name		required	type		sample				description
+secureId		y	String						For SDK integration
+
+7. Simple Purchase Notification
+IOT Pay Server -> Merchant Server
+NotifyUrl message(post request in json format)
+name		required	type		sample				description
+payOrderId		y	String		SUCCESS or FAIL	
+mchId			y	String		
+mchOrderNo		y	String		
+originalOrderId		y	String						original pay order id if payType=refund
+amount			y	Int		100				in cents
+currency		y	String		CAD	
+payType			y	String		pay or refund	
+refundable		y	Int		100				in cents
+status			y	Int		2				2 or 3 means success
+invoiceNum		y	String		SUCCESS or FAIL	
+paySuccTime		y	String		2021-04-07 19:44:51	
+cardNum			y	String		432567******2266	
+cardType		y	String		V or	
+expiryDate		y	String		SUCCESS or FAIL	
+authNum			y	String		
+transNum		y	String		
+sign			y	String(32)	C380BEC2BFD727A4B6845133519F3AD6 Sign algorithm
+
+ReturnUrl parameters
+name		required	type		sample				description
+retCode			y	String		SUCCESS or FAIL
+retMsg			n	String		
+status			y	Int		2				2 or 3 both mean the transaction is successful
+
+8. Simple Purchase Resonese: 
+App SDK -> Merchant App
+name		required	type		sample				description
+amount	 			Int   						Int in cent
+authNum 			String
+cardNum 			String		424242XXXXXX4242		desensitizated 
+cardType 			String 		V				V=Visa, M=Master, D=Interact
+currency 			String 		CAD
+expiryDate 			String 		1122
+invoiceNum 			String 		832828793487
+mchId 				String		10000576
+mchOrderNo 			String	 	1618569175
+originalOrderId			String  
+payOrderId 			String 		CS20210416103255832828793487
+paySuccTime			String		2021-04-16 03:33:16
+payType		 		String		pay
+redirectUrl			String		
+refundable			Int   						Int in cent
+status	 			Int   		2
+transNum 			String   	000108583539
 ```
 
 
 
 <br />  
-### Option B: "Recurving Purchase"
-"Add Card" & "Purchase with token":
+#### 2.4.1 Option B: "Recurving Purchase"
 <br />  
-Once the user adds a card successfully, the IOTPay server will send back a response that includes desensitized card info. Your app and server should save those desensitized info for users' future purchase. After Add card Event, the App will only need to send a request to your own mechant server, which will interact with IOTPay server and get response/receipt to the App. This framework should not be used again, unless the user wants to add another card, or do a one time purchase with another card. 
+This option is ideal for users to store the card info. All the purchases after that will not need the user to fill in the card info again.Upon user fillin the card info for the first time, the merchant should generate a unique "cardId" and send this to the server. This "cardId" will be the reference for this user's future purchase. 
+
+There are two steps in Recurving Purchase: "Add Card" & "Purchase with token":Please note that only "Add Card" involves Merchant App -> IOT App SDK -> IOT Server flow.After the Add card Event, the App will only need to send a request to your own mechant server, which will interact with IOTPay server and get response/receipt back to the App. This framework(SDK) should not be used again, unless the user wants to add another card, or do a one time purchase with another card. 
 <br /> 
 
+#### 2.4.2 Recurving Purchase Flow
 ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK0.png "Logo Title Text 3")
 ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK1.png "Logo Title Text 3")
 
+
+#### 2.4.3 Recurving Purchase: Add Card Parameters Table:
+*This table only shows the data/response between Merchant App/Server and IOT AppSDK/Server. Since either IOT to IOT or Merchant to Merchant is relevant to the topic.*
+
+```
+2. Add Card Request:
+Merchant Server -> IOT Pay Server
+Endpoint: https://api.iotpaycloud.com/v3/cc_addcard
+Reqeust method: POST
+Content-Type: application/json;charset=UTF-8
+Parameters
+name			required	type		sample					description
+mchId			y		String(30)	10000701				assigned by IOTPay
+cardId			y		String(30)	604567999				assigned by merchant,must be unique
+loginName		y		String(12)	jack123					merchant's login name
+returnUrl		y		String(200)						redirect to this url after payment
+sign			y		String(32)	C380BEC2BFD727A4B6845133519F3AD6	Sign algorithm
+each cardId can bind only one credit card, if one user need to bind more cards, use different cardId
+
+Response
+name			required	type	sample						description
+retCode			y		String	SUCCESS or FAIL	
+retMsg			y		String		
+retData.redirectUrl	y		String							if retCode=SUCCESS, merchant redirect to this url
+retData.secureId	y		String							used for sdk integration
+
+ReturnUrl parameters
+name			required	type	sample						description
+retCode			y		String	SUCCESS or FAIL
+retMsg			n		String		
+
+
+
+2. Simple Purchase Request:
+Merchant Server -> IOT Pay Server
+Parameters
+name	  	required	type		sample				description
+mchId			y	String(30)	10000701			assigned by IOTPay
+mchOrderNo		y	String(30)	1234567890abc			assigned by merchant
+amount			y	Int		1500				in cents
+currency		y	String(3)	CAD				for now only CAD supported
+loginName		y	String(12)	jack123				merchant's login name
+subject			n	String(64)		
+body			n	String(250)		
+notifyUrl		y	String(200)					get notify when success
+returnUrl		y	String(200)					redirect to this url after payment
+sign			y	String(32)	C380BEC2BFD727A4B6845133519F3AD6 Sign algorithm
+
+Response
+name		required	type		sample				description
+retCode			y	String		SUCCESS or FAIL	
+retMsg			y	String		
+retData.redirectUrl	y	String		if retCode=SUCCESS, merchant redirect to this url
+retData.secureId	y	String		For SDK integration only
+
+3. Secure Id Response: 
+IOT Pay Server -> Merchant Server
+name		required	type		sample				description
+retCode			y	String		SUCCESS or FAIL	
+retMsg			y	String		
+retData.redirectUrl	y	String						if retCode=SUCCESS, merchant redirect to this url
+retData.secureId	y	String						For SDK integration only
+
+
+5. Secure ID 
+Merchant App -> App SDK
+name		required	type		sample				description
+secureId		y	String						For SDK integration
+
+7. Simple Purchase Notification
+IOT Pay Server -> Merchant Server
+NotifyUrl message(post request in json format)
+name		required	type		sample				description
+payOrderId		y	String		SUCCESS or FAIL	
+mchId			y	String		
+mchOrderNo		y	String		
+originalOrderId		y	String						original pay order id if payType=refund
+amount			y	Int		100				in cents
+currency		y	String		CAD	
+payType			y	String		pay or refund	
+refundable		y	Int		100				in cents
+status			y	Int		2				2 or 3 means success
+invoiceNum		y	String		SUCCESS or FAIL	
+paySuccTime		y	String		2021-04-07 19:44:51	
+cardNum			y	String		432567******2266	
+cardType		y	String		V or	
+expiryDate		y	String		SUCCESS or FAIL	
+authNum			y	String		
+transNum		y	String		
+sign			y	String(32)	C380BEC2BFD727A4B6845133519F3AD6 Sign algorithm
+
+ReturnUrl parameters
+name		required	type		sample				description
+retCode			y	String		SUCCESS or FAIL
+retMsg			n	String		
+status			y	Int		2				2 or 3 both mean the transaction is successful
+
+8. Simple Purchase Resonese: 
+App SDK -> Merchant App
+name		required	type		sample				description
+amount	 			Int   						Int in cent
+authNum 			String
+cardNum 			String		424242XXXXXX4242		desensitizated 
+cardType 			String 		V				V=Visa, M=Master, D=Interact
+currency 			String 		CAD
+expiryDate 			String 		1122
+invoiceNum 			String 		832828793487
+mchId 				String		10000576
+mchOrderNo 			String	 	1618569175
+originalOrderId			String  
+payOrderId 			String 		CS20210416103255832828793487
+paySuccTime			String		2021-04-16 03:33:16
+payType		 		String		pay
+redirectUrl			String		
+refundable			Int   						Int in cent
+status	 			Int   		2
+transNum 			String   	000108583539
+```
 
 
 To start the next step, you will need:
