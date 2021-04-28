@@ -117,8 +117,7 @@ Please check 5.1 Temporary solution to get secureId at the end of this guide.  
 
 
 <br />  
-### 2.4 Option A: Recurring Purchase
-In recurring purchase option, you will use "Add Card" flow to get user's payment info, and then use "Purchaes with Token" flow for the future transitions.
+### 2.4 Recurring Purchase Option
 #### 2.4.1 Setup Card Info View:
 Declare the view before viewDidLoad. 
 This is not mandatory for displaying the view, but you will need this view's point to send a request in the next step.
