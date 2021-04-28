@@ -147,15 +147,15 @@ This will start the interface for the user to fill in the card info.<br />    
 
 #### 2.4.2 Card Info View Delegate:
 
-The card Info View delegate (IOTCardInfoViewDelegate) has one func in protocol:  onDidCompleteValidately()
+The card Info View delegate (IOTCardInfoViewDelegate) has one func in protocol:  onDidCompleteValidate()
 
 
-This func will be called once after users' fill in all the required info viliadly, so you know when to make the "Add Card" button ready for user input.
+This will be called once the user's inputted card info is valid. in all the required info viliadly, so you know when to make the "Add Card" button ready for user input.
 ```
 Swift:
 extension ViewController: IOTCardInfoViewDelegate {	
-	func onDidCompleteValidately() {		
-		// User did complete card info view Validately, we should enable the button		
+	func onDidCompleteValidate() {		
+		// User did complete card info view Validate, we should enable the button		
 		button.setTitle("Add Card", for: .normal)		
 		button.isUserInteractionEnabled = true	
 	}
@@ -166,8 +166,8 @@ Objc: .h
 @interface ViewController : UIViewController <IOTCardInfoViewDelegate>
 
 .m
-- (void)onDidCompleteValidately {	
-	// User did complete card info view Validately, we should enable the button	
+- (void)onDidCompleteValidate {	
+	// User did complete card info view Validate, we should enable the button	
 	[self.button setTitle: @"Add Card" forState: UIControlStateNormal];	
 	[self.button setUserInteractionEnabled: true];
 }
@@ -261,13 +261,13 @@ self.cardInfoView.delegate = self;[self.view addSubview: self.cardInfoView];
 This will start the interface for the user to fill in the card info.<br />   
 
 #### 2.5.2 Card Info View Delegate:
-The card Info View delegate (IOTCardInfoViewDelegate) has one func in protocol:  func onDidCompleteValidately() { }
+The card Info View delegate (IOTCardInfoViewDelegate) has one func in protocol:  func onDidCompleteValidate() { }
 This func will be called once after users' fill in all the required info viliadly, so you know when to make the "Add Card" button ready for user input.
 ```
 Swift:
 extension ViewController: IOTCardInfoViewDelegate {	
-	func onDidCompleteValidately() {		
-		// User did complete card info view Validately, we should enable the button		
+	func onDidCompleteValidate() {		
+		// User did complete card info view Validate, we should enable the button		
 		button.setTitle("Purchase", for: .normal)		
 		button.isUserInteractionEnabled = true	
 	}
@@ -278,8 +278,8 @@ Objc: .h
 @interface ViewController : UIViewController <IOTCardInfoViewDelegate>
 
 .m
-- (void)onDidCompleteValidately {	
-	// User did complete card info view Validately, we should enable the button	
+- (void)onDidCompleteValidate {	
+	// User did complete card info view Validate, we should enable the button	
 	[self.button setTitle: @"Purchase" forState: UIControlStateNormal];	
 	[self.button setUserInteractionEnabled: true];
 }
