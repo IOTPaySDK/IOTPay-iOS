@@ -115,7 +115,7 @@ Declare the view before viewDidLoad.
 This is not mandatory for displaying the view, but you will need this view's point to send a request in the next step.
 ```
 Swift:
-var cardInfoView: IOTCardInfoViewSingleLine!
+var cardInfoView: IOTCardInfoViewTripleLineNCardView!
 ```
 ```
 Objc: 
@@ -125,8 +125,9 @@ Objc:
 Add following code in ViewController after viewDidLoad
 ```
 Swift:
-cardInfoView = IOTCardInfoViewSingleLine(action: .addCard, style: .roundRect)
-cardInfoView.Delegate = selfview.addSubview(cardInfoView)
+cardInfoView = IOTCardInfoViewTripleLineNCardView(action: .addCard, style: .roundRect)
+cardInfoView.delegate = self
+view.addSubview(cardInfoView)
 ```
 ```
 Objc: (in .m)
