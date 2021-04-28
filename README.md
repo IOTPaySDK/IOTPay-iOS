@@ -89,9 +89,9 @@ This framework should be used/re-init for each simple purchase event.
 
 <br />  
 ### Option B: Recurring Purchase
-Recurring Purchase start with "Add Card" to save payment info, and then use "Purchase with token" for future transistion.
+Recurring Purchase start with "Add Card" to save payment info, and then use "Purchase with token" for future transaction.
 <br />  
-Once the user adds a card successfully, the IOTPay server will send back a response that includes desensitized card info. Your app and server should save those desensitized info for users' future purchase. After Add card Event, the App will only need to send a request to your own mechant server, which will interact with IOTPay server and get response/receipt to the App. This framework should not be used again, unless the user wants to add another card, or do a one time purchase with another card. 
+Once the user adds a card successfully, the IOTPay server will send back a response that includes desensitized card info. After Add card Event, the App will only need to send a request to your own mechant server, which will interact with IOTPay server and get response/receipt to the App. This framework should not be used again, unless the user wants to add another card, or do a one time purchase with another card. 
 <br /> 
 
 ![alt text](https://github.com/IOTPaySDK/IOTPay-iOS/blob/main/ReadmeImages/APIV3MobileAppSDK1.png "Logo Title Text 3")
