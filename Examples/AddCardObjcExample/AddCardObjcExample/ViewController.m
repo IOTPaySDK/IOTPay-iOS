@@ -49,7 +49,7 @@
 	CGRect buttonRect = CGRectMake(self.view.frame.size.width * 0.5 - 150.0,
 																	self.cardInfoView.frame.size.height + 50.0 + 50.0, 300.0, 50.0);
 	self.button = [[UIButton alloc] initWithFrame: buttonRect];
-	[self.button setTitleColor: UIColor.blueColor forState: UIControlStateNormal];
+	[self.button setTitleColor: UIColor.systemBlueColor forState: UIControlStateNormal];
 	[self.button setTitle: @"Please enter card info" forState: UIControlStateNormal];
 	[self.button setUserInteractionEnabled: false];
 	[self.button addTarget:self action:@selector(onButton) forControlEvents:UIControlEventTouchDown];
@@ -67,8 +67,8 @@
 }
 
 
-- (void)onDidCompleteValidately {
-	// User did complete card info view Validately, we should enable the button
+- (void)onDidCompleteValidate {
+	// User did complete card info view Validate, we should enable the button
 	[self.button setTitle: @"Add Card" forState: UIControlStateNormal];
 	[self.button setUserInteractionEnabled: true];
 }

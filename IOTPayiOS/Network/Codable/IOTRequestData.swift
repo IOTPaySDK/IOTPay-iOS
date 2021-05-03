@@ -20,8 +20,6 @@ public class IOTDesensitizedCardInfo: NSObject {
 	let cardId: String
 	let cardNumber: String
 	let holderName: String
-//	let expiryDate: String
-//	let cvv: String
 
 	@objc
 	init(cardId: String, cardNumber: String, holderName: String) {
@@ -56,27 +54,23 @@ struct IOTRequestCardData {
 		self.cvv = cardInfo.cvv
 		self.holder = cardInfo.holderName
 		self.expiryDate = cardInfo.expiryDate
-		print(cardInfo.expiryDate)
 		self.cardNum = cardInfo.cardNumber
-		print(cardInfo.cardNumber)
-		print(cardInfo.cvv)
-		print(cardInfo.holderName)
-		print("here????")
 		self.secureId = secureId
-//		#if DEBUG
-//		guard secureId.count == 64 else {
-//			fatalError("secureId expecting string.count 64, got \(secureId.count), str: \(secureId)")
-//		}
-//		guard cvv.count == 3 || cvv.count == 4 else {
-//			fatalError("cvv expecting count 3 or 4, got \(cvv.count), str: \(cvv)")
-//		}
-//		guard expiryDate.count == 4 else {
-//			fatalError("cvv expecting count 3 or 4, got \(expiryDate.count), str: \(expiryDate)")
-//		}
-//		guard cardNum.count >= 14, cardNum.count <= 19 else {
-//			fatalError("cardNum expecting count 14-19, got \(cardNum.count), str: \(cardNum)")
-//		}
-//		#endif
+
+		#if DEBUG
+		guard secureId.count == 64 else {
+			fatalError("secureId expecting string.count 64, got \(secureId.count), str: \(secureId)")
+		}
+		guard cvv.count == 3 || cvv.count == 4 else {
+			fatalError("cvv expecting count 3 or 4, got \(cvv.count), str: \(cvv)")
+		}
+		guard expiryDate.count == 4 else {
+			fatalError("cvv expecting count 3 or 4, got \(expiryDate.count), str: \(expiryDate)")
+		}
+		guard cardNum.count >= 14, cardNum.count <= 19 else {
+			fatalError("cardNum expecting count 14-19, got \(cardNum.count), str: \(cardNum)")
+		}
+		#endif
 	}
 
 	var params: [String: String] {

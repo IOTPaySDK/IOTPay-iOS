@@ -10,10 +10,6 @@ import UIKit
 
 public class IOTCardInfoViewTripleLineNCardView: IOTDeformableCardInfoView {
 
-
-	//let layout: IOTCardInfoViewLayout = .tripleLineWithLargeCardViewOnTop
-	//let style: IOTCardInfoViewStyle
-
 	private let defaultLabelHeight: CGFloat = 50.0
 	private let defaultVerticalMargin: CGFloat = 10.0
 	private let defaultLabelWidthPortionToScreenWidth: CGFloat = 0.9
@@ -25,7 +21,6 @@ public class IOTCardInfoViewTripleLineNCardView: IOTDeformableCardInfoView {
 	private let defalutCardLargeViewWidthToScreenWidth: CGFloat = 0.8
 	private let cardWidthHeightRatio: CGFloat = 1.586
 
-
 	private let minLabelHeight: CGFloat = 30.0
 	private let maxLabelHeight: CGFloat = 60.0
 	private let verticalEdgeToSelfHeightRatio: CGFloat = 0.01
@@ -36,51 +31,22 @@ public class IOTCardInfoViewTripleLineNCardView: IOTDeformableCardInfoView {
 	private let cardViewHorzontalEdgeToSelfWidthRatio: CGFloat = 0.1
 	private let labelToLabelHorzontalSpaceToGroupRatio: CGFloat = 0.01
 
-	//private let defaultLabelHorizontalSpacePortionToScreenWidth: CGFloat = 0.1
-
 	private var deformConfig = IOTDeformConfig(
 		initDisplayState: [.full, .full, .full, .full],
 		nilSeletionRatios: [1.0, 1.0, 0.4, 0.4],
 		fixedRects: []
 	)
 
-//	override init(layout: IOTCardInfoViewLayout, action: IOTNetworkRequestAction) {
-//		super.init(layout: layout, action: action)
-//	}
-
-//	@objc
-//	public init() {
-//		let layout: IOTCardInfoViewLayout = .tripleLineWithLargeCardViewOnTop
-//		self.style = .roundRect
-//		//let layout = IOTCardInfoViewLayout.tripleLineWithLargeCardViewOnTop
-//		super.init(action: .addCard, layout: layout, style: <#T##IOTCardInfoViewStyle#>
-//							 deformConfig: deformConfig)
-//		facade = IOTCardInfoComponentsFacade(action: action, layout: layout, style: .roundRect)
-//		//facade = IOTCardInfoComponentsFacade(action: action, layout: layout, style: .roundRect)
-//		self.layout = layout
-//
-//	}
-
-
 	convenience public init(action: IOTNetworkRequestAction, style: IOTCardInfoViewStyle? = nil) {
 		let style = style ?? .roundRect
 		self.init(action: action, style: style)
 	}
 
-
 	@objc
 	public init(action: IOTNetworkRequestAction, style: IOTCardInfoViewStyle) {
 		let layout: IOTCardInfoViewLayout = .tripleLineWithLargeCardViewOnTop
-		//self.style = style
-		//let layout = IOTCardInfoViewLayout.tripleLineWithLargeCardViewOnTop
 		super.init(action: action, layout: layout, style: style, deformConfig: deformConfig)
-		//facade = IOTCardInfoComponentsFacade(action: action, layout: layout, style: .roundRect)
-		//facade = IOTCardInfoComponentsFacade(action: action, layout: layout, style: .roundRect)
-		//self.layout = layout
-
 	}
-
-
 
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
@@ -89,9 +55,6 @@ public class IOTCardInfoViewTripleLineNCardView: IOTDeformableCardInfoView {
 	override func commonInit() {
 		super.commonInit()
 		defaultLayout()
-		//facade = IOTCardInfoComponentsFacade(action: action, layout: layout, style: .roundRect)
-		//super.commonInit()
-		//defaultLayout()
 	}
 
 	private func defaultLayout() {
@@ -99,11 +62,7 @@ public class IOTCardInfoViewTripleLineNCardView: IOTDeformableCardInfoView {
 		backgroundColor = IOTColor.system5.uiColor
 	}
 
-	public override var frame: CGRect { didSet {
-		updateLayout()
-	}}
-
-
+	public override var frame: CGRect { didSet { updateLayout() }}
 
 	func updateLayout() {
 
@@ -133,14 +92,6 @@ public class IOTCardInfoViewTripleLineNCardView: IOTDeformableCardInfoView {
 		let cardAspectRect = CGRect(x: (frame.width - cardViewSize.width) * 0.5,
 																y: (verticalEdgeToSelfHeightRatio * frame.height),
 																width: cardViewSize.width, height: cardViewSize.height)
-		//backgroundColor = .red
-
-
-//		let cardViewa = DYSegmenter.vertical(
-//			rect: CGRect(origin: cardView.origin, size: cardView.size),
-//			segmentCount: 1,
-//			edgeRatio: DYSegmenter.EdgeRatio( horizontal: horzontalEdgeToSelfWidthRatio,
-//																				vertical: verticalEdgeToSelfHeightRatio))
 
 		let textFieldVertialSpace = (1.0 - labelHeightToLabelGroupHeightRatio * 3) / 2
 		let textlRectNSpaceArr = DYSegmenter.vertical(
@@ -174,18 +125,3 @@ public class IOTCardInfoViewTripleLineNCardView: IOTDeformableCardInfoView {
 
 }
 
-//extension IOTCardInfoViewTripleLineNCardView: IOTCardInfoComponentsDelegate {
-//	func onDidComplete(isValid: Bool) {
-//		if isValid { print("done and valid") }
-//		else { print("done with error") }
-//	}
-//
-//}
-
-//extension IOTCardInfoViewSingleLineNCardIcon {
-//	enum Style {
-//		case roundRect
-//		case infoLight
-//		case infoDark
-//	}
-//}

@@ -9,7 +9,7 @@ import UIKit
 
 @objc
 public protocol IOTCardInfoViewDelegate: AnyObject {
-	func onDidCompleteValidately()
+	func onDidCompleteValidate()
 }
 
 public class IOTCardInfoView: UIView {
@@ -86,7 +86,7 @@ public class IOTCardInfoView: UIView {
 
 	func commonInit() {
 		setupDismissKeyboardCondition()
-		backgroundColor = .red
+		backgroundColor = IOTColor.labelBackground.uiColor
 		viewModel.delegate = self
 		facade.delegate = self
 		//textFieldsay = [holderNameTextField, cardNumberTextField, expiryDateTextField, cvvTextField]
@@ -158,8 +158,8 @@ public class IOTCardInfoView: UIView {
 }
 
 extension IOTCardInfoView: IOTCardInfoComponentsFacadeDelegate {
-	func onDidCompleteValidately() {
-		delegate?.onDidCompleteValidately()
+	func onDidCompleteValidate() {
+		delegate?.onDidCompleteValidate()
 	}
 }
 

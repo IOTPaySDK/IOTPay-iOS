@@ -46,7 +46,7 @@ class ViewController: UIViewController {
 		button = UIButton(frame: CGRect(x: view.frame.width * 0.5 - 150.0,
 																		y: cardInfoView.frame.height + 50.0 + 100.0,
 																		width: 300.0, height: 50.0))
-		button.setTitleColor(.blue, for: .normal)
+		button.setTitleColor(.systemBlue, for: .normal)
 		button.setTitle("Please enter card info", for: .normal)
 		button.isUserInteractionEnabled = false
 		button.addTarget(self, action: #selector(onButton), for: .touchDown)
@@ -70,8 +70,8 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: IOTCardInfoViewDelegate {
-	func onDidCompleteValidately() {
-		// User did complete card info view Validately, we should enable the button
+	func onDidCompleteValidate() {
+		// User did complete card info view Validate, we should enable the button
 		button.setTitle("Add Card", for: .normal)
 		button.isUserInteractionEnabled = true
 	}

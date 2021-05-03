@@ -9,16 +9,14 @@ import UIKit
 
 
 protocol IOTCardInfoComponentsViewModelDelegate: AnyObject {
-//	func updatingComposition(fromSelection: IOTTextFieldSubject, toSeletion: IOTTextFieldSubject, aimation: Bool)
-//	func updatingImageIcon(to state: IOTCardIconState)
+
 	func onDidLoad(initDisplayState: [IOTTextFieldDisplayState])
 	func onDidUpdateTextFieldsLayout(rectArray: [CGRect])
 	func onDidUpdateCardIconViewLayout(rect: CGRect)
-	func onDidFinishCardInfoValidately()
+	func onDidFinishCardInfoValidate()
 
 	func updateFirstResponder(to textFieldAtIndex: Int)
 	func updatePatternPrediction(to patternPrediction: IOTCardPatternPrediction)
-
 
 	func playTextFieldAnimation(fromPositions: [CGRect], toPosition: [CGRect])
 	func playCardFlipAnimation(to: IOTCardSide)
@@ -53,23 +51,11 @@ final class IOTCardInfoComponentsViewModel: NSObject, UITextFieldDelegate {
 	var seletedTextFieldIndex: Int? { seletedTextFieldSubject?.rawValue }
 
 	var nextTextFieldIndex: Int? {
-//		if let index = seletedTextFieldSubject?.rawValue {
-//			return index < IOTTextFieldSubject.allCases.count - 1 ? index + 1 : nil
-//		}
 		guard let index = seletedTextFieldSubject?.rawValue else { return nil }
 		return index < IOTTextFieldSubject.allCases.count - 1 ? index + 1 : nil
 	}
 
-	override init() {
-		super.init()
-
-	}
-
-
-
-	//Deform var
-	//var segmentModelConfig: IOTSegmentModel.IOTSegmentModelConfig!
-//	var segmentModel: IOTSegmentModel!
+	override init() { super.init() }
 
 	@objc func onTextFieldDidSelect(sender: IOTTextField) { // first responser
 		seletedTextFieldSubject = sender.subject
@@ -112,19 +98,14 @@ extension IOTCardInfoComponentsViewModel: IOTTextFieldDelegate {
 		viewModeDelegate?.updatePatternPrediction(to: cardPattern)
 	}
 
-	func onDidSelected(textField: IOTTextFieldSubject) {
+	func onDidSelected(textField: IOTTextFieldSubject) { }
 
-	}
-
-	func onDidChanged(textField: IOTTextFieldSubject, text: String) {
-
-	}
+	func onDidChanged(textField: IOTTextFieldSubject, text: String) { }
 
 	func onDidComplete(textField: IOTTextFieldSubject, isValid: Bool) {
 		completionArray[textField.rawValue] = isValid
-		print("onDidComplete", completionArray)
 		if completionArray == [true, true, true, true] {
-			viewModeDelegate?.onDidFinishCardInfoValidately()
+			viewModeDelegate?.onDidFinishCardInfoValidate()
 			return
 		}
 

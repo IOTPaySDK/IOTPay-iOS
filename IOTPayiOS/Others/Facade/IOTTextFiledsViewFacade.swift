@@ -8,7 +8,7 @@
 import UIKit
 
 protocol IOTCardInfoComponentsFacadeDelegate {
-	func onDidCompleteValidately()
+	func onDidCompleteValidate()
 }
 
 
@@ -51,7 +51,7 @@ final class IOTCardInfoComponentsFacade: NSObject {
 }
 
 extension IOTCardInfoComponentsFacade: IOTCardInfoComponentsDelegate {
-	func onDidCompleteValidately() {
-		delegate?.onDidCompleteValidately()
+	func onDidCompleteValidate() {
+		delegate?.onDidCompleteValidate()
 	}
 }

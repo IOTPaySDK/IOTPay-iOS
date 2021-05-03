@@ -22,14 +22,14 @@
 		2DBE50435E7304B56AB0D25BACBF3450 /* Pods-IOTPayiOS-IOTPayiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IOTPayiOS-IOTPayiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		439B222EAC96EBF1F290E484119FFA7E /* Pods-IOTPayiOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-IOTPayiOS.modulemap"; sourceTree = "<group>"; };
-		4F7643BAE012C414D96E8A880C299E3A /* Pods_IOTPayiOS_IOTPayiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_IOTPayiOS_IOTPayiOSTests.framework; path = "Pods-IOTPayiOS-IOTPayiOSTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		58100FEC3AC4EFC0F1728D56A141BC85 /* Pods_IOTPayiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_IOTPayiOS.framework; path = "Pods-IOTPayiOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F7643BAE012C414D96E8A880C299E3A /* Pods_IOTPayiOS_IOTPayiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOTPayiOS_IOTPayiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58100FEC3AC4EFC0F1728D56A141BC85 /* Pods_IOTPayiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOTPayiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		644746606AA126624A5C22E207E83EB3 /* Pods-IOTPayiOS-IOTPayiOSTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IOTPayiOS-IOTPayiOSTests-Info.plist"; sourceTree = "<group>"; };
 		7863CB46DE9C7C52EF1410E3B5A2E5C8 /* Pods-IOTPayiOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IOTPayiOS-Info.plist"; sourceTree = "<group>"; };
 		7DEC4F43593A39FEA427C2D86EF873F3 /* Pods-IOTPayiOS-IOTPayiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IOTPayiOS-IOTPayiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8EFF348BFD519CD428AEA5911BC527B1 /* Pods-IOTPayiOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IOTPayiOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		91D4825743B779E1EC62506FBCC7E85A /* Pods-IOTPayiOS-IOTPayiOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IOTPayiOS-IOTPayiOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BB28F2C44CF18FF069D916976C63EB2F /* Pods-IOTPayiOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IOTPayiOS-umbrella.h"; sourceTree = "<group>"; };
 		CFC80E0A235BEC17876C1A72CD565797 /* Pods-IOTPayiOS-IOTPayiOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IOTPayiOS-IOTPayiOSTests-dummy.m"; sourceTree = "<group>"; };
 		D6548DA8020E32A3F01B5BC6D7922204 /* Pods-IOTPayiOS-IOTPayiOSTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-IOTPayiOS-IOTPayiOSTests.modulemap"; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -283,6 +283,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -385,6 +386,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

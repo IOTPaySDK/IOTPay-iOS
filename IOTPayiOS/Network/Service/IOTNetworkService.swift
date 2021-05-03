@@ -34,7 +34,7 @@ public class IOTNetworkService: NSObject {
 		guard secureId != "Your secureId" && secureId.count >= 20 else {
 			#if DEBUG
 				fatalError("""
-								You secureId is invalid, please check Github guide,
+								You secureId is invalid, please check Github guide, secureId section at end
 								https://github.com/IOTPaySDK/IOTPay-iOS
 								""")
 			#else
@@ -90,8 +90,8 @@ public class IOTNetworkService: NSObject {
 
 
 							 do {
-									 let a = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-								print("fasdaaaa", a)
+									 let decodedData = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+								print("decodedData", decodedData ?? "decode failed")
 							 } catch {
 									 print(error.localizedDescription)
 							 }
@@ -106,7 +106,6 @@ public class IOTNetworkService: NSObject {
 //				}
 //				if let result  = try? JSONSerialization.jsonObject(with: result, options: []) as? [String: Any] {
 //					// try to read out a string array
-//						print("aafinal get ", result)
 //					}
 
 
@@ -240,16 +239,11 @@ public class IOTNetworkService: NSObject {
 extension IOTNetworkService: IOTCardInfoComponentsTransportDelegate {
 	func transport(action: IOTNetworkRequestAction, info: IOTCardInfo) {
 		let requested = IOTRequestCardData(secureId: secureId, cardInfo: info)
-		guard let jsonData = try? JSONSerialization.data(withJSONObject: requested.params) else {
-			fatalError()
-		}
+		guard let jsonData = try? JSONSerialization.data(withJSONObject: requested.params) else { fatalError() }
 
-		if let json = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
-						// try to read out a string array
-
-			print("endwith ", json)
-				}
-		print("action", action)
+//		if let json = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
+//						// try to read out a string array
+//				}
 
 		switch action {
 			case .addCard:

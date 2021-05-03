@@ -20,7 +20,7 @@ protocol IOTCardInfoComponentsDelegate: AnyObject {
 //	func updateCardIconView(displayState: IOTCardIconState)
 //	func updateCardIconView(temporaryEvent: IOTCardIconTemporaryEvent)
 //	func updateTextFieldSeletedIndex(subject: Int)
-	func onDidCompleteValidately()
+	func onDidCompleteValidate()
 }
 
 
@@ -139,10 +139,12 @@ extension IOTCardInfoComponents {
 
 
 extension IOTCardInfoComponents: IOTCardInfoComponentsViewModelDelegate {
-	func onDidFinishCardInfoValidately() {
-		textFields.forEach { $0.resignFirstResponder() }
-		print("all resign")
-		componentsDelegate?.onDidCompleteValidately()
+	func onDidFinishCardInfoValidate() {
+		for textField in textFields where textField.subject == .holderName  {
+			
+		}
+		//textFields.forEach // where  { $0.resignFirstResponder() }
+		componentsDelegate?.onDidCompleteValidate()
 	}
 
 	func updatePatternPrediction(to patternPrediction: IOTCardPatternPrediction) {
@@ -156,7 +158,6 @@ extension IOTCardInfoComponents: IOTCardInfoComponentsViewModelDelegate {
 
 
 	func playCardFlipAnimation(to: IOTCardSide) {
-		print("playCardFlipAnimation")
 		if cardIconView != nil && viewModel.layout == .singleLineWithSmallCardIcon {
 			if to == .back {
 				cardIconView?.state = .back
@@ -164,6 +165,7 @@ extension IOTCardInfoComponents: IOTCardInfoComponentsViewModelDelegate {
 				cardIconView?.state = patternPrediction.cardIconDisplayState
 			}
 		}
+
 		if let cardLargeView = cardLargeView, viewModel.layout == .tripleLineWithLargeCardViewOnTop {
 			if to == .back && cardLargeView.side == .front {
 				cardLargeView.playFlipAnimation()
@@ -184,9 +186,7 @@ extension IOTCardInfoComponents: IOTCardInfoComponentsViewModelDelegate {
 
 	}
 
-	func onDidUpdateCardIconViewLayout(rect: CGRect) {
-
-	}
+	func onDidUpdateCardIconViewLayout(rect: CGRect) { }
 
 	func onDidUpdateTextFieldsLayout(rectArray: [CGRect]) {
 		for i in 0..<textFields.count { textFields[i].frame = rectArray[i] }
@@ -195,15 +195,6 @@ extension IOTCardInfoComponents: IOTCardInfoComponentsViewModelDelegate {
 	func onDidLoad(initDisplayState: [IOTTextFieldDisplayState]) {
 		for i in 0..<textFields.count { textFields[i].displayState = initDisplayState[i] }
 	}
-
-//	func onDdiUpdateCardIconViewLayout(rect: CGRect) {
-//		//cardIconView(
-////		cardIconView?.frame = rect
-////		cardIconView?.updateFrame()
-////
-//	}
-
-
 }
 
 
@@ -220,12 +211,8 @@ extension IOTCardInfoComponents {
 			if let count = self?.textFields.count {
 				for i in 0..<count { self?.textFields[i].frame.origin = toPositions[i] }
 			}
-
-//			if isSuccess () { }  //gogo
-
 		}
 	}
-
 }
 
 extension IOTCardInfoComponents {
@@ -237,28 +224,15 @@ extension IOTCardInfoComponents {
 			cvv: textFields[IOTTextFieldSubject.cvv.rawValue].valueString!)
 		transportDelegate?.transport(action: action, info: info)
 	}
-
-
 }
 
 //Fixed size layout setting
 extension IOTCardInfoComponents {
-//	func setLargeCard(width: CGFloat) {
-//		cardLargeView = IOTCardView()
-//		cardLargeView!.setView(width: width)
-//		cardLargeView?.center.x = center.x
-//		cardLargeView?.center.y = center.y
-//		cardLargeView?.backgroundColor = .red
-//		print( cardLargeView?.frame)
-//		addSubview(cardLargeView!)
-//	}
 
 	func setFixedViewRects(array: [CGRect]) {
-
 		cardLargeView = IOTCardView(frame: array[4])
 		addSubview(cardLargeView!)
 		frame = array[5]
-
 		setupStyle(array: array)
 	}
 
@@ -268,8 +242,8 @@ extension IOTCardInfoComponents {
 				let backRectView = UIView(frame: array[i])
 				backRectView.layer.cornerRadius = 10.0
 				backRectView.layer.borderWidth = 1.0
-				backRectView.layer.borderColor = UIColor.blue.cgColor
-				backRectView.backgroundColor = .white
+				backRectView.layer.borderColor = IOTColor.roundRectBoderColorBlue.uiColor.cgColor
+				backRectView.backgroundColor = IOTColor.labelBackground.uiColor
 				backRectView.alpha = 0.8
 				backRectView.isUserInteractionEnabled = false
 				addSubview(backRectView)
@@ -285,7 +259,6 @@ extension IOTCardInfoComponents {
 			}
 			onDidLoad(initDisplayState: [.full, .full, .full, .full])
 		}
-		
 	}
 }
 

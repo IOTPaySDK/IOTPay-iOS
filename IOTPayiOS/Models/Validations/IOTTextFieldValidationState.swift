@@ -22,9 +22,9 @@ enum IOTTextFieldValidationState {
 
 	var color: UIColor {
 		switch self {
-		case .conflict, .tooLong, .tooShort: return .systemRed
-		case .empty, .entering: return .white
-		case .valid: return .systemGreen
+			case .conflict, .tooLong, .tooShort: return IOTColor.inViladTextColor.uiColor
+		case .empty, .entering: return IOTColor.normalTextColor.uiColor
+		case .valid: return IOTColor.normalTextColor.uiColor
 		}
 	}
 }

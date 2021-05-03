@@ -101,7 +101,7 @@ extension IOTTextField {
 			}
 
 			UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {
-				self?.textColor = .black
+				self?.textColor = IOTColor.normalTextColor.uiColor
 				self?.backgroundColor = .clear
 			}
 
