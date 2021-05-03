@@ -68,7 +68,7 @@ public enum IOTCardInfoViewLayout {
 
 @objc
 public enum IOTCardInfoViewStyle: Int {
-	case roundRect = 0
-	case infoLight
-	case infoDark
+	case autoDarkModeSupport = 0
+	case forceLightMode
+	case forceDarkMode
 }

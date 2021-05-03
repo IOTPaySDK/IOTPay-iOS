@@ -33,7 +33,7 @@ public final class IOTCardInfoViewTripleLine: IOTCardInfoView {
 
 
 	public init(action: IOTNetworkRequestAction, style: IOTCardInfoViewStyle? = nil) {
-		super.init(action: action, layout: .tripleLine, style: style ?? .roundRect)
+		super.init(action: action, layout: .tripleLine, style: style ?? .autoDarkModeSupport)
 		
 	}
 

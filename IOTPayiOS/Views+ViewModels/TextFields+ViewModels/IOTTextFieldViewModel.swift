@@ -27,6 +27,7 @@ class IOTTextFieldViewModel: NSObject {
 	let filterModel = IOTInputFilterModel()
 	let validatorModel = IOTInputValidateModel()
 	let formatterModel = IOTOutputFormatModel()
+	var style: IOTCardInfoViewStyle!
 	//init
 	let subject: IOTTextFieldSubject
 
@@ -126,7 +127,7 @@ extension IOTTextFieldViewModel {
 		valueString = subject != .expiryDate ? result.valueString :
 			result.valueString.replacingOccurrences(of: "/", with: "")
 		displayString = result.displayString
-		displayStringColor = color.uiColor
+		displayStringColor = color.uiColor(for: style)
 		isBackSpaced = false
 	}
 

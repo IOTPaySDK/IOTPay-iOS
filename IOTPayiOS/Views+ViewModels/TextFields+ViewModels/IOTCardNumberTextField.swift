@@ -9,8 +9,9 @@ import UIKit
 
 class IOTCardNumberTextField: IOTTextField {
 
-	override func setupViewModel(textFieldType: IOTTextFieldSubject) {
+	override func setupViewModel(textFieldType: IOTTextFieldSubject, style: IOTCardInfoViewStyle) {
 		viewModel = IOTCardNumberTextFieldViewModel(textFieldSubject: textFieldType)
+		viewModel.style = style
 		viewModel.delegate = self
 		viewModel.start()
 		delegate = viewModel

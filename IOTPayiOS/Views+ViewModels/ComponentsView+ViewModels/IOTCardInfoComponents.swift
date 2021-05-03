@@ -69,6 +69,7 @@ public final class IOTCardInfoComponents: UIView {
 
 		let textFieldFactory = IOTTextFieldFactory()
 		textFields = textFieldFactory.makeTextFieldArray(subjectSequence: nil,
+																										 style: style,
 																										 attributeSequence: [layout.textFieldAttribute])
 		cardIconView = layout.isDisplayingCardIcon ? IOTCardIconView() : nil
 

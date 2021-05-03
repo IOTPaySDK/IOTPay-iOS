@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <IOTPayiOS/IOTPayiOS-Swift.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController <IOTCardInfoViewDelegate, IOTNetworkServiceDelegate>
 @property (nonatomic, retain) IOTCardInfoViewTripleLineNCardView *cardInfoView;
 @property (nonatomic, retain) UIButton *button;
 

@@ -37,8 +37,8 @@ public class IOTCardInfoViewTripleLineNCardView: IOTDeformableCardInfoView {
 		fixedRects: []
 	)
 
-	convenience public init(action: IOTNetworkRequestAction, style: IOTCardInfoViewStyle? = nil) {
-		let style = style ?? .roundRect
+	convenience public init(action: IOTNetworkRequestAction, style: IOTCardInfoViewStyle?) {
+		let style = style ?? .autoDarkModeSupport
 		self.init(action: action, style: style)
 	}
 

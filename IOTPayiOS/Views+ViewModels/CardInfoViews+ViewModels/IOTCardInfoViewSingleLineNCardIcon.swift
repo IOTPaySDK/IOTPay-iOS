@@ -54,7 +54,7 @@ public class IOTCardInfoViewSingleLineNCardIcon: IOTDeformableCardInfoView {
 
 	private func defaultLayout() {
 		frame = CGRect(x: 0, y: 0, width: screenW, height: defaultLabelHeight)
-		backgroundColor = IOTColor.system5.uiColor
+		backgroundColor = IOTColor.system5.uiColor(for: style)
 	}
 
 	func updateLayout() {
@@ -67,8 +67,8 @@ public class IOTCardInfoViewSingleLineNCardIcon: IOTDeformableCardInfoView {
 		let labelGrid = UIView(frame: labelGridRect)
 		labelGrid.layer.cornerRadius = 10.0
 		labelGrid.layer.borderWidth = 1.0
-		labelGrid.layer.borderColor = IOTColor.roundRectBoderColorBlue.uiColor.cgColor
-		labelGrid.backgroundColor = IOTColor.labelBackground.uiColor
+		labelGrid.layer.borderColor = IOTColor.roundRectBoderColorBlue.uiColor(for: style).cgColor
+		labelGrid.backgroundColor = IOTColor.labelBackground.uiColor(for: style)
 		labelGrid.clipsToBounds = true
 		addSubview(labelGrid)
 

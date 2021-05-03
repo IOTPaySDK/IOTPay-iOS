@@ -19,7 +19,71 @@ enum IOTColor: Int {
 	case roundRectBoderColorGray
 	case labelBackground
 
-public
+	public
+	func uiColor(for style: IOTCardInfoViewStyle) -> UIColor {
+		if #available(iOS 13.0, *) {
+			switch self {
+			case .normalTextColor:
+				switch style {
+					case .autoDarkModeSupport: return UIColor.label
+					case .forceDarkMode: return UIColor.white
+					case .forceLightMode: return UIColor.black
+				}
+			case .inViladTextColor:
+				return UIColor.systemRed
+			case .validTextColor:
+				return UIColor.systemGreen
+			case .placeholderTextColor:
+				return UIColor.systemGray
+			case .system5:
+				//return UIColor.systemGray5
+				switch style {
+					case .autoDarkModeSupport: return UIColor.systemGray5
+					case .forceDarkMode: return UIColor.black
+					case .forceLightMode: return UIColor.lightGray
+				}
+			case .roundRectBoderColorBlue:
+				return .systemBlue
+			case .roundRectBoderColorGray:
+				return .systemGray
+			case .labelBackground:
+				switch style {
+					case .autoDarkModeSupport: return UIColor.systemBackground
+					case .forceDarkMode: return UIColor.black
+					case .forceLightMode: return UIColor.gray
+				}
+				//return .systemBackground
+			}
+		} else { // no dark mode options
+			switch self {
+			case .normalTextColor:
+				switch style {
+					case .forceDarkMode: return UIColor.white
+					case .forceLightMode, .autoDarkModeSupport: return UIColor.black
+				}
+			case .inViladTextColor:
+				return UIColor.systemRed
+			case .validTextColor:
+				return UIColor.systemGreen
+			case .placeholderTextColor:
+				return UIColor.gray
+			case .system5:
+				if #available(iOS 13.0, *) {
+					return UIColor.systemGray5
+				} else {
+					return uiColor255(with: 229, green: 229, blue: 234, alpha: 1.0)
+				}
+			case .roundRectBoderColorBlue:
+				return uiColor255(with: 1, green: 111, blue: 208, alpha: 1.0)
+			case .roundRectBoderColorGray:
+				return uiColor255(with: 229, green: 229, blue: 234, alpha: 1.0)
+			case .labelBackground:
+				return .white
+			}
+		}
+	}
+
+	public
 	var uiColor: UIColor {
 		if #available(iOS 13.0, *) {
 			switch self {

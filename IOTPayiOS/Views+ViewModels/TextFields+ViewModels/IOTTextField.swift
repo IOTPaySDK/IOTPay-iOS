@@ -19,7 +19,7 @@ class IOTTextField: UITextField {
 	weak var textFieldDelegate: IOTTextFieldDelegate?
 
 	var viewModel: IOTTextFieldViewModel!
-
+	var style: IOTCardInfoViewStyle { viewModel.style }
 	let attribute: IOTTextFieldAttribute
 
 	// calculated var from viewModel
@@ -37,10 +37,10 @@ class IOTTextField: UITextField {
 	}
 
 	//MARK: Life cycle
-	init(textFieldType: IOTTextFieldSubject, attribute: IOTTextFieldAttribute) {
+	init(textFieldType: IOTTextFieldSubject, style: IOTCardInfoViewStyle, attribute: IOTTextFieldAttribute) {
 		self.attribute = attribute
 		super.init(frame: CGRect.zero)
-		setupViewModel(textFieldType: textFieldType)
+		setupViewModel(textFieldType: textFieldType, style: style)
 		commonInit()
 	}
 
@@ -50,8 +50,9 @@ class IOTTextField: UITextField {
 
 	deinit {}
 
-	func setupViewModel(textFieldType: IOTTextFieldSubject) {
+	func setupViewModel(textFieldType: IOTTextFieldSubject, style: IOTCardInfoViewStyle) {
 		viewModel = IOTTextFieldViewModel(textFieldSubject: textFieldType)
+		viewModel.style = style
 		viewModel.delegate = self
 		delegate = viewModel
 		viewModel.start()
@@ -100,8 +101,8 @@ extension IOTTextField {
 				self?.backgroundColor = .green
 			}
 
-			UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {
-				self?.textColor = IOTColor.normalTextColor.uiColor
+			UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) { [weak self] in
+				self?.textColor = IOTColor.normalTextColor.uiColor(for: self!.style)
 				self?.backgroundColor = .clear
 			}
 

@@ -31,7 +31,7 @@ class ViewController: UIViewController {
 		style: (enum) Choose any style fit your app.
 		For auto - Nightmode detection, please use .autoNightmode
 		*/
-		cardInfoView = IOTCardInfoViewTripleLineNCardView(action: .oneTimePurchase, style: .roundRect)
+		cardInfoView = IOTCardInfoViewTripleLineNCardView(action: .oneTimePurchase, style: .autoDarkModeSupport)
 		cardInfoView.frame.origin = CGPoint(x: 0.0, y: 50.0)
 		/* set delegate
 		this is the IOTCardInfoViewDelegate,
