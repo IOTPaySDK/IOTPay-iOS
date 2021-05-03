@@ -12,7 +12,7 @@
 Quick Start:<br />   
 ```
 For Swift:
-cardInfoView = IOTCardInfoViewSingleLine(action: .addCard, style: .roundRect)  
+cardInfoView = IOTCardInfoViewSingleLine(action: .addCard, style: .autoDarkModeSupport)  
 IOTNetworkService.shared.sendRequest(secureId: "Your secureId", cardInfoView: cardInfoView)
 ```
 ```
@@ -133,7 +133,7 @@ Objc:
 Add following code in ViewController after viewDidLoad
 ```
 Swift:
-cardInfoView = IOTCardInfoViewTripleLineNCardView(action: .addCard, style: .roundRect)
+cardInfoView = IOTCardInfoViewTripleLineNCardView(action: .addCard, style: .autoDarkModeSupport)
 cardInfoView.delegate = self
 view.addSubview(cardInfoView)
 ```
@@ -249,7 +249,7 @@ Objc:
 Add following code in ViewController after viewDidLoad
 ```
 Swift:
-cardInfoView = IOTCardInfoViewSingleLine(action: .simplePurchase, style: .roundRect)
+cardInfoView = IOTCardInfoViewSingleLine(action: .simplePurchase, style: .autoDarkModeSupport)
 cardInfoView.Delegate = selfview.addSubview(cardInfoView)
 ```
 ```
@@ -354,10 +354,9 @@ enum IOTNetworkRequestAction {
 #style: 
 ```
 enum IOTCardInfoViewStyle {	
-	case roundRect	
-	case infoLight	
-	case infoDark   
-	case autoDetectDarkMode
+	case autoDarkModeSupport	
+	case forceLightMode	
+	case forceDarkMode   
 }
 ```
 
