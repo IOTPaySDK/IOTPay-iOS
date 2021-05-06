@@ -71,7 +71,9 @@ And finally, save and close the text editor, then enter the following command in
 pod install
 ```
 The cocoaPod will start installing the IOTPayiOS framework.
-<br />  <br />      (#Layout)
+<br />  <br />      
+
+[Layout](Layout)
 
 
 ### 2.2 Import Framework
