@@ -1,7 +1,6 @@
 # IOTPay-iOS
 #### IOTPay - Online Credit Card Payment Framework for iOS/Android/php
 <br />    
-
 - [1 Features](#1.0)
 - [2. Integration Walkthrough](#2.0)
 	- [2.1 Install Framework](#2.1)
@@ -12,8 +11,6 @@
 - [3 Layout, Style and Anition options](#3.0)
 - [4 Temporary secureID](#4.0)
 
-[link text](http://...#abcd)
-[link](#head1234)
 
 <a name="1.0"><a/>
 ## 1. Features:
@@ -137,10 +134,15 @@ Please check 5.1 Temporary solution to get secureId at the end of this guide.  
 
 <br />
 <a name="2.4"><a/>
+	
 ### 2.4 Recurring Purchase Option
+
 #### 2.4.1 Setup Card Info View:
+
 Declare the view before viewDidLoad. 
+
 This is not mandatory for displaying the view, but you will need this view's point to send a request in the next step.
+
 ```
 Swift:
 var cardInfoView: IOTCardInfoViewTripleLineNCardView!
