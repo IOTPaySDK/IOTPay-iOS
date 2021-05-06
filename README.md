@@ -13,6 +13,7 @@
 - [4 Temporary secureID](#4 Temporary secureID)
 
 [link text](http://...#abcd)
+[link](#head1234)
 
 
 ## 1. Features:
@@ -77,7 +78,7 @@ The cocoaPod will start installing the IOTPayiOS framework.
 
 [Layout](Layout)
 
-<a name="abcd"><a/>
+<a name="head1234"><a/> Heading in this
 	
 
 
