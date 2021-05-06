@@ -3,9 +3,9 @@
 <br />    
 
 - [1 Features](#1.-Features)
-- [2 Integration Walkthrough](#2 Integration Walkthrough)
-	- [2.1 Install Framework](#2.1 Install Framework)
-	- [2.2 Import Framework](#2.2 Import Framework)
+- [2 Integration Walkthrough](#2.-Integration-Walkthrough)
+	- [2.1 Install Framework](#2.1-Install-Framework)
+	- [2.2 Import Framework](#2.2-Import-Framework)
 	- [2.3 Event Flow and Options](#2.3 Event Flow and Options)
 	- [2.4 "Recurring Purchase" Option](#2.4 "Recurring Purchase" Option)
 	- [2.5 "Simple Purchase" Option](#2.5 "Simple Purchase" Option)
@@ -74,7 +74,7 @@ The cocoaPod will start installing the IOTPayiOS framework.
 <br />  <br />      
 
 
-### 2.2 Import framework
+### 2.2 Import Framework
 ```
 Swift:
 import IOTPayiOS
