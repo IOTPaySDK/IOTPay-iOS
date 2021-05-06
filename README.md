@@ -3,7 +3,7 @@
 <br />    
 
 - [1 Features](#1.-Features)
-- [2. Integration Walkthrough:](### 2. Integration Walkthrough:)
+- [2. Integration Walkthrough:](#2.-integration-walkthrough:)
 	- [2. Integration Walkthrough:](#2.-integration-walkthrough:)
 	- [2.2 Import Framework](#sytl)
 	- [2.3 Event Flow and Options](#2.3-event-flow-and-options)
