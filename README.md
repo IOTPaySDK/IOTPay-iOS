@@ -4,7 +4,7 @@
 
 - [1 Features](#1.-Features)
 - [2. Integration Walkthrough:](### 2. Integration Walkthrough:)
-	- [2.1 Install Framework](#Now-IOTPay)
+	- [2.1 Install Framework](#2.-integration-walkthrough:)
 	- [2.2 Import Framework](#sytl)
 	- [2.3 Event Flow and Options](#2.3-event-flow-and-options)
 	- [2.4 "Recurring Purchase" Option](#2.4 "Recurring Purchase" Option)
