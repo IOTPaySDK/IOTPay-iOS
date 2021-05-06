@@ -5,7 +5,7 @@
 - [1 Features](#1.-Features)
 - [2 Integration Walkthrough](#2.-Integration-Walkthrough)
 	- [2.1 Install Framework](#2.1-Install-Framework)
-	- [2.2 Import Framework](#2.2-Import-Framework)
+	- [2.2 Import Framework](#sytl)
 	- [2.3 Event Flow and Options](#2.3 Event Flow and Options)
 	- [2.4 "Recurring Purchase" Option](#2.4 "Recurring Purchase" Option)
 	- [2.5 "Simple Purchase" Option](#2.5 "Simple Purchase" Option)
@@ -125,6 +125,8 @@ which will generate the "secureId". For the testing phase, there is a shortcut t
 Please check 5.1 Temporary solution to get secureId at the end of this guide.    
 <br />  
 
+
+# sytl
 
 <br />  
 ### 2.4 Recurring Purchase Option
