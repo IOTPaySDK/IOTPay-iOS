@@ -2,20 +2,20 @@
 #### IOTPay - Online Credit Card Payment Framework for iOS/Android/php
 <br />    
 
-- [1 Features](#2.2)
-- [2. Integration Walkthrough:](#2.-integration-walkthrough:)
-	- [2. Integration Walkthrough:](#2.-integration-walkthrough:)
-	- [2.2 Import Framework](#sytl)
-	- [2.3 Event Flow and Options](#2.3-event-flow-and-options)
-	- [2.4 "Recurring Purchase" Option](#2.4 "Recurring Purchase" Option)
-	- [2.5 "Simple Purchase" Option](####-2.2-Import-Framework)
-- [3 Layout, Style and Anition options](#layout)
-- [4 Temporary secureID](#4 Temporary secureID)
+- [1 Features](#1.0)
+- [2. Integration Walkthrough](#2.0)
+	- [2.1 Install Framework](#2.1)
+	- [2.2 Import Framework](#2.2)
+	- [2.3 Event Flow and Options](#2.3)
+	- [2.4 "Recurring Purchase" Option](#2.4)
+	- [2.5 "Simple Purchase" Option](#2.5)
+- [3 Layout, Style and Anition options](#3.0)
+- [4 Temporary secureID](#4.0)
 
 [link text](http://...#abcd)
 [link](#head1234)
 
-
+<a name="1.0"><a/>
 ## 1. Features:
 #### *-Highly customizable*
 #### *-Secure*
@@ -42,8 +42,9 @@ IOTCardInfoViewSingleLine *cardInfoView = [[IOTCardInfoViewTripleLineNCardView a
 <br />  
 <br />  
 <br />  
-
+<a name="2.0"><a/>
 ## 2. Integration Walkthrough:
+<a name="2.1"><a/>
 ### 2.1 Install Framework
 The easiest way to install the IOTPayframework and keep it upon date is using cocoaPod. CocoaPod is one of the most commonly used Xcode library & framework dependency management software. For Pod reference and how-to install pod, please follow this link:
 <br /> 
@@ -77,10 +78,9 @@ The cocoaPod will start installing the IOTPayiOS framework.
 <br />  <br />      
 
 
+
+
 <a name="2.2"><a/>
-	
-
-
 ### 2.2 Import Framework
 ```
 Swift:
@@ -92,7 +92,7 @@ Objc: (in .h)
 ```
 <br />    
 
-
+<a name="2.3"><a/>
 ### 2.3 Event Flow and Options
 <br /> 
 Now IOTPay is installed and imported. Next step is your choice with two options for the payment, "Recurring Purchase" and "Simple Purchase". Please choose the one based on your needs.<br /> 
@@ -133,9 +133,10 @@ Please check 5.1 Temporary solution to get secureId at the end of this guide.  
 <br />  
 
 
-# sytl
 
-<br />  
+
+<br />
+<a name="2.4"><a/>
 ### 2.4 Recurring Purchase Option
 #### 2.4.1 Setup Card Info View:
 Declare the view before viewDidLoad. 
@@ -251,7 +252,7 @@ You should record some of that info to associate the user account/device to your
 Please check the AddUserSwiftExample or AddUserObjcExample in the examples folder for finished code.
 
 
-
+<a name="2.5"><a/>
 ### 2.5 "Simple Purchase" Option:
 
 #### 2.5.1 Setup Card Info View:
@@ -361,7 +362,8 @@ in .m
 Please check the SimplePurchaseSwiftExample or SimplePurchaseObjcExample in the examples folder for finished code.
 
 
-<br />      
+<br /> 
+<a name="3.0"><a/>
 ## 3 Layout, Style and Action options:
 
 The cardInfoView has 3 layout, which are:
@@ -406,7 +408,7 @@ IOTCardInfoView
 Should fill in the name/pointer of the view that the user is filling in the info, this is required for sending the request.
 
 
-
+<a name="4.0"><a/>
 ## 4 Temporary secureID
 #secureId:
 <br />   
