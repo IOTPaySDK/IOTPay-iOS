@@ -2,7 +2,15 @@
 #### IOTPay - Online Credit Card Payment Framework for iOS/Android/php
 <br />    
 
-[Markdown - Layout/Style](https://github.com/IOTPaySDK/IOTPay-iOS/main/README.md#L346)
+- [1 Features](#1 Features)
+- [2 Integration Walkthrough](#2 Integration Walkthrough)
+	- [2.1 Install Framework](#2.1 Install Framework)
+	- [2.2 Import Framework](#2.2 Import Framework)
+	- [2.3 Event Flow and Options](#2.3 Event Flow and Options)
+	- [2.4 "Recurring Purchase" Option](#2.4 "Recurring Purchase" Option)
+	- [2.5 "Simple Purchase" Option](#2.5 "Simple Purchase" Option)
+- [3 Layout, Style and Anition options](#3 Layout, Style and Anition options)
+- [4 Temporary secureID](#4 Temporary secureID)
 
 
 ## 1. Features:
