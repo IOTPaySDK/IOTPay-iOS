@@ -6,7 +6,7 @@
 - [2 Integration Walkthrough](#2.-Integration-Walkthrough)
 	- [2.1 Install Framework](#2.1-Install-Framework)
 	- [2.2 Import Framework](#sytl)
-	- [2.3 Event Flow and Options](#2.3 Event Flow and Options)
+	- [2.3 Event Flow and Options](#2.3-event-flow-and-options)
 	- [2.4 "Recurring Purchase" Option](#2.4 "Recurring Purchase" Option)
 	- [2.5 "Simple Purchase" Option](#2.5 "Simple Purchase" Option)
 - [3 Layout, Style and Anition options](#3 Layout, Style and Anition options)
