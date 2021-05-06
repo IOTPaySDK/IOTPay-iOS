@@ -2,7 +2,7 @@
 #### IOTPay - Online Credit Card Payment Framework for iOS/Android/php
 <br />    
 
-- [1 Features](#1.-Features)
+- [1 Features](#2.2)
 - [2. Integration Walkthrough:](#2.-integration-walkthrough:)
 	- [2. Integration Walkthrough:](#2.-integration-walkthrough:)
 	- [2.2 Import Framework](#sytl)
@@ -76,9 +76,8 @@ pod install
 The cocoaPod will start installing the IOTPayiOS framework.
 <br />  <br />      
 
-[Layout](Layout)
 
-<a name="head1234"><a/> Heading in this
+<a name="2.2"><a/>
 	
 
 
