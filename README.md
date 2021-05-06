@@ -143,6 +143,7 @@ self.cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: 
 									 style: IOTCardInfoViewStyleRoundRect];
 self.cardInfoView.delegate = self;[self.view addSubview: self.cardInfoView];
 ```
+
 This will start the interface for the user to fill in the card info.<br />    
 
 #### 2.4.2 Card Info View Delegate:
@@ -342,7 +343,17 @@ Please check the SimplePurchaseSwiftExample or SimplePurchaseObjcExample in the 
 
 
 <br />      
-## 3 Data Reference:
+## 3 Layout, Style and Action options:
+
+The cardInfoView has 3 layout, which are:
+```
+IOTCardInfoViewTripleLineNCardView
+IOTCardInfoViewTripleLineOnCardView
+IOTCardInfoViewSingleLineNCardIcon
+```
+The frame required to display the view is in decsending order. Beside the frame and layout, that are all the same and have same func's.
+<br />  
+
 #action: 
 ```
 enum IOTNetworkRequestAction {	
@@ -350,15 +361,24 @@ enum IOTNetworkRequestAction {
 	case simplePurchase    // one time payment, without saving user's payment method
 }
 ```
+The action should be either .purchase for "Simple Purchase" or .addCard for "recurring Purchase".
+<br />  
+
 
 #style: 
+
+The sytle is a enum that has following options:
 ```
-enum IOTCardInfoViewStyle {	
-	case autoDarkModeSupport	
-	case forceLightMode	
-	case forceDarkMode   
+@objc
+public enum IOTCardInfoViewStyle: Int {
+	case autoDarkModeSupport = 0
+	case forceLightMode
+	case forceDarkMode
 }
 ```
+It's recommended to use .autoDarkModeSupport, as it will support not only the Dark/Ligh mode, but also support the device which use outdated iOS version that even don't has dark mode.
+
+<br />  
 
 #cardInfoPrivder: 
 ```
