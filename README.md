@@ -12,6 +12,8 @@
 - [3 Layout, Style and Anition options](#layout)
 - [4 Temporary secureID](#4 Temporary secureID)
 
+[link text](http://...#abcd)
+
 
 ## 1. Features:
 #### *-Highly customizable*
@@ -74,6 +76,9 @@ The cocoaPod will start installing the IOTPayiOS framework.
 <br />  <br />      
 
 [Layout](Layout)
+
+<a name="abcd"><a/>
+	
 
 
 ### 2.2 Import Framework
