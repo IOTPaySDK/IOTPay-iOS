@@ -9,7 +9,7 @@
 	- [2.4 "Recurring Purchase" Option](#2.4)
 	- [2.5 "Simple Purchase" Option](#2.5)
 - [3 Layout, Style and Anition options](#3.0)
-- [4 Temporary secureID](#4.0)
+- [4 Temporary secureID & Testing Variable](#4.0)
 
 
 <a name="1.0"><a/>
@@ -411,7 +411,7 @@ Should fill in the name/pointer of the view that the user is filling in the info
 
 
 <a name="4.0"><a/>
-## 4 Temporary secureID
+## 4 Temporary secureID & Testing Variable
 #secureId:
 <br />   
 
@@ -434,3 +434,15 @@ https://ccdev.iotpaycloud.com/cc/addcard?key=cf383bf97a7288f4a4f6a2741ec56df51a1
 
 Copy the string after "addcard?key=", and use it as the temporary secureId. This secureId will be valid for an hour.
 (cf383bf97a7288f4a4f6a2741ec56df51a1cacb48a90b77f6b9198d928fc84f2 is the secureId in the above case.)
+<br />   
+# Testing Variable:
+<br />   
+The Framework has a strong regulation about the invalid input. To pass the regulation check, please input variables follow reasonable patterns, for example:
+```
+"cvv": "123",
+"holder": "Dan",
+"expiryDate": "1133",
+"cardNum": "4242123456789000",
+"loginName": "abcde",
+```
+
