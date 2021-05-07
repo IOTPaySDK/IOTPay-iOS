@@ -434,6 +434,8 @@ https://ccdev.iotpaycloud.com/cc/addcard?key=cf383bf97a7288f4a4f6a2741ec56df51a1
 
 Copy the string after "addcard?key=", and use it as the temporary secureId. This secureId will be valid for an hour.
 (cf383bf97a7288f4a4f6a2741ec56df51a1cacb48a90b77f6b9198d928fc84f2 is the secureId in the above case.)
+
+
 <br />   
 #Testing Variable:
 <br />   
