@@ -437,7 +437,9 @@ Copy the string after "addcard?key=", and use it as the temporary secureId. This
 
 
 <br />   
+
 #Testing Variable:
+
 <br />   
 The Framework has a strong regulation about the invalid input. To pass the regulation check, please input variables follow reasonable patterns, for example:
 ```
