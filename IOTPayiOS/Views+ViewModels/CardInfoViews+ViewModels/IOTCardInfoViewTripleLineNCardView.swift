@@ -10,26 +10,26 @@ import UIKit
 
 public class IOTCardInfoViewTripleLineNCardView: IOTDeformableCardInfoView {
 
-	private let defaultLabelHeight: CGFloat = 50.0
-	private let defaultVerticalMargin: CGFloat = 10.0
-	private let defaultLabelWidthPortionToScreenWidth: CGFloat = 0.9
-	private let defaultCardHeightToLabelHeight: CGFloat = 0.5
-	private let defaultCardLeftMarginToWidth: CGFloat = 0.015
-	private let defaultTextFieldRelocationAnimationTimeInterval: TimeInterval = 0.3
-	private let defaultCardAndTextFieldHorzontalEdgeToParentWidth: CGFloat = 0.02
-	private let defaultCardTextFieldHorzontalSpaceToParentWidth: CGFloat = 0.01
-	private let defalutCardLargeViewWidthToScreenWidth: CGFloat = 0.8
+	//private let defaultLabelHeight: CGFloat = 50.0
+	//private let defaultVerticalMargin: CGFloat = 10.0
+	//private let defaultLabelWidthPortionToScreenWidth: CGFloat = 0.9
+	//private let defaultCardHeightToLabelHeight: CGFloat = 0.5
+	//private let defaultCardLeftMarginToWidth: CGFloat = 0.015
+	//private let defaultTextFieldRelocationAnimationTimeInterval: TimeInterval = 0.3
+	//private let defaultCardAndTextFieldHorzontalEdgeToParentWidth: CGFloat = 0.02
+	//private let defaultCardTextFieldHorzontalSpaceToParentWidth: CGFloat = 0.01
+	//private let defalutCardLargeViewWidthToScreenWidth: CGFloat = 0.8
 	private let cardWidthHeightRatio: CGFloat = 1.586
 
-	private let minLabelHeight: CGFloat = 30.0
-	private let maxLabelHeight: CGFloat = 60.0
+//	private let minLabelHeight: CGFloat = 30.0
+//	private let maxLabelHeight: CGFloat = 60.0
 	private let verticalEdgeToSelfHeightRatio: CGFloat = 0.01
 	private let horzontalEdgeToSelfWidthRatio: CGFloat = 0.015
 	private let cardViewHeigtRatioToAfterEdgeAndSpaceHeigt: CGFloat = 0.6
 	private let labelHeightToLabelGroupHeightRatio: CGFloat = 0.3
 	private let cardViewNLabelGroupSpaceHeightTOSelfHeightRatio: CGFloat = 0.03
-	private let cardViewHorzontalEdgeToSelfWidthRatio: CGFloat = 0.1
-	private let labelToLabelHorzontalSpaceToGroupRatio: CGFloat = 0.01
+	//private let cardViewHorzontalEdgeToSelfWidthRatio: CGFloat = 0.1
+	//private let labelToLabelHorzontalSpaceToGroupRatio: CGFloat = 0.01
 
 	private var deformConfig = IOTDeformConfig(
 		initDisplayState: [.full, .full, .full, .full],
@@ -65,10 +65,7 @@ public class IOTCardInfoViewTripleLineNCardView: IOTDeformableCardInfoView {
 	public override var frame: CGRect { didSet { updateLayout() }}
 
 	func updateLayout() {
-
-		subviews.forEach { $0.removeFromSuperview() }
-
-
+		//subviews.forEach { $0.removeFromSuperview() }
 		let (cardViewRect, textFieldsRect) = DYSegmenter.verticalTwo(
 			rect: CGRect(origin: CGPoint.zero, size: frame.size),
 			ratios: [cardViewHeigtRatioToAfterEdgeAndSpaceHeigt,
@@ -105,7 +102,6 @@ public class IOTCardInfoViewTripleLineNCardView: IOTDeformableCardInfoView {
 		let midRect = textlRectNSpaceArr[2]
 		let botRect = textlRectNSpaceArr[4]
 
-
 		let bottomThree = DYSegmenter.horizontal(
 			rect: botRect,
 			ratios: [0.45, 0.1, 0.45],
@@ -120,8 +116,6 @@ public class IOTCardInfoViewTripleLineNCardView: IOTDeformableCardInfoView {
 		facade.setFixedViewRects(array: viewRectsArr)
 		facade.layoutSubview()
 		addSubview(facade.viewComponents)
-
 	}
-
 }
 

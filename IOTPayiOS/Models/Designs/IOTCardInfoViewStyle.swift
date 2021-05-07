@@ -9,7 +9,7 @@ import Foundation
 
 public enum IOTCardInfoViewLayout {
 	case singleLineWithSmallCardIcon
-	case tripleLine
+	case tripleLineOnLargeCardView
 	case tripleLineWithLargeCardViewOnTop
 	case tripleLineWithLargeCardIconOnLeft
 
@@ -18,7 +18,8 @@ public enum IOTCardInfoViewLayout {
 		case .singleLineWithSmallCardIcon,
 				 .tripleLineWithLargeCardIconOnLeft:
 			return true
-		case .tripleLine, .tripleLineWithLargeCardViewOnTop:
+		case .tripleLineOnLargeCardView,
+				 .tripleLineWithLargeCardViewOnTop:
 			return false
 		}
 	}
@@ -26,19 +27,21 @@ public enum IOTCardInfoViewLayout {
 	var isDisplayingCardView: Bool {
 		switch self {
 		case .tripleLineWithLargeCardIconOnLeft,
-				 .tripleLineWithLargeCardViewOnTop:
+				 .tripleLineWithLargeCardViewOnTop,
+				 .tripleLineOnLargeCardView:
 			return true
-		case .singleLineWithSmallCardIcon, .tripleLine:
+		case .singleLineWithSmallCardIcon:
 			return false
 		}
 	}
 
 	var textFieldAttribute: IOTTextFieldAttribute {
 		switch self {
-		case .singleLineWithSmallCardIcon, .tripleLineWithLargeCardViewOnTop:
+		case .singleLineWithSmallCardIcon,
+				 .tripleLineWithLargeCardViewOnTop,
+				 .tripleLineOnLargeCardView:
 				 return .deformable
-		case .tripleLine,
-				 .tripleLineWithLargeCardIconOnLeft:
+		case .tripleLineWithLargeCardIconOnLeft:
 			return .common
 		}
 	}
@@ -47,7 +50,7 @@ public enum IOTCardInfoViewLayout {
 		switch self {
 		case .singleLineWithSmallCardIcon:
 				 return true
-		case .tripleLine,
+		case .tripleLineOnLargeCardView,
 				 .tripleLineWithLargeCardIconOnLeft,
 				 .tripleLineWithLargeCardViewOnTop:
 			return false
@@ -58,7 +61,7 @@ public enum IOTCardInfoViewLayout {
 		switch self {
 		case .singleLineWithSmallCardIcon:
 				 return false
-		case .tripleLine,
+		case .tripleLineOnLargeCardView,
 				 .tripleLineWithLargeCardIconOnLeft,
 				 .tripleLineWithLargeCardViewOnTop:
 			return true

@@ -8,6 +8,9 @@ import UIKit
 
 class IOTCardView: UIView {
 
+	//init
+	let layout: IOTCardInfoViewLayout
+
 	private let cardWidthHeightRatio: CGFloat = 1.586
 
 //	var current = UIView()
@@ -18,20 +21,38 @@ class IOTCardView: UIView {
 	var brand: CardCulingCycle = .unrecognized
 	var tillBrand: CardCulingCycle = .unrecognized
 
+
+
 	var isInvalid: Bool = false
 
 	var timer: Timer?
 
-	var current = IOTCardImageView(frame: CGRect.zero)
+	var current: IOTCardImageView!
+
+	override var frame: CGRect {
+		didSet {
+			layoutSub()
+		}
+	}
 
 	//var markView = CardMarkView(frame: CGRect.zero)
 
-	override init(frame: CGRect) {
-		super.init(frame: frame)
+	init(layout: IOTCardInfoViewLayout) {
+		self.layout = layout
+		super.init(frame: CGRect.zero)
 
 		IOTCardImageView.logoRect = nil
-		current = makeCard(brand: .unrecognized, side: .front)
-		addSubview(current)
+//		current = makeCard(brand: .unrecognized, side: .front)
+//		addSubview(current)
+
+	}
+
+	init(frame: CGRect, layout: IOTCardInfoViewLayout) {
+		self.layout = layout
+		super.init(frame: frame)
+		IOTCardImageView.logoRect = nil
+//		current = makeCard(brand: .unrecognized, side: .front)
+//		addSubview(current)
 		//backgroundColor = .red
 
 //		markView.frame = CGRect(origin: CGPoint.zero, size: frame.size)
@@ -44,6 +65,12 @@ class IOTCardView: UIView {
 	func setView(width: CGFloat) {
 		let height = width / cardWidthHeightRatio
 		frame.size = CGSize(width: width, height: height)
+	}
+
+	func layoutSub() {
+		subviews.forEach { $0.removeFromSuperview() }
+		current = makeCard(brand: .unrecognized, side: .front)
+		addSubview(current)
 	}
 
 
@@ -102,9 +129,18 @@ class IOTCardView: UIView {
 
 
 	private func flip(fromView: IOTCardImageView, toView: IOTCardImageView) {
-		UIView.transition(from: fromView, to: toView, duration: 0.4, options: [
+		let option: AnimationOptions
+		switch layout {
+			case .tripleLineWithLargeCardIconOnLeft,
+					 .tripleLineWithLargeCardViewOnTop,
+					 .singleLineWithSmallCardIcon:
+				option = .transitionFlipFromLeft
+			case .tripleLineOnLargeCardView:
+				option = .transitionCrossDissolve
+		}
+		UIView.transition(from: fromView, to: toView, duration: 0.4, options: [ option
 			//.transitionCrossDissolve,
-			.transitionFlipFromLeft
+			//.transitionFlipFromLeft
 			//.transitionCurlDown
 			//.transitionCurlUp, //.showHideTransitionViews
 		])
@@ -112,38 +148,40 @@ class IOTCardView: UIView {
 	}
 
 	func cycle(fromView: IOTCardImageView, toView: IOTCardImageView) {
-		UIView.transition(from: fromView, to: toView, duration: 0.2, options: [
+		let option: AnimationOptions
+		switch layout {
+			case .tripleLineWithLargeCardIconOnLeft,
+					 .tripleLineWithLargeCardViewOnTop,
+					 .singleLineWithSmallCardIcon:
+				option = .transitionCurlUp
+			case .tripleLineOnLargeCardView:
+				option = .transitionCrossDissolve
+		}
+		UIView.transition(from: fromView, to: toView, duration: 0.2, options: [ option
 			//.transitionCrossDissolve,
 			//.transitionFlipFromLeft
 			//.transitionFlipFromTop
 			//.transitionCurlDown
-			.transitionCurlUp, //.showHideTransitionViews
+			//.transitionCurlUp, //.showHideTransitionViews
 		])
 		current = toView
 	}
 
 	private func makeCard(brand: CardCulingCycle?, side: CardFlipCycle) -> IOTCardImageView {
-		let card = IOTCardImageView(frame: CGRect(origin: CGPoint.zero, size: frame.size))
+		let card = IOTCardImageView(frame: CGRect(origin: CGPoint.zero, size: frame.size), layout: layout)
 		card.setCard(brand: brand, side: side)
 		return card
 	}
 
-
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-
-//	func aspectRatio() {
-//		let size = aspectRatioFit(rect: frame.size, imageRatio: cardWidthHeightRatio)
-//		frame.size = size
-//	}
 
 	func centering() {
 		let origin = CGPoint(x: (frame.width - frame.size.width) * 0.5,
 												 y: (frame.height - frame.size.height) * 0.5)
 		frame.origin = origin
 	}
-
 
 	private func aspectRatioFit(rect: CGSize, image: UIImage?) -> CGSize {
 		guard let image = image else { return CGSize.zero }
@@ -164,7 +202,4 @@ class IOTCardView: UIView {
 		}
 		return CGSize(width: width, height: height)
 	}
-
-
-
 }

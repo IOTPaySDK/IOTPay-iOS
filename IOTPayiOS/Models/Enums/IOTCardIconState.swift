@@ -14,7 +14,7 @@ enum IOTCardIconState {
 	var imageName: String {
 		switch self {
 		case .recognized(brand: let brand): return brand.rawValue
-		case .back: return "card-verification-value" //"security-code.png"
+		case .back: return "cardCVVHalf" //"security-code.png"
 		case .unrecognized: return "unknowLine" //"default.png"
 		case .error: return "cardFatal"
 		}
@@ -27,7 +27,7 @@ enum IOTCardSide {
 	var imageName: String {
 		switch self {
 		case .front: return ""
-		case .back: return "card-verification-value" //"security-code.png"
+		case .back: return "cardCVVHalf" //"security-code.png"
 		}
 	}
 }

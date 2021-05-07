@@ -10,7 +10,7 @@
 
 @interface ViewController : UIViewController <IOTCardInfoViewDelegate, IOTNetworkServiceDelegate>
 
-@property (nonatomic, retain) IOTCardInfoViewTripleLineNCardView *cardInfoView;
+@property (nonatomic, retain) IOTCardInfoViewTripleLineOnCardView *cardInfoView;
 @property (nonatomic, retain) UIButton *button;
 
 @end

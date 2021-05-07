@@ -15,7 +15,7 @@ struct HTTPNetworkRequest {
 		/// Set the body, method, headers, and paramaters of the request
 		static func configureHTTPRequest(from route: HTTPNetworkRoute, with parameters: HTTPParameters, includes headers: HTTPHeaders, contains body: Data?, and method: HTTPMethod) throws -> URLRequest {
 
-			guard let url = URL(string: "https://ccdev.iotpaycloud.com/v3/" + route.rawValue) else {
+			guard let url = URL(string: "https://ccapi.iotpaycloud.com/v3/" + route.rawValue) else {
 				throw HTTPNetworkError.missingURL
 			}
 

@@ -32,8 +32,9 @@ public final class IOTCardInfoComponents: UIView {
 	private let viewModel: IOTCardInfoComponentsViewModel
 
 	private let textFields: [IOTTextField]
+	private var backRectViews: [UIView] = []
 	private let cardIconView: IOTCardIconView?
-	private var cardLargeView: IOTCardView?
+	private let cardLargeView: IOTCardView?
 
 	private let action: IOTNetworkRequestAction
 
@@ -49,7 +50,9 @@ public final class IOTCardInfoComponents: UIView {
 					cardIconView?.state = patternPrediction.cardIconDisplayState
 				}
 				if let cardLargeView = cardLargeView,
-					 viewModel.layout == .tripleLineWithLargeCardViewOnTop {
+						viewModel.layout == .tripleLineWithLargeCardViewOnTop ||
+						viewModel.layout == .tripleLineOnLargeCardView ||
+						viewModel.layout == .tripleLineWithLargeCardIconOnLeft {
 					cardLargeView.playCycleAnimation(till: patternPrediction.cardCulingCycle)
 				}
 			}
@@ -71,7 +74,12 @@ public final class IOTCardInfoComponents: UIView {
 		textFields = textFieldFactory.makeTextFieldArray(subjectSequence: nil,
 																										 style: style,
 																										 attributeSequence: [layout.textFieldAttribute])
+
+		for _ in 0..<textFields.count { backRectViews.append(UIView()) }
+
 		cardIconView = layout.isDisplayingCardIcon ? IOTCardIconView() : nil
+
+		cardLargeView = layout.isDisplayingCardView ? IOTCardView(layout: layout) : nil
 
 		super.init(frame: CGRect.zero)
 
@@ -84,42 +92,39 @@ public final class IOTCardInfoComponents: UIView {
 	}
 	
 	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+fatalError("init(coder:) has not been implemented")
 	}
 	
 	private func commonInit(layout: IOTCardInfoViewLayout) {
-		textFields.forEach {
-			addSubview($0)
-			$0.addTarget(viewModel, action: #selector(viewModel.onTextFieldDidSelect(sender:)), for: .editingDidBegin)
-			$0.addTarget($0.viewModel, action: #selector($0.viewModel.onTextFieldDidChange(sender:)), for: .editingChanged)
-		}
-		for textField in textFields { textField.textFieldDelegate = viewModel }
 
 		if layout.isDisplayingCardIcon { addSubview(cardIconView!) }
 
+		if layout.isDisplayingCardView { addSubview(cardLargeView!)}
+		
+		backRectViews.forEach {
+			addSubview($0)
+		}
+
+		switch layout {
+			case .singleLineWithSmallCardIcon,
+					 .tripleLineWithLargeCardIconOnLeft,
+					 .tripleLineWithLargeCardViewOnTop:
+				textFields.forEach { addSubview($0) }
+			case .tripleLineOnLargeCardView:
+				textFields.forEach { addSubview($0) }
+		}
+
+		textFields.forEach {
+			$0.addTarget(viewModel, action: #selector(viewModel.onTextFieldDidSelect(sender:)), for: .editingDidBegin)
+			$0.addTarget($0.viewModel, action: #selector($0.viewModel.onTextFieldDidChange(sender:)), for: .editingChanged)
+		}
+
+		for textField in textFields { textField.textFieldDelegate = viewModel }
+
 		clipsToBounds = true
-
-
-
-
 	}
 
-
-//	func textField(subject: IOTTextFieldSubject) -> IOTTextField {
-//		textFields.first { $0.subject == subject }!
-//	}
-
-//	func onTextFieldValidCompletion(textField: IOTTextField) {
-//		focusedOn(textField: )
-//	}
-
-//	private func focusedOn(textField: IOTTextField) {
-//
-//	}
-
 	deinit {}
-
-
 }
 
 //MARK: Connection with facade
@@ -141,10 +146,9 @@ extension IOTCardInfoComponents {
 
 extension IOTCardInfoComponents: IOTCardInfoComponentsViewModelDelegate {
 	func onDidFinishCardInfoValidate() {
-		for textField in textFields where textField.subject == .holderName  {
-			
-		}
-		//textFields.forEach // where  { $0.resignFirstResponder() }
+//		for textField in textFields where textField.subject == .holderName  {
+//
+//		}
 		componentsDelegate?.onDidCompleteValidate()
 	}
 
@@ -167,7 +171,10 @@ extension IOTCardInfoComponents: IOTCardInfoComponentsViewModelDelegate {
 			}
 		}
 
-		if let cardLargeView = cardLargeView, viewModel.layout == .tripleLineWithLargeCardViewOnTop {
+		if let cardLargeView = cardLargeView,
+				viewModel.layout == .tripleLineWithLargeCardViewOnTop ||
+				viewModel.layout == .tripleLineOnLargeCardView ||
+				viewModel.layout == .tripleLineWithLargeCardIconOnLeft {
 			if to == .back && cardLargeView.side == .front {
 				cardLargeView.playFlipAnimation()
 			} else if to == .front && cardLargeView.side == .back {
@@ -181,10 +188,10 @@ extension IOTCardInfoComponents: IOTCardInfoComponentsViewModelDelegate {
 		UIView.animate(withDuration: 0.2) { [weak self] in
 			guard let self = self else { return }
 			for i in 0..<self.textFields.count { self.textFields[i].frame = toPosition[i] }
-		} completion: { (completed) in
-			if completed {}
 		}
-
+//		completion: { (completed) in
+//			if completed {}
+//		}
 	}
 
 	func onDidUpdateCardIconViewLayout(rect: CGRect) { }
@@ -231,8 +238,7 @@ extension IOTCardInfoComponents {
 extension IOTCardInfoComponents {
 
 	func setFixedViewRects(array: [CGRect]) {
-		cardLargeView = IOTCardView(frame: array[4])
-		addSubview(cardLargeView!)
+		cardLargeView?.frame = array[4] // = IOTCardView(frame: array[4])
 		frame = array[5]
 		setupStyle(array: array)
 	}
@@ -240,22 +246,38 @@ extension IOTCardInfoComponents {
 	private func setupStyle(array: [CGRect]) {
 		if viewModel.layout == .tripleLineWithLargeCardViewOnTop {
 			for i in 0..<textFields.count {
-				let backRectView = UIView(frame: array[i])
-				backRectView.layer.cornerRadius = 10.0
-				backRectView.layer.borderWidth = 1.0
-				backRectView.layer.borderColor = IOTColor.roundRectBoderColorBlue.uiColor.cgColor
-				backRectView.backgroundColor = IOTColor.labelBackground.uiColor
-				backRectView.alpha = 0.8
-				backRectView.isUserInteractionEnabled = false
-				addSubview(backRectView)
+				backRectViews[i].frame = array[i]
+				backRectViews[i].layer.cornerRadius = 10.0
+				backRectViews[i].layer.borderWidth = 1.0
+				backRectViews[i].layer.borderColor = IOTColor.roundRectBoderColorBlue.uiColor.cgColor
+				backRectViews[i].backgroundColor = IOTColor.labelBackground.uiColor
+				backRectViews[i].alpha = 0.8
+				backRectViews[i].isUserInteractionEnabled = false
 
 				let leftSpace = array[0].width * 0.05
 				let textFieldsWidth = array[i].width - leftSpace * 2.0
 				textFields[i].frame = CGRect(
 					x: array[i].origin.x + leftSpace, y: array[i].origin.y,
 					width: textFieldsWidth, height: array[i].size.height)
-				addSubview(textFields[i])
+				textFields[i].font = UIFont.systemFont(ofSize: 17)
+			}
+			onDidLoad(initDisplayState: [.full, .full, .full, .full])
+		}
 
+		if viewModel.layout == .tripleLineOnLargeCardView {
+			for i in 0..<textFields.count {
+				backRectViews[i].frame = array[i]
+				backRectViews[i].layer.cornerRadius = 10.0
+				backRectViews[i].layer.borderWidth = 1.0
+				backRectViews[i].layer.borderColor = IOTColor.roundRectBoderColorBlue.uiColor.cgColor
+				backRectViews[i].backgroundColor = IOTColor.labelBackground.uiColor
+				backRectViews[i].alpha = 0.6
+				backRectViews[i].isUserInteractionEnabled = false
+				let leftSpace = array[0].width * 0.05
+				let textFieldsWidth = array[i].width - leftSpace * 2.0
+				textFields[i].frame = CGRect(
+					x: array[i].origin.x + leftSpace, y: array[i].origin.y,
+					width: textFieldsWidth, height: array[i].size.height)
 				textFields[i].font = UIFont.systemFont(ofSize: 17)
 			}
 			onDidLoad(initDisplayState: [.full, .full, .full, .full])

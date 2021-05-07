@@ -17,11 +17,11 @@ import UIKit
 public class IOTCardInfoViewSingleLineNCardIcon: IOTDeformableCardInfoView {
 
 	private let defaultLabelHeight: CGFloat = 50.0
-	private let defaultVerticalMargin: CGFloat = 10.0
-	private let defaultLabelWidthPortionToScreenWidth: CGFloat = 0.9
-	private let defaultCardHeightToLabelHeight: CGFloat = 0.5
-	private let defaultCardLeftMarginToWidth: CGFloat = 0.015
-	private let defaultTextFieldRelocationAnimationTimeInterval: TimeInterval = 0.3
+	//private let defaultVerticalMargin: CGFloat = 10.0
+	//private let defaultLabelWidthPortionToScreenWidth: CGFloat = 0.9
+	//private let defaultCardHeightToLabelHeight: CGFloat = 0.5
+	//private let defaultCardLeftMarginToWidth: CGFloat = 0.015
+	//private let defaultTextFieldRelocationAnimationTimeInterval: TimeInterval = 0.3
 	private let defaultCardAndTextFieldHorzontalEdgeToParentWidth: CGFloat = 0.02
 	private let defaultCardTextFieldHorzontalSpaceToParentWidth: CGFloat = 0.01
 	private let deformConfig = IOTDeformConfig(
@@ -32,7 +32,10 @@ public class IOTCardInfoViewSingleLineNCardIcon: IOTDeformableCardInfoView {
 	)
 
 	//@objc
-	public override var frame: CGRect { didSet { updateLayout() }}
+	public override var frame: CGRect { didSet {
+		updateLayout()
+
+	}}
 
 
 	@objc

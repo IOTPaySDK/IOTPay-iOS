@@ -31,7 +31,7 @@
 	style: (enum) Choose any style fit your app.
 	For auto - Nightmode detection, please use .autoNightmode
 	*/
-	self.cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc]
+	self.cardInfoView = [[IOTCardInfoViewTripleLineOnCardView alloc]
 		initWithAction: IOTNetworkRequestActionAddCard style: IOTCardInfoViewStyleForceLightMode];
 	self.cardInfoView.center = CGPointMake(self.view.frame.size.width * 0.5,
 																				 self.cardInfoView.frame.size.height * 0.5 + 50.0);

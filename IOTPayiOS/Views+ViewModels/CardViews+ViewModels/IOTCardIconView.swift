@@ -37,7 +37,6 @@ class IOTCardIconView: UIView {
 		let size = CGSize(width: height * cardWidthHeightRatio, height: height)
 		super.init(frame: CGRect(origin: origin, size: size))
 		commonInit()
-		//iconImageView.backgroundColor = .red
 	}
 
 	init(segmentRect: CGRect) { // aspet either width or heigh then center

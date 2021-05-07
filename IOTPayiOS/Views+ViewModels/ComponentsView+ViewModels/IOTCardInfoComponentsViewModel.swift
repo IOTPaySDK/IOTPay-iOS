@@ -64,6 +64,7 @@ final class IOTCardInfoComponentsViewModel: NSObject, UITextFieldDelegate {
 	@objc func onTextFieldDidChange(sender: IOTTextField) { // first responser
 
 	}
+
 }
 
 
@@ -75,7 +76,6 @@ extension IOTCardInfoComponentsViewModel {
 		let rectArray = segmentModel!.rectArr(for: .none)
 		viewModeDelegate?.onDidUpdateTextFieldsLayout(rectArray: rectArray)
 		viewModeDelegate?.onDidLoad(initDisplayState: segmentModelConfig.deformConfig.initDisplayState)
-
 		textFieldAnimationModel = IOTTextFieldAnimationModel()
 	}
 

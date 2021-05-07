@@ -9,6 +9,8 @@ import UIKit
 
 class IOTCardImageView: UIImageView {
 
+	private let layout: IOTCardInfoViewLayout
+
 	private let cardWidthHeightRatio: CGFloat = 1.586
 	private let logoWidthHeightRatio: CGFloat = 2.543
 	private let logoWidthToCardWidth: CGFloat = 0.45
@@ -20,7 +22,8 @@ class IOTCardImageView: UIImageView {
 	var side: CardFlipCycle = .front
 	var brand: CardCulingCycle? = .unrecognized
 
-	override init(frame: CGRect) {
+	init(frame: CGRect, layout: IOTCardInfoViewLayout) {
+		self.layout = layout
 		super.init(frame: frame)
 	}
 
@@ -36,7 +39,7 @@ class IOTCardImageView: UIImageView {
 	}
 
 	private func setBackground() {
-		image = Loader.assetImage(named: side.imageName)
+		image = Loader.assetImage(named: side.imageName(layout: layout))
 	}
 
 	private func setLogo() {
@@ -67,6 +70,23 @@ enum CardFlipCycle {
 		}
 	}
 
+	func imageName(layout: IOTCardInfoViewLayout) -> String {
+		switch layout {
+			case .tripleLineWithLargeCardIconOnLeft,
+					 .tripleLineWithLargeCardViewOnTop,
+					 .singleLineWithSmallCardIcon:
+				switch self {
+					case .front: return "frontAlmost"
+					case .back: return "backAlmost"
+				}
+			case .tripleLineOnLargeCardView:
+				switch self {
+					case .front: return "frontEmpty"
+					case .back: return "backAlmost"
+				}
+		}
+	}
+
 	var nextSide: CardFlipCycle {
 		switch self {
 			case .front: return .back
@@ -74,6 +94,8 @@ enum CardFlipCycle {
 		}
 	}
 }
+
+
 
 enum CardCulingCycle {
 	case unrecognized, diner, visa, jcb, ame, discover, master
