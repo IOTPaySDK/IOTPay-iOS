@@ -39,19 +39,6 @@ final class IOTOutputFormatModel {
 		return result
 	}
 
-
-//		var arrWithOneForwardSlash = [Character]()
-//		var isForwardSlashAppeared = false
-//		for char in charArr {
-//			if char == "/" {
-//				if isForwardSlashAppeared {
-//					break
-//				} else {
-//					isForwardSlashAppeared = true
-//				}
-//			}
-//			arrWithOneForwardSlash.append(char)
-//		}
 	private func expiryDate(text: String) -> String {
 		var arrWithOneForwardSlash = Array(text)
 		guard !arrWithOneForwardSlash.isEmpty, arrWithOneForwardSlash[0] != "/" else { return "" }

@@ -23,14 +23,6 @@ public enum HTTPNetworkError: Error {
 	case pageNotFound //= "Error Found : Page/Route rquested not found."
 	case failed //= "Error Found : Network Request failed"
 	case serverSideError //= "Error Found : Server error"
-//
-//	case taskError
-//	case taskNotReceiveingData
-//	case decodablePurchaseResponseInfoFieldWillPrinRetCode
-//	case purchaseResponseDecodeFail
-//	case baseDataDecodingFail
-//	case purchaseResponseDecodeFailWithoutRetCode
-//	case purchaseResponseDecodeFailWithoutRetMsg
 
 	case taskNotReceiveingData
 	case taskErrorStopBeforeSendingRequest

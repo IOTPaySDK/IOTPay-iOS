@@ -48,16 +48,6 @@ public class IOTNetworkService: NSObject {
 	}
 
 	func addCard(data: Data, _ onComplete: @escaping (IOTAddCardRetData) -> ()) {
-//		do {
-//			guard let request = try? HTTPNetworkRequest.configureHTTPRequest(from: .addCard,
-//																																			 with: [:],
-//																																			 includes: [:],
-//																																			 contains: data,
-//																																			 and: .post) else {
-//				throw HTTPNetworkError.taskErrorStopBeforeSendingRequest
-//			}
-
-//			(request.httpBody)
 
 		guard let request = makeRequest(action: .addCard, data: data) else { return }
 
@@ -96,19 +86,6 @@ public class IOTNetworkService: NSObject {
 									 print(error.localizedDescription)
 							 }
 
-//				if let data = text.data(using: .utf8) {
-//							do {
-//									let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:AnyObject]
-//									//print("jsonnnn", json)
-//							} catch {
-//									print("Something went wrong")
-//							}
-//				}
-//				if let result  = try? JSONSerialization.jsonObject(with: result, options: []) as? [String: Any] {
-//					// try to read out a string array
-//					}
-
-
 				if let result = try? JSONDecoder().decode(IOTAddCardResponseData.self, from: data) {
 
 					switch result.retCode {
@@ -122,16 +99,6 @@ public class IOTNetworkService: NSObject {
 								throw HTTPNetworkError.failedToDecodingAddCardResponseData
 							}
 							print("Failed retCode = .FAIL, Msg:", retMsg)
-//							///remove start
-//
-//							if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String]{
-//
-//								let firstElement = json.first ?? "Element Not Found!"
-//
-//											print(firstElement)
-//							}
-//
-//						//// remove end
 					}
 
 				} else {
@@ -240,10 +207,6 @@ extension IOTNetworkService: IOTCardInfoComponentsTransportDelegate {
 	func transport(action: IOTNetworkRequestAction, info: IOTCardInfo) {
 		let requested = IOTRequestCardData(secureId: secureId, cardInfo: info)
 		guard let jsonData = try? JSONSerialization.data(withJSONObject: requested.params) else { fatalError() }
-
-//		if let json = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
-//						// try to read out a string array
-//				}
 
 		switch action {
 			case .addCard:

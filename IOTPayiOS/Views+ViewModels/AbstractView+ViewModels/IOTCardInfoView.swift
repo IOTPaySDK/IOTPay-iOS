@@ -28,15 +28,6 @@ public class IOTCardInfoView: UIView {
 	// models
 	let viewModel: IOTCardInfoViewModel
 
-	//MARK: ViewElements
-	//var viewComponents: IOTCardInfoComponents!
-//	private var cardNumberTextField = CardNumberTextField()
-//	private var holderNameTextField = HolderNameTextField()
-//	private var expiryDateTextField = ExpiryDateTextField()
-//	private var cvvTextField = CvvTextField()
-//	private var cardIconView: IOTCardIconView?
-
-
 	// calculated var
 	var screenW: CGFloat { UIScreen.main.bounds.width }
 	var screenH: CGFloat { UIScreen.main.bounds.height }
@@ -44,23 +35,9 @@ public class IOTCardInfoView: UIView {
 		for textField in textFieldsay { if !textField.isValid { return false }}
 		return true
 	}
-//	var cardInfo: IOTCardInfo { IOTCardInfo(cardNumber: cardNumberTextField.valueString,
-//																					holderName: holderNameTextField.valueString,
-//																					expiryDate: expiryDateTextField.valueString,
-//																					cvv: cvvTextField.valueString)}
 
-	// temp? var
+	// temp var
 	private var textFieldsay: [IOTDeformableTextField] = []
-
-
-//	public init() {
-//		self.action = .addCard
-//		self.style = style
-//		self.layout = layout
-//		self.viewModel = IOTCardInfoViewModel()
-//		super.init(frame: CGRect.zero)
-//		commonInit()
-//	}
 
 	// MARK: life cycle
 	public init(action: IOTNetworkRequestAction, layout: IOTCardInfoViewLayout, style: IOTCardInfoViewStyle) {
@@ -78,30 +55,16 @@ public class IOTCardInfoView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-//	required init?(coder: NSCoder) {
-//		self.viewModel = IOTCardInfoViewModel()
-//		super.init(frame: CGRect.zero)
-//		commonInit()
-//	}
-
 	func commonInit() {
 		setupDismissKeyboardCondition()
 		backgroundColor = IOTColor.labelBackground.uiColor
 		viewModel.delegate = self
 		facade.delegate = self
-		//textFieldsay = [holderNameTextField, cardNumberTextField, expiryDateTextField, cvvTextField]
-		//viewModel.start()
-		//viewModel.delegate = self
-		//setupSelf()
-		//setupSegments()
-		//setupViewEach()
+
 
 		setupView()
 
 		layer.masksToBounds = true
-
-		//selectedTextField = nil
-		//toTextFieldComposition(fromComposition: .normal, toComposition: .normal)
 	}
 
 	deinit {}
@@ -115,45 +78,10 @@ public class IOTCardInfoView: UIView {
 		endEditing(true)
 	}
 
-
-	private func setupView() {
-//		if layout.isDisplayingCardIcon {
-//			cardIconView = IOTCardIconView()
-//			addSubview(cardIconView!)
-//		}
-//		addSubview(holderNameTextField)
-//		addSubview(cardNumberTextField)
-//		addSubview(expiryDateTextField)
-//		addSubview(cvvTextField)
-	}
-
-	
-
-	private func setupUserInputTarget() {
-//		holderNameTextField.addTarget(self, action: #selector(onTextFieldDidSelect(sender:)), for: .editingDidBegin)
-//		cardNumberTextField.addTarget(self, action: #selector(onTextFieldDidSelect(sender:)), for: .editingDidBegin)
-//		expiryDateTextField.addTarget(self, action: #selector(onTextFieldDidSelect(sender:)), for: .editingDidBegin)
-//		cvvTextField.addTarget(self, action: #selector(onTextFieldDidSelect(sender:)), for: .editingDidBegin)
-//
-//		holderNameTextField.addTarget(self, action: #selector(onTextFieldDidChange(sender:)), for: .editingChanged)
-//		cardNumberTextField.addTarget(self, action: #selector(onTextFieldDidChange(sender:)), for: .editingChanged)
-//		expiryDateTextField.addTarget(self, action: #selector(onTextFieldDidChange(sender:)), for: .editingChanged)
-//		cvvTextField.addTarget(self, action: #selector(onTextFieldDidChange(sender:)), for: .editingChanged)
-
-//		textFieldsay.forEach {
-//			$0.addTarget(viewModel, action: #selector(viewModel.onTextFieldDidSelect(sender:)), for: .editingDidBegin)
-//			$0.addTarget(viewModel, action: #selector(viewModel.onTextFieldDidChange(sender:)), for: .editingChanged)
-//		}
-
-	}
+	private func setupView() { }
 
 
-
-
-
-
-
-
+	private func setupUserInputTarget() { }
 
 }
 
@@ -165,55 +93,10 @@ extension IOTCardInfoView: IOTCardInfoComponentsFacadeDelegate {
 
 
 extension IOTCardInfoView: IOTCardInfoViewModelDelegate {
-	func updatingComposition(fromSelection: IOTTextFieldSubject, toSeletion: IOTTextFieldSubject, aimation: Bool) {
+	func updatingComposition(fromSelection: IOTTextFieldSubject, toSeletion: IOTTextFieldSubject, aimation: Bool) { }
 
-	}
-
-	func updatingImageIcon(to state: IOTCardIconState) {
-		
-	}
-
-//	func onRelocatingUpdate(fromComposition: TextFieldComposition, toComposition: TextFieldComposition, aimation: Bool) {
-//
-//	}
-//
-////	delegate
-//
-//	func toTextFieldComposition(fromComposition: TextFieldComposition, toComposition: TextFieldComposition) {
-////		let segmentRectArr = segmentRectArray(composition: toComposition)
-////		cardIconView.frame = segmentRectArr[0]
-////		nameTextField?.frame = segmentRectArr[1]
-////		numberTextField.frame = segmentRectArr[2]
-////		expiryDateTextField.frame = segmentRectArr[3]
-////		cvvTextField.frame = segmentRectArr[4]
-//	}
-//
-//	func animatToTextFieldComposition(fromComposition: TextFieldComposition, toComposition: TextFieldComposition) {
-////		textFieldComposition(composition: fromComposition)
-////		UIView.animate(withDuration: defaultTextFieldRelocationAnimationTimeInterval) { [weak self] in
-////			self?.textFieldComposition(composition: toComposition)
-////		} completion: { (completed) in
-////			if completed {
-////			}
-////		}
-//
-//	}
-//
-//	private func textFieldComposition(composition: TextFieldComposition) {
-////		let segmentRectArr = segmentRectArray(composition: composition)
-////		//cardIconView.frame = segmentRectArr[0]
-////		nameTextField?.frame = segmentRectArr[1]
-////		numberTextField.frame = segmentRectArr[2]
-////		expiryDateTextField.frame = segmentRectArr[3]
-////		cvvTextField.frame = segmentRectArr[4]
-//	}
-
+	func updatingImageIcon(to state: IOTCardIconState) { }
 }
-
-
-
-
-
 
 
 enum SingleLineWidthRatios {
@@ -238,40 +121,3 @@ enum SingleLineWidthRatios {
 	}
 }
 
-
-
-
-
-//enum TextFieldComposition {
-//	case normal
-//	case fullHolderName
-//	case fullCardNumber
-//
-//	var segmentRatioArr: [CGFloat] {
-//		switch self {
-//		case .normal: return [0.1, 0.3, 0.2, 0.2, 0.2]
-//		case .fullHolderName: return [0.1, 0.7, 0.2, 0.2, 0.2]
-//		case .fullCardNumber: return [0.1, 0.2, 0.5, 0.2, 0.2]
-//		}
-//	}
-//
-//	var segmentRatioArrSum: CGFloat {
-//		switch self {
-//		case .normal: return segmentRatioArr.reduce(0, +)
-//		case .fullHolderName: return segmentRatioArr.reduce(0, +)
-//		case .fullCardNumber: return segmentRatioArr.reduce(0, +)
-//		}
-//	}
-
-//		var widthMultiplier: CGFloat {
-//			switch self {
-//			case .normal: break //return segmentRectArray.reduce(0, { $0.portion(textFieldComposition: self) + $1.portion(textFieldComposition: self)})
-//			case .fullHolderName: return 2.0
-//			case .fullCardNumber: return 2.0
-//			}
-//		}
-//
-//		var sumOfPortion: CGFloat {
-//			segmentRectArray.reduce(0, { $0.portion(textFieldComposition: self) + $1.portion(textFieldComposition: self)})
-//		}
-//}

@@ -119,18 +119,6 @@ public class IOTPurchaseReceipt: NSObject {
 		payOrderId: \(payOrderId), paySuccessTime: \(paySuccessTime), payType: \(payType),
 		refundable: \(refundable), status: \(status), transitionNumber: \(transitionNumber)
 		"""
-//		self.cardNumber = cardNumber
-//		self.cardType = cardType
-//		self.currency = currency
-//		self.invoiceNumber = invoiceNumber
-//		self.merchantOrderNumber = merchantOrderNumber
-//		self.originalOrderId = originalOrderId
-//		self.payOrderId = payOrderId
-//		self.paySuccessTime = paySuccessTime
-//		self.payType = payType
-//		self.refundable = refundable
-//		self.status = status
-//		self.transitionNumber = transitionNumber"
 	}
 
 }

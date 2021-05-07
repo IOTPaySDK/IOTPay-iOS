@@ -13,8 +13,6 @@ final class IOTCardPatternPredictionModel {
 	let filterModel = IOTInputFilterModel()
 
 	init() {}
-//
-//	func predicting(cardNumberText: String, previousPrediction: IOTCardPatternPrediction) -> IOTCardPatternPrediction {
 
 	func predicting(cardNumberText: String) -> IOTCardPatternPrediction {
 

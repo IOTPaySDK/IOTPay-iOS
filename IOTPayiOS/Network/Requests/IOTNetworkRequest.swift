@@ -34,27 +34,8 @@ public final class IOTNetworkRequest {
 	private var url: URL { URL(string: apiPrefix + apiSuffix)! }
 	var urlRequest: URLRequest { URLRequest(url: url) }
 
-
 	init(secureId: String, action: IOTNetworkRequestAction, cardInfo: IOTCardInfo) {
 		self.action = action
 		self.cardInfo = IOTRequestCardData(secureId: secureId, cardInfo: cardInfo)
 	}
-
-//	struct IOTCardData {
-//		let cardNumber: String
-//		let holderName: String
-//		let expiryDate: String
-//		let cvv: String
-//		var params: [String: String] {
-//			["number": cardNumber,
-//			 "holder": holderName,
-//			 "expiryDate": expiryDate,
-//			 "cvv": cvv,]
-//		}
-
-
-
-
-		//request(data: param, event: .pfadduser, type: "POST")
-//	}
 }

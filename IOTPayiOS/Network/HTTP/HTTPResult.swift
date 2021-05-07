@@ -8,10 +8,4 @@
 enum Result<T> {
 		case success(T)
 		case failure(Error)
-//	var description: String {
-//		switch self {
-//			case .success(T): return ""
-//			case .failure(Error): return ""
-//		}
-//	}
 }

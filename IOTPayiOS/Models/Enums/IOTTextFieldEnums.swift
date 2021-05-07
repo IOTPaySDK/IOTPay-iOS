@@ -98,9 +98,5 @@ extension IOTTextFieldSubject {
 		case .holderName: return 0
 		}
 	}
-
-
-
-
 }
 
