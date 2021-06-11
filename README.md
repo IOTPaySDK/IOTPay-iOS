@@ -169,7 +169,8 @@ view.addSubview(cardInfoView)
 Objc: (in .m)
 self.cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionAddCard 
 									 style: IOTCardInfoViewStyleRoundRect];
-self.cardInfoView.delegate = self;[self.view addSubview: self.cardInfoView];
+self.cardInfoView.delegate = self;
+[self.view addSubview: self.cardInfoView];
 ```
 
 This will start the interface for the user to fill in the card info.<br />    
@@ -266,7 +267,7 @@ shard.delegate = self;
 [shard sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
 ```
 As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
-
+The secureId is generated after your server connects with IOTPay server, please check the Flow Chart above and IOTPayPhp for more info, or go to the end of this readme for a method to get secureId for testing.
 
 #### 2.4.4 Network Response
 
@@ -289,14 +290,15 @@ Objc:
 Add following code in ViewController after viewDidLoad
 ```
 Swift:
-cardInfoView = IOTCardInfoViewSingleLine(action: .simplePurchase, style: .autoDarkModeSupport)
+cardInfoView = IOTCardInfoViewSingleLine(action: .oneTimePurchase, style: .autoDarkModeSupport)
 cardInfoView.Delegate = selfview.addSubview(cardInfoView)
 ```
 ```
 Objc: (in .m)
-self.cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionSimplePurchase 
+self.cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase
 									 style: IOTCardInfoViewStyleRoundRect];
-self.cardInfoView.delegate = self;[self.view addSubview: self.cardInfoView];
+self.cardInfoView.delegate = self;
+[self.view addSubview: self.cardInfoView];
 ```
 This will start the interface for the user to fill in the card info.<br />   
 
@@ -326,23 +328,7 @@ Objc: .h
 ```
 Please don't forget to add "IOTCardInfoViewDelegate" in the previous step.<br />   
 
-#### 2.5.3 Send the Request
-After user filling the card info and tap on the "Add User" sending the request by:
-```
-Swift:
-let shard = IOTNetworkManager.shared
-shard.delegate = self
-shard.sendRequest(secureId: "your secureId", cardInfoPrivder: cardInfoView)
-```
-```
-Objc:
-IOTNetworkService *shard = IOTNetworkService.shared;
-shard.delegate = self;
-[shard sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
-```
-As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
-
-#### 2.5.4 NetworkService Response Delegate:
+#### 2.5.3 NetworkService Response Delegate:
 ```
 Swift:
 extension ViewController: IOTNetworkServiceDelegate {	
@@ -380,8 +366,30 @@ in .m
 ```
 Please check the SimplePurchaseSwiftExample or SimplePurchaseObjcExample in the examples folder for finished code.
 
+	
+#### 2.5.4 Send the Request
+After user filling the card info and tap on the "Add User" sending the request by:
+```
+Swift:
+let shard = IOTNetworkManager.shared
+shard.delegate = self
+shard.sendRequest(secureId: "your secureId", cardInfoPrivder: cardInfoView)
+```
+```
+Objc:
+IOTNetworkService *shard = IOTNetworkService.shared;
+shard.delegate = self;
+[shard sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
+```
+As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
+The secureId is generated after your server connecting with IOTPay server, please check the Flow Chart above and IOTPayPhp for more info, or go to the end of this readme for method to get secureId for testing.
+	
 
-<br /> 
+#### 2.5.5 Network Response:
+
+	
+<br   />     
+<br   />     
 <a name="3.0"><a/>
 ## 3 Layout, Style and Action options:
 
