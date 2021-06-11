@@ -201,7 +201,7 @@ Please don't forget to add "IOTCardInfoViewDelegate" in the previous step.<br />
 After user filling the card info and tap on the "Add User" sending the request by:
 ```
 Swift:
-let shard = IOTNetworkManager.shared
+let shard = IOTNetworkService.shared
 shard.delegate = self
 shard.sendRequest(secureId: "your secureId", cardInfoPrivder: cardInfoView)
 ```
