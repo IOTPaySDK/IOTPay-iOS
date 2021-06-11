@@ -176,10 +176,14 @@ The card Info View delegate (IOTCardInfoViewDelegate) has one func in protocol: 
 This will be called once the user's inputted card info is valid. in all the required info viliadly, so you know when to make the "Add Card" button ready for user input.
 ```
 Swift:
+// This Swift sample code is using extension, which should add at the end of the code out side ViewController class.
+// If you want to write the those function in the ViewController class, simply add the IOTNetworkServiceDelegate to class declaration line of ViewController,
+// For example: "class ViewController: UIViewController, IOTNetworkServiceDelegate { "
+	
 extension ViewController: IOTCardInfoViewDelegate {	
 	func onDidCompleteValidate() {		
 		// User did complete card info view Validate, we should enable the button		
-		button.setTitle("Add Card", for: .normal)		
+		button.setTitle("Purchase", for: .normal)		
 		button.isUserInteractionEnabled = true	
 	}
 }
@@ -191,31 +195,17 @@ Objc: .h
 .m
 - (void)onDidCompleteValidate {	
 	// User did complete card info view Validate, we should enable the button	
-	[self.button setTitle: @"Add Card" forState: UIControlStateNormal];	
+	[self.button setTitle: @"Purchase" forState: UIControlStateNormal];	
 	[self.button setUserInteractionEnabled: true];
 }
 ```
 Please don't forget to add "IOTCardInfoViewDelegate" in the previous step.<br />  
 
-#### 2.4.3 Send the Request
-After user filling the card info and tap on the "Add User" sending the request by:
-```
-Swift:
-let shard = IOTNetworkService.shared
-shard.delegate = self
-shard.sendRequest(secureId: "your secureId", cardInfoPrivder: cardInfoView)
-```
-```
-Objc:
-IOTNetworkService *shard = IOTNetworkService.shared;
-shard.delegate = self;
-[shard sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
-```
-As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
 
-#### 2.4.4 NetworkService Response Delegate:
+#### 2.4.3 NetworkService Response Delegate:
 ```
-Swift:
+Swift:	
+// This Swift sample code is using extension, which should add at the end of the code out side ViewController class.
 extension ViewController: IOTNetworkServiceDelegate {	
 func onDidAddCard(desensitizedCardInfo: IOTDesensitizedCardInfo, redirectUrl: String) {		
 	/* 
@@ -252,6 +242,22 @@ Objc: .h
 ```
 You should record some of that info to associate the user account/device to your Merchant Server. The future purchase should use "purchase with token" from now on, except your user wants to add or pay with a new card.
 Please check the AddUserSwiftExample or AddUserObjcExample in the examples folder for finished code.
+
+#### 2.4.4 Send the Request
+After user filling the card info and tap on the "Add User" sending the request by:
+```
+Swift:
+let shard = IOTNetworkService.shared
+shard.delegate = self
+shard.sendRequest(secureId: "your secureId", cardInfoPrivder: cardInfoView)
+```
+```
+Objc:
+IOTNetworkService *shard = IOTNetworkService.shared;
+shard.delegate = self;
+[shard sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
+```
+As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
 
 
 <a name="2.5"><a/>
