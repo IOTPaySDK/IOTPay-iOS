@@ -136,6 +136,12 @@ Please check 5.1 Temporary solution to get secureId at the end of this guide.  
 <a name="2.4"><a/>
 	
 ### 2.4 Recurring Purchase Option
+	
+Recurring Purchase is recommended as users will only need to enter their card info once, after that IOTServer will remember user info and make payment without user entering info again. The desensitization card info such as card number will be provided at the end of the add card event, which can be used as title or hint for the user's future payment, but your app should not try to record the user's full card number.
+Once the add card event is done, this SDK is end of duty, and future purchase requests should happen by sending requests using your own server to the IOTPay server. Please check the chart above and check the IOTPayPhp for more info.https://github.com/IOTPaySDK/IOTPay-PHP
+
+IMPORTANT: In another word, in this route the SDK only prived users to be added to the "recurring purchase" list, unlike "simple purchase option", there is no "purchase" action happening with the SDK in this option.
+	
 
 #### 2.4.1 Setup Card Info View:
 
@@ -161,7 +167,7 @@ view.addSubview(cardInfoView)
 ```
 ```
 Objc: (in .m)
-self.cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase 
+self.cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionAddCard 
 									 style: IOTCardInfoViewStyleRoundRect];
 self.cardInfoView.delegate = self;[self.view addSubview: self.cardInfoView];
 ```
@@ -183,7 +189,7 @@ Swift:
 extension ViewController: IOTCardInfoViewDelegate {	
 	func onDidCompleteValidate() {		
 		// User did complete card info view Validate, we should enable the button		
-		button.setTitle("Purchase", for: .normal)		
+		button.setTitle("Add Card", for: .normal)		
 		button.isUserInteractionEnabled = true	
 	}
 }
@@ -195,7 +201,7 @@ Objc: .h
 .m
 - (void)onDidCompleteValidate {	
 	// User did complete card info view Validate, we should enable the button	
-	[self.button setTitle: @"Purchase" forState: UIControlStateNormal];	
+	[self.button setTitle: @"Add Card" forState: UIControlStateNormal];	
 	[self.button setUserInteractionEnabled: true];
 }
 ```
@@ -242,6 +248,8 @@ Objc: .h
 ```
 You should record some of that info to associate the user account/device to your Merchant Server. The future purchase should use "purchase with token" from now on, except your user wants to add or pay with a new card.
 Please check the AddUserSwiftExample or AddUserObjcExample in the examples folder for finished code.
+	
+
 
 #### 2.4.4 Send the Request
 After user filling the card info and tap on the "Add User" sending the request by:
@@ -260,6 +268,9 @@ shard.delegate = self;
 As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
 
 
+#### 2.4.4 Network Response
+
+	
 <a name="2.5"><a/>
 ### 2.5 "Simple Purchase" Option:
 
