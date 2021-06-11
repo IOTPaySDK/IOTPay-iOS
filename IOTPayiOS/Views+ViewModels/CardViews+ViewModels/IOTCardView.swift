@@ -21,8 +21,6 @@ class IOTCardView: UIView {
 	var brand: CardCulingCycle = .unrecognized
 	var tillBrand: CardCulingCycle = .unrecognized
 
-
-
 	var isInvalid: Bool = false
 
 	var timer: Timer?
@@ -72,7 +70,6 @@ class IOTCardView: UIView {
 		current = makeCard(brand: .unrecognized, side: .front)
 		addSubview(current)
 	}
-
 
 	func playFlipAnimation() {
 		let card = makeCard(brand: brand, side: side.nextSide)

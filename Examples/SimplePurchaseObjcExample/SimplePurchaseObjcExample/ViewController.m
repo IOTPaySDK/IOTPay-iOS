@@ -63,7 +63,7 @@
 -(void)onButton {
 	IOTNetworkService *shard = IOTNetworkService.shared;
 	shard.delegate = self;
-	[shard sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
+	[shard sendRequestWithSecureId: @"Your SecureId" cardInfoView:self.cardInfoView];
 	[self.button setTitle: @"Please enter card info" forState: UIControlStateNormal];
 	[self.button setUserInteractionEnabled: true];
 }

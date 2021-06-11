@@ -36,7 +36,7 @@ enum IOTCardPatternPrediction {
 
 	var validCvvDigits: Int {
 		switch self {
-		case .unrecognized: return -1
+		//case .unrecognized: return -1
 		case .master: return 4
 		default: return 3
 		}
@@ -68,7 +68,7 @@ enum IOTCardPatternPrediction {
 		case .discover: return .discover
 		case .dinersClub14: return .diner
 		case .dinersClub16: return .diner
-		case .unionPay: return .unrecognized
+		case .unionPay: return .unionpay
 		case .jcb: return .jcb
 			case .error: return .unrecognized
 		}

@@ -14,8 +14,8 @@ enum IOTCardIconState {
 	var imageName: String {
 		switch self {
 		case .recognized(brand: let brand): return brand.rawValue
-		case .back: return "cardCVVHalf" //"security-code.png"
-		case .unrecognized: return "unknowLine" //"default.png"
+		case .back: return "cardIconCvv" //"cardCVVHalf" //"security-code.png"
+		case .unrecognized: return "cardIconEmpty" //"default.png"
 		case .error: return "cardFatal"
 		}
 	}

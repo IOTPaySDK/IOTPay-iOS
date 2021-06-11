@@ -1,7 +1,7 @@
 
 //
 //  ViewController.m
-//  SimplePurchaseObjcExample
+//  SimplePurchaseSwiftExample
 //
 //  Created by macbook on 2021-04-25.
 //
@@ -64,11 +64,9 @@ class ViewController: UIViewController {
 		*/
 		let shared = IOTNetworkService.shared
 		shared.delegate = self
-		shared.sendRequest(secureId: "Your secureId",
+		shared.sendRequest(secureId: "Your SecureId",
 											 cardInfoView: cardInfoView)
 	}
-
-
  }
 
 extension ViewController: IOTCardInfoViewDelegate {

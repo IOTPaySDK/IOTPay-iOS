@@ -20,7 +20,7 @@ public class IOTCardInfoView: UIView {
 	let facade: IOTCardInfoComponentsFacade
 	//MARK: Constants
 	// init constants
-	let action: IOTNetworkRequestAction
+	var action: IOTNetworkRequestAction
 	let layout: IOTCardInfoViewLayout
 	let style: IOTCardInfoViewStyle
 	// default constatns

@@ -28,11 +28,19 @@ final class IOTCardPatternPredictionModel {
 			return possiableBrands[0]
 		}
 
+		let prefixSix = String(cardNumberText.prefix(6))
+		if length >= 6 && Int(prefixOne) != nil && prefixOne == "4" {
+			if IOTCardNumberRegulation.visaFirstSixDigits.contains(prefixSix) {
+				return .visa13
+			}
+			return .visa16
+		}
 
 		let prefixTwo = String(cardNumberText.prefix(2))
-		if length >= 2 && length < 6 && Int(prefixOne) != nil,
+		//if length >= 2 && length < 6 && Int(prefixOne) != nil,
+		if length >= 2 && Int(prefixOne) != nil,
 			 let firstTwoDigitsInt = Int(prefixTwo),
-			 firstTwoDigitsInt > 10 {
+			firstTwoDigitsInt > 10 {
 
 			if let certainBrands = IOTCardNumberRegulation.firstDigitCertainPattern[prefixOne],
 				 certainBrands.count == 1 || Set(certainBrands.map { $0.brand }).count == 1 {
@@ -43,14 +51,6 @@ final class IOTCardPatternPredictionModel {
 				 certainBrands.count == 1 || Set(certainBrands.map { $0.brand }).count == 1 {
 				return certainBrands[0]
 			}
-		}
-
-		let prefixSix = String(cardNumberText.prefix(6))
-		if length >= 6 && Int(prefixOne) != nil && prefixOne == "4" {
-			if IOTCardNumberRegulation.visaFirstSixDigits.contains(prefixSix) {
-				return .visa13
-			}
-			return .visa16
 		}
 
 		return .unrecognized

@@ -63,10 +63,9 @@ class ViewController: UIViewController {
 		*/
 		let shared = IOTNetworkService.shared
 		shared.delegate = self
-		shared.sendRequest(secureId: "Your secureId", cardInfoView: cardInfoView)
+		let yourSecureId = "Your SecureId";
+		shared.sendRequest(secureId: yourSecureId, cardInfoView: cardInfoView)
 	}
-
-
 }
 
 extension ViewController: IOTCardInfoViewDelegate {

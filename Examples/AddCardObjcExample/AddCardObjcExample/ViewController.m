@@ -61,7 +61,7 @@
 -(void)onButton {
 	IOTNetworkService *shard = IOTNetworkService.shared;
 	shard.delegate = self;
-	[shard sendRequestWithSecureId: @"Your secureId" cardInfoView: self.cardInfoView];
+	[shard sendRequestWithSecureId: @"d8d17792ed741d906b2477e72808e6c6a53f069f89c3428e9512752b91285975" cardInfoView: self.cardInfoView];
 	[self.button setTitle: @"Add Card" forState: UIControlStateNormal];
 	[self.button setUserInteractionEnabled: true];
 }

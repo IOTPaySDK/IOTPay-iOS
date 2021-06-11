@@ -17,7 +17,7 @@ class Loader {
 			return image
 		} else { // in pod
 			if let url = Bundle(for: self).url(forResource: "IOTPayiOS", withExtension: "bundle"),
-				 let bundle = Bundle(url: url) {
+				let bundle = Bundle(url: url) {
 				return UIImage(named: named, in: bundle, compatibleWith: nil)
 			} else {
 				print("Can't find IOTPayiOS Images")

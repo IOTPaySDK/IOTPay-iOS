@@ -8,14 +8,14 @@
 import Foundation
 
 struct IOTBaseResponseData: Codable {
-	//let retData: String?
 	let retCode: IOTRetCode
 	let retMsg: String?
 }
 
+
 struct IOTAddCardResponseData: Codable {
-	let retData: IOTAddCardRetData?
-	let retCode: IOTRetCode
+	let retData: IOTAddCardRetData
+	let retCode: String
 	let retMsg: String?
 }
 
@@ -33,7 +33,7 @@ struct IOTAddCardRetData: Codable {
 }
 
 struct IOTPurchaseResponseData: Codable {
-	let retData: IOTPurchaseRetData?
+	let retData: IOTPurchaseRetData
 	let retCode: IOTRetCode
 	let retMsg: String?
 }
@@ -50,7 +50,7 @@ struct IOTPurchaseRetData: Codable {
 	let mchOrderNo: String// 1618569175;
 	let originalOrderId: String // "";
 	let payOrderId: String //CS20210416103255832828793487;
-	let paySuccTime: String// "2021-04-16 03:33:16";
+	var paySuccTime: String?// "2021-04-16 03:33:16";
 	let payType: String// pay;
 	let redirectUrl: String
 //	// "https://develop.iotpay.ca/new/v3dev/result.php?abc=111&code=234&
@@ -58,6 +58,7 @@ struct IOTPurchaseRetData: Codable {
 	let refundable: Int   //Int in cent
 	let status: Int   //2
 	let transNum: String   //Int= 000108583539;
+	let channel: String //"UPI_EX" or "PF_CC"
 
 	var purchaseReceipt: IOTPurchaseReceipt {
 		IOTPurchaseReceipt(amount: amount, authorizationNumber: authNum, cardNumber: cardNum,
@@ -91,7 +92,7 @@ public class IOTPurchaseReceipt: NSObject {
 
 	init(amount: Int, authorizationNumber: String, cardNumber: String, cardType: String,
 			 currency: String, invoiceNumber: String, merchantOrderNumber: String,
-			 originalOrderId: String, payOrderId: String, paySuccessTime: String,
+			 originalOrderId: String, payOrderId: String, paySuccessTime: String?,
 			 payType: String, refundable: Int, status: Int, transitionNumber: String) {
 		self.amount = amount
 		self.authorizationNumber	= authorizationNumber
@@ -102,7 +103,7 @@ public class IOTPurchaseReceipt: NSObject {
 		self.merchantOrderNumber = merchantOrderNumber
 		self.originalOrderId = originalOrderId
 		self.payOrderId = payOrderId
-		self.paySuccessTime = paySuccessTime
+		self.paySuccessTime = paySuccessTime ?? ""
 		self.payType = payType
 		self.refundable = refundable
 		self.status = status
@@ -125,6 +126,11 @@ public class IOTPurchaseReceipt: NSObject {
 
 enum IOTRetCode: String, Codable {
 	case SUCCESS, FAIL
+	init(retCode: String) {
+		if retCode == "SUCCESS" { self = .SUCCESS }
+		else if retCode == "FAIL" { self = .FAIL}
+		else { fatalError() }
+	}
 }
 
 struct IOTNetworkResponse: Codable {

@@ -14,18 +14,18 @@
 		FA75516D26379C05002CFF4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA75516C26379C05002CFF4B /* Assets.xcassets */; };
 		FA75517026379C05002CFF4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA75516E26379C05002CFF4B /* LaunchScreen.storyboard */; };
 		FA75517326379C05002CFF4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75517226379C05002CFF4B /* main.m */; };
-		FA75519426379D07002CFF4B /* IOTPayiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA75519326379D07002CFF4B /* IOTPayiOS.framework */; };
-		FA75519526379D07002CFF4B /* IOTPayiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA75519326379D07002CFF4B /* IOTPayiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA963DD92672D81500A71651 /* IOTPayiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA75519326379D07002CFF4B /* IOTPayiOS.framework */; };
+		FA963DDA2672D81500A71651 /* IOTPayiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA75519326379D07002CFF4B /* IOTPayiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FA75519626379D07002CFF4B /* Embed Frameworks */ = {
+		FA963DDB2672D81500A71651 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FA75519526379D07002CFF4B /* IOTPayiOS.framework in Embed Frameworks */,
+				FA963DDA2672D81500A71651 /* IOTPayiOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA75519426379D07002CFF4B /* IOTPayiOS.framework in Frameworks */,
+				FA963DD92672D81500A71651 /* IOTPayiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +113,7 @@
 				FA75515926379C04002CFF4B /* Sources */,
 				FA75515A26379C04002CFF4B /* Frameworks */,
 				FA75515B26379C04002CFF4B /* Resources */,
-				FA75519626379D07002CFF4B /* Embed Frameworks */,
+				FA963DDB2672D81500A71651 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

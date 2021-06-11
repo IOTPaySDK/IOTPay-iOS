@@ -1,0 +1,267 @@
+
+
+//	func addCard(data: Data, _ onComplete: @escaping (IOTAddCardRetData) -> ()) {
+//
+//		guard let request = makeRequest(action: .addCard, data: data) else { return }
+//
+//		let postSession = URLSession(configuration: .default)
+//		let task = postSession.dataTask(with: request) { (data, response, error) in
+//			do {
+//				//MARK: error
+//				if error != nil {
+//					//TODO, error handling
+//					guard let error = error else {
+//						throw IOTHTTPNetworkError.failedCauseReceiveErrorAtURLSessionAndFailedToLogError
+//					}
+//					print("Failed Cause Receive Error At URLSession errorMsg: ", error)
+//					return
+//				}
+//
+//				//MARK: response
+//				guard let response = response as? HTTPURLResponse else {
+//					print("Filed to get response from server")
+//					return
+//				}
+//
+//				guard (200...299).contains(response.statusCode) else {
+//					print("Filed due to response problem with response.statsCode:", response.statusCode)
+//					return
+//				}
+//
+//				//MARK: data
+//				guard let data = data else { throw IOTHTTPNetworkError.taskNotReceiveingData}
+//
+//
+//							 do {
+//									 let decodedData = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+//								print("decodedData", decodedData ?? "decode failed")
+//							 } catch {
+//									 print(error.localizedDescription)
+//							 }
+//
+//				if let result = try? JSONDecoder().decode(IOTAddCardResponseData.self, from: data) {
+//
+//					switch result.retCode {
+//						case .SUCCESS:
+//							guard let retData = result.retData else {
+//								throw IOTHTTPNetworkError.failedToDecodingAddCardResponseData
+//							}
+//							onComplete(retData)
+//						case .FAIL:
+//							guard let retMsg = result.retMsg else {
+//								throw IOTHTTPNetworkError.failedToDecodingAddCardResponseData
+//							}
+//							print("Failed retCode = .FAIL, Msg:", retMsg)
+//					}
+//
+//				} else {
+//
+//					if let baseData = try? JSONDecoder().decode(IOTBaseResponseData.self, from: data) {
+//						guard let retMsg = baseData.retMsg else {
+//							throw IOTHTTPNetworkError.failedToDecodingBaseResponseDataAndFailedToFindMsg
+//						}
+//						print("Failed decoding baseData with Msg:", baseData.retCode, retMsg)
+//					} else {
+//						throw IOTHTTPNetworkError.failedToDecodingBaseResponseData
+//					}
+//
+//				}
+//			} catch let taskError {
+//				print(taskError)
+//			}
+//		}
+//		task.resume()
+//	}
+//
+//	func oneTimePurchase(data: Data, _ onComplete: @escaping (IOTPurchaseRetData) -> ()) {
+//		print("in oneTimePurchase")
+//		guard let request = makeRequest(action: .oneTimePurchase, data: data) else { return }
+//
+//
+//		print("in oneTimePurchase1")
+//
+//		let postSession = URLSession(configuration: .default)
+//		let task = postSession.dataTask(with: request) { (data, response, error) in
+//
+//				guard let dataa = data else { return }
+//				print(String(data: dataa, encoding: .utf8)!)
+//
+//			do {
+//				print("in oneTimePurchase2")
+//				//MARK: error
+//				if error != nil {
+//					//TODO, error handling
+//					guard let error = error else {
+//						throw IOTHTTPNetworkError.failedCauseReceiveErrorAtURLSessionAndFailedToLogError
+//					}
+//					print("Failed Cause Receive Error At URLSession errorMsg: ", error)
+//					return
+//				}
+//
+//				print("in oneTimePurchase3")
+//				//MARK: response
+//				guard let response = response as? HTTPURLResponse else {
+//					print("Filed to get response from server")
+//					return
+//				}
+//
+//				guard (200...299).contains(response.statusCode) else {
+//					print("Filed due to response problem with response.statsCode:", response.statusCode)
+//					return
+//				}
+//
+//				print("in oneTimePurchase4")
+//				//MARK: data
+//				guard let data = data else { throw IOTHTTPNetworkError.taskNotReceiveingData}
+//
+//				if let result = try? JSONDecoder().decode(IOTPurchaseResponseData.self, from: data) {
+//					print("in result try working")
+//					switch result.retCode {
+//						case .SUCCESS:
+//							guard let retData = result.retData else {
+//								throw IOTHTTPNetworkError.failedToDecodingAddCardResponseData
+//							}
+//							onComplete(retData)
+//						case .FAIL:
+//							guard let retMsg = result.retMsg else {
+//								throw IOTHTTPNetworkError.failedToDecodingAddCardResponseDataAndFailedToFindMsg
+//							}
+//							print("Failed decoding addUserResponseData with Msg:", retMsg)
+//					}
+//
+//				} else {
+//
+//					print("in oneTimePurchase5")
+//
+//
+////					do {
+////						let data1 =  try JSONSerialization.data(withJSONObject: data, options: JSONSerialization.WritingOptions.prettyPrinted) // first of all convert json to the data
+////						let convertedString = String(data: data1, encoding: String.Encoding.utf8) // the data will be converted to the string
+////										 print(convertedString) // <-- here is ur string
+////
+////								 } catch let myJSONError {
+////										 print(myJSONError)
+////								 }
+//
+//
+//
+//
+//					if let baseData = try? JSONDecoder().decode(IOTBaseResponseData.self, from: data) {
+//						guard let retMsg = baseData.retMsg else {
+//							throw IOTHTTPNetworkError.failedToDecodingBaseResponseDataAndFailedToFindMsg
+//						}
+//						if retMsg == "" {
+//							throw IOTHTTPNetworkError.failedToDecodingBaseResponseData
+//						} else {
+//							print("Failed decoding baseData with Msg12:", baseData.retCode, retMsg)
+//						}
+//					} else {
+//						throw IOTHTTPNetworkError.failedToDecodingBaseResponseData
+//					}
+//
+//				}
+//			} catch let taskError {
+//				print(taskError)
+//			}
+//		}
+//		task.resume()
+//	}
+//
+//
+//
+//
+//
+//
+//	func retryPurchase(data: Data, _ onComplete: @escaping (IOTPurchaseRetData) -> ()) {
+//		print("in oneTimePurchase")
+//		guard let request = makeRequest(action: .retryPurchase, data: data) else { return }
+//
+//
+//		print("in oneTimePurchase1")
+//
+//		let postSession = URLSession(configuration: .default)
+//		let task = postSession.dataTask(with: request) { (data, response, error) in
+//
+//				guard let dataa = data else { return }
+//				print(String(data: dataa, encoding: .utf8)!)
+//
+//			do {
+//				print("in oneTimePurchase2")
+//				//MARK: error
+//				if error != nil {
+//					//TODO, error handling
+//					guard let error = error else {
+//						throw IOTHTTPNetworkError.failedCauseReceiveErrorAtURLSessionAndFailedToLogError
+//					}
+//					print("Failed Cause Receive Error At URLSession errorMsg: ", error)
+//					return
+//				}
+//
+//				print("in oneTimePurchase3")
+//				//MARK: response
+//				guard let response = response as? HTTPURLResponse else {
+//					print("Filed to get response from server")
+//					return
+//				}
+//
+//				guard (200...299).contains(response.statusCode) else {
+//					print("Filed due to response problem with response.statsCode:", response.statusCode)
+//					return
+//				}
+//
+//				print("in oneTimePurchase4")
+//				//MARK: data
+//				guard let data = data else { throw IOTHTTPNetworkError.taskNotReceiveingData}
+//
+//				if let result = try? JSONDecoder().decode(IOTPurchaseResponseData.self, from: data) {
+//					print("in result try working")
+//					switch result.retCode {
+//						case .SUCCESS:
+//							guard let retData = result.retData else {
+//								throw IOTHTTPNetworkError.failedToDecodingAddCardResponseData
+//							}
+//							onComplete(retData)
+//						case .FAIL:
+//							guard let retMsg = result.retMsg else {
+//								throw IOTHTTPNetworkError.failedToDecodingAddCardResponseDataAndFailedToFindMsg
+//							}
+//							print("Failed decoding addUserResponseData with Msg:", retMsg)
+//					}
+//
+//				} else {
+//
+//					print("in oneTimePurchase5")
+//
+//
+////					do {
+////						let data1 =  try JSONSerialization.data(withJSONObject: data, options: JSONSerialization.WritingOptions.prettyPrinted) // first of all convert json to the data
+////						let convertedString = String(data: data1, encoding: String.Encoding.utf8) // the data will be converted to the string
+////										 print(convertedString) // <-- here is ur string
+////
+////								 } catch let myJSONError {
+////										 print(myJSONError)
+////								 }
+//
+//
+//
+//
+//					if let baseData = try? JSONDecoder().decode(IOTBaseResponseData.self, from: data) {
+//						guard let retMsg = baseData.retMsg else {
+//							throw IOTHTTPNetworkError.failedToDecodingBaseResponseDataAndFailedToFindMsg
+//						}
+//						if retMsg == "" {
+//							throw IOTHTTPNetworkError.failedToDecodingBaseResponseData
+//						} else {
+//							print("Failed decoding baseData with Msg12:", baseData.retCode, retMsg)
+//						}
+//					} else {
+//						throw IOTHTTPNetworkError.failedToDecodingBaseResponseData
+//					}
+//
+//				}
+//			} catch let taskError {
+//				print(taskError)
+//			}
+//		}
+//		task.resume()
+//	}

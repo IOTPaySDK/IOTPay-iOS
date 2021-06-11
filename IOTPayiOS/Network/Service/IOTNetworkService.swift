@@ -19,48 +19,122 @@ public protocol IOTNetworkServiceDelegate: AnyObject {
 
 public class IOTNetworkService: NSObject {
 
+	private let logNetworkData = true
+
+	private var _secureId: String?
+	private var secureId: String { return checkSecureId() }
+	private var route: IOTIOTHTTPNetworkRoute?
+	private weak var viewComponents: IOTCardInfoComponents?
+	private weak var timer: Timer?
+	private var timerCounter: Int = 0
+	private var isCheckingPurchaseResultLooping = false
+
 	@objc
 	public static let shared = IOTNetworkService()
 
 	@objc
 	public weak var delegate: IOTNetworkServiceDelegate?
 
-	var secureId: String = ""
-
 	private override init() { }
+
+	private func startTimer() {
+		stopTimer()
+		timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] (t) in
+			if t.isValid {
+				self?.viewComponents?.transport()
+			}
+		})
+	}
+
+	private func stopTimer() {
+		if timer != nil {
+			timer?.invalidate()
+			timer = nil
+		}
+		timerCounter = 0
+	}
+
+	deinit { stopTimer() }
 
 	@objc
 	public func sendRequest(secureId: String, cardInfoView: IOTCardInfoView) {
-		guard secureId != "Your secureId" && secureId.count >= 20 else {
-			#if DEBUG
-				fatalError("""
-								You secureId is invalid, please check Github guide, secureId section at end
-								https://github.com/IOTPaySDK/IOTPay-iOS
-								""")
-			#else
-				return
-			#endif
-		}
-		self.secureId = secureId
-		let viewComponents = cardInfoView.facade.viewComponents
-		viewComponents.transportDelegate = self
-		viewComponents.transport()
+		_secureId = secureId
+		route = IOTIOTHTTPNetworkRoute(action: cardInfoView.action)
+		viewComponents = cardInfoView.facade.viewComponents
+		viewComponents?.transportDelegate = self
+		viewComponents?.transport()
 	}
 
-	func addCard(data: Data, _ onComplete: @escaping (IOTAddCardRetData) -> ()) {
+	private func checkSecureId() -> String! {
+		#if DEBUG
+			let defaultString = "your secureid"
+			guard let _secureId = _secureId, _secureId.lowercased() != defaultString,
+						_secureId.count >= 20 else {
+				printSecureIdErrorMsg()
+				fatalError("Error: secureId invalid")
+			}
+			return _secureId
+		#else
+			print("Error: secureId invalid")
+			return secureId ?? ""
+		#endif
+	}
 
-		guard let request = makeRequest(action: .addCard, data: data) else { return }
+	private func printSecureIdErrorMsg() {
+		#if DEBUG
+			fatalError("""
+							You secureId is invalid, please check Github guide, secureId section at end of
+							https://github.com/IOTPaySDK/IOTPay-iOS
+							This Fatal error only occurs in DEBUG mode, it will just return and with fail
+							network status on real device
+							""")
+		#else
+			return
+		#endif
+	}
+
+
+
+
+	func paymentFail(msg: String?) {
+		print("payment fail, retMsg: ", msg ?? "no msg")
+	}
+
+	func startNetworkRequest(route: IOTIOTHTTPNetworkRoute,
+													 data: Data,
+													 onComplete: @escaping (Data) -> ()) {
+//		#if DEBUG
+//		print("Start Network Request --This Log only appear in Debug mode-- \n",
+//					"Route: ", route, "\n",
+//					"Request Data: ", String(data: data, encoding: .utf8)!)
+//		#endif
+
+		guard let request = makeRequest(route: self.route!, data: data) else { return }
+
+		#if DEBUG
+		if logNetworkData { printRequestData(url: request.url, data: data) }
+		#endif
 
 		let postSession = URLSession(configuration: .default)
-		let task = postSession.dataTask(with: request) { (data, response, error) in
+		let task = postSession.dataTask(with: request) { [weak self] (data, response, error) in
+
+			if let logNetworkData = self?.logNetworkData, logNetworkData {
+				self?.printResponseData(data: data, response: response, error: error)
+			}
+
+//			#if DEBUG
+//				guard let str = request else { return }
+//				//print(String(data: data, encoding: .utf8)!)
+//			#endif
+
 			do {
 				//MARK: error
 				if error != nil {
 					//TODO, error handling
-					guard let error = error else {
-						throw HTTPNetworkError.failedCauseReceiveErrorAtURLSessionAndFailedToLogError
-					}
-					print("Failed Cause Receive Error At URLSession errorMsg: ", error)
+//					guard let error = error else {
+//						throw IOTHTTPNetworkError.failedCauseReceiveErrorAtURLSessionAndFailedToLogError
+//					}
+					print("Failed Cause Receive Error At URLSession errorMsg: ", error ?? "Error EMPTY")
 					return
 				}
 
@@ -76,43 +150,26 @@ public class IOTNetworkService: NSObject {
 				}
 
 				//MARK: data
-				guard let data = data else { throw HTTPNetworkError.taskNotReceiveingData}
+				guard let data = data else { throw IOTHTTPNetworkError.taskNotReceiveingData }
 
-
-							 do {
-									 let decodedData = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-								print("decodedData", decodedData ?? "decode failed")
-							 } catch {
-									 print(error.localizedDescription)
-							 }
-
-				if let result = try? JSONDecoder().decode(IOTAddCardResponseData.self, from: data) {
-
-					switch result.retCode {
+				if let baseResponse = try? JSONDecoder().decode(IOTBaseResponseData.self, from: data) {
+					switch baseResponse.retCode {
 						case .SUCCESS:
-							guard let retData = result.retData else {
-								throw HTTPNetworkError.failedToDecodingAddCardResponseData
-							}
-							onComplete(retData)
+//							guard let retData = baseResult.retData else {
+//								throw IOTHTTPNetworkError.failedToDecodingAddCardResponseData
+//							}
+							onComplete(data)
 						case .FAIL:
-							guard let retMsg = result.retMsg else {
-								throw HTTPNetworkError.failedToDecodingAddCardResponseData
-							}
-							print("Failed retCode = .FAIL, Msg:", retMsg)
+							self?.paymentFail(msg: baseResponse.retMsg)
+//							guard let retMsg = result.retMsg else {
+//								throw IOTHTTPNetworkError.failedToDecodingAddCardResponseDataAndFailedToFindMsg
+//							}
 					}
 
 				} else {
-
-					if let baseData = try? JSONDecoder().decode(IOTBaseResponseData.self, from: data) {
-						guard let retMsg = baseData.retMsg else {
-							throw HTTPNetworkError.failedToDecodingBaseResponseDataAndFailedToFindMsg
-						}
-						print("Failed decoding baseData with Msg:", baseData.retCode, retMsg)
-					} else {
-						throw HTTPNetworkError.failedToDecodingBaseResponseData
-					}
-
+					throw IOTHTTPNetworkError.failedToDecodingBaseResponseData
 				}
+//			}
 			} catch let taskError {
 				print(taskError)
 			}
@@ -120,78 +177,38 @@ public class IOTNetworkService: NSObject {
 		task.resume()
 	}
 
-	func oneTimePurchase(data: Data, _ onComplete: @escaping (IOTPurchaseRetData) -> ()) {
-		guard let request = makeRequest(action: .oneTimePurchase, data: data) else { return }
-
-			let postSession = URLSession(configuration: .default)
-			let task = postSession.dataTask(with: request) { (data, response, error) in
-			do {
-				//MARK: error
-				if error != nil {
-					//TODO, error handling
-					guard let error = error else {
-						throw HTTPNetworkError.failedCauseReceiveErrorAtURLSessionAndFailedToLogError
-					}
-					print("Failed Cause Receive Error At URLSession errorMsg: ", error)
-					return
-				}
-
-				//MARK: response
-				guard let response = response as? HTTPURLResponse else {
-					print("Filed to get response from server")
-					return
-				}
-
-				guard (200...299).contains(response.statusCode) else {
-					print("Filed due to response problem with response.statsCode:", response.statusCode)
-					return
-				}
-
-				//MARK: data
-				guard let data = data else { throw HTTPNetworkError.taskNotReceiveingData}
-
-				if let result = try? JSONDecoder().decode(IOTPurchaseResponseData.self, from: data) {
-
-					switch result.retCode {
-						case .SUCCESS:
-							guard let retData = result.retData else {
-								throw HTTPNetworkError.failedToDecodingAddCardResponseData
-							}
-							onComplete(retData)
-						case .FAIL:
-							guard let retMsg = result.retMsg else {
-								throw HTTPNetworkError.failedToDecodingAddCardResponseDataAndFailedToFindMsg
-							}
-							print("Failed decoding addUserResponseData with Msg:", retMsg)
-					}
-
-				} else {
-
-					if let baseData = try? JSONDecoder().decode(IOTBaseResponseData.self, from: data) {
-						guard let retMsg = baseData.retMsg else {
-							throw HTTPNetworkError.failedToDecodingBaseResponseDataAndFailedToFindMsg
-						}
-						print("Failed decoding baseData with Msg:", baseData.retCode, retMsg)
-					} else {
-						throw HTTPNetworkError.failedToDecodingBaseResponseData
-					}
-
-				}
-			} catch let taskError {
-				print(taskError)
-			}
-		}
-		task.resume()
+	private func printRequestData(url: URL?, data: Data) {
+		#if DEBUG
+		print("Start Network Request --This Log only appear in Debug mode-- \n",
+					"Route: \(url!) \n",
+					"Request Data: ", String(data: data, encoding: .utf8)!)
+		#endif
 	}
 
-	private func makeRequest(action: HTTPNetworkRoute, data: Data) -> URLRequest? {
+	private func printResponseData(data: Data?, response: URLResponse?, error: Error?) {
+		#if DEBUG
+		print("On Receive Network Response --This Log only appear in Debug mode-- \n",
+					"Error: ", error ?? "Error EMPTY", "\n",
+					"Resonse: ", response ?? "Response EMPTY", "\n")
+		if data != nil {
+			print("Data: ", String(data: data!, encoding: .utf8)!, "\n")
+		} else {
+			print("Data: ", "Data EMPTY", "\n")
+		}
+		print("unionPay checkLoopCount: ", timerCounter)
+		#endif
+	}
+
+
+
+	private func makeRequest(route: IOTIOTHTTPNetworkRoute, data: Data) -> URLRequest? {
 		do {
-			guard let request = try? HTTPNetworkRequest.configureHTTPRequest(from: action,
+			guard let request = try? IOTHTTPNetworkRequest.configureHTTPRequest(from: route,
 																																			 with: [:],
 																																			 includes: [:],
 																																			 contains: data,
 																																			 and: .post) else {
-				throw HTTPNetworkError.taskErrorStopBeforeSendingRequest
+				throw IOTHTTPNetworkError.taskErrorStopBeforeSendingRequest
 			}
 			return request
 		} catch let requestError {
@@ -199,28 +216,60 @@ public class IOTNetworkService: NSObject {
 			return nil
 		}
 	}
-
 }
 
 
 extension IOTNetworkService: IOTCardInfoComponentsTransportDelegate {
-	func transport(action: IOTNetworkRequestAction, info: IOTCardInfo) {
-		let requested = IOTRequestCardData(secureId: secureId, cardInfo: info)
-		guard let jsonData = try? JSONSerialization.data(withJSONObject: requested.params) else { fatalError() }
+	func transport(route: IOTIOTHTTPNetworkRoute, info: IOTCardInfo) {
 
-		switch action {
+		let requested = IOTRequestCardData(secureId: secureId, cardInfo: info)
+		guard let jsonData = try? JSONSerialization.data(withJSONObject: requested.params) else {
+			print("JSONSerialization network request data error")
+			return
+		}
+
+		startNetworkRequest(route: route, data: jsonData) { [weak self] (jsonData: Data) in
+			print("in start net work request call back")
+//			let retData = baseResponse.retCode
+
+			switch route {
 			case .addCard:
-				addCard(data: jsonData) { [weak self] (addCardRetData: IOTAddCardRetData) in
-					let desensitizedCardInfo: IOTDesensitizedCardInfo = addCardRetData.desensitizedCardInfo
-					self?.delegate?.onDidAddCard(desensitizedCardInfo: desensitizedCardInfo,
-																			 redirectUrl: addCardRetData.redirectUrl)
+				guard let res = try? JSONDecoder().decode(IOTAddCardResponseData.self, from: jsonData)
+				else {
+					print("decode retData to IOTAddCardResponseData failed")
+					return
+					//throw IOTHTTPNetworkError.failedToDecodingAddCardResponseData
 				}
-			case .oneTimePurchase:
-				oneTimePurchase(data: jsonData) { [weak self] (purchaseRetData: IOTPurchaseRetData) in
-					let purchaseReceipt: IOTPurchaseReceipt = purchaseRetData.purchaseReceipt
-					self?.delegate?.onDidPurchase(purchaseReceipt: purchaseReceipt,
-																				redirectUrl: purchaseRetData.redirectUrl)
+				let desensitizedCardInfo = res.retData.desensitizedCardInfo
+				self?.delegate?.onDidAddCard(desensitizedCardInfo: desensitizedCardInfo,
+																		 redirectUrl: res.retData.redirectUrl)
+
+			case .oneTimePurchase, .retryPurchase:
+				guard let res = try? JSONDecoder().decode(IOTPurchaseResponseData.self, from: jsonData)
+				else { return }
+				let retData = res.retData
+				if retData.status == 2 || retData.status == 3 {
+					self?.delegate?.onDidPurchase(purchaseReceipt: retData.purchaseReceipt,
+																				redirectUrl: retData.redirectUrl)
+					self?.isCheckingPurchaseResultLooping = false
+				} else if retData.status == 9 && route == .retryPurchase {
+					self?.paymentFail(msg: res.retMsg)
+					self?.isCheckingPurchaseResultLooping = false
+					//self?.stopTimer()
+				} else {
+					self?.isCheckingPurchaseResultLooping = true
+					self?.route = .retryPurchase
+					self?.timerCounter += 1
+
+					DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+						if let timerCounter = self?.timerCounter, let boolVal = self?.isCheckingPurchaseResultLooping {
+							if timerCounter <= 30 && boolVal {
+								self?.viewComponents?.transport()
+							}
+						}
+					}
 				}
+			}
 		}
 	}
 }

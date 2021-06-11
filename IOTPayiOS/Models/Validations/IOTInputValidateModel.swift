@@ -125,11 +125,17 @@ final class IOTInputValidateModel {
 	//MARK: Cvv
 	private func validatingCvv(text: String,
 														 prediction: IOTCardPatternPrediction?) -> ValidationResult {
-
+		//TODO: fix
+		var expectedDigits: Int? = nil
+		if prediction == .unrecognized {
+			expectedDigits = nil
+		} else {
+			expectedDigits = prediction?.validCvvDigits ?? nil
+		}
 		var validationState: IOTTextFieldValidationState = .entering
 		var errors = [IOTCardInfoValidationError]()
 
-		if let validDigit = prediction?.validCvvDigits {
+		if let validDigit = expectedDigits {
 			if text.count < validDigit {
 				errors.append(.cvvTooShort)
 				validationState = .entering
@@ -139,6 +145,8 @@ final class IOTInputValidateModel {
 			} else {
 				validationState = .valid
 			}
+		} else { // TODO: if want to block unknow card???
+			validationState = .valid
 		}
 		return ValidationResult(state: validationState, error: errors)
 	}

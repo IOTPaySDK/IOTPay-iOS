@@ -11,9 +11,8 @@ import UIKit
 //	IOTCardInfoComponents
 //}
 
-protocol IOTCardInfoComponentsTransportDelegate: IOTNetworkService //IOTPay_iOS_nonFramework.//IOTNetworkManager
-{
-	func transport(action: IOTNetworkRequestAction, info: IOTCardInfo)
+protocol IOTCardInfoComponentsTransportDelegate: IOTNetworkService { //IOTPay_iOS_nonFramework.//IOTNetworkManager
+	func transport(route: IOTIOTHTTPNetworkRoute, info: IOTCardInfo)
 }
 
 protocol IOTCardInfoComponentsDelegate: AnyObject {
@@ -92,7 +91,7 @@ public final class IOTCardInfoComponents: UIView {
 	}
 	
 	required init?(coder: NSCoder) {
-fatalError("init(coder:) has not been implemented")
+		fatalError("init(coder:) has not been implemented")
 	}
 	
 	private func commonInit(layout: IOTCardInfoViewLayout) {
@@ -225,12 +224,13 @@ extension IOTCardInfoComponents {
 
 extension IOTCardInfoComponents {
 	func transport() {
+		let route = IOTIOTHTTPNetworkRoute(action: action)
 		let info = IOTCardInfo(
 			cardNumber: textFields[IOTTextFieldSubject.cardNumber.rawValue].valueString!,
 			holderName: textFields[IOTTextFieldSubject.holderName.rawValue].valueString!,
 			expiryDate: textFields[IOTTextFieldSubject.expiryDate.rawValue].valueString!,
 			cvv: textFields[IOTTextFieldSubject.cvv.rawValue].valueString!)
-		transportDelegate?.transport(action: action, info: info)
+		transportDelegate?.transport(route: route, info: info)
 	}
 }
 

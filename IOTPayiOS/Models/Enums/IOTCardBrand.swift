@@ -16,8 +16,8 @@ enum IOTCardBrand: String {
 
 	var isCurrentlySupported: Bool {
 		switch self {
-		case .visa, .master, .americanExpress, .discover: return true
-		default: return false
+			case .visa, .master, .americanExpress, .discover, .unionPay: return true
+			default: return false
 		}
 	}
 }

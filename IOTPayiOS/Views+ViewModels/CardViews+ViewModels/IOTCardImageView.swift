@@ -98,16 +98,17 @@ enum CardFlipCycle {
 
 
 enum CardCulingCycle {
-	case unrecognized, diner, visa, jcb, ame, discover, master
+	case unrecognized, diner, visa, jcb, ame, discover, master, unionpay
 	var imageName: String? {
 		switch self {
 			case .unrecognized: return nil
-			case .diner: return "dinerLarge"
+			case .diner: return "dinersLarge"
 			case .visa: return "visaLarge"
 			case .jcb: return "jcbLarge"
 			case .ame: return "ameLarge"
 			case .discover: return "discoverLarge"
 			case .master: return "masterLarge"
+			case .unionpay: return "unionpayLarge"
 		}
 	}
 
@@ -119,7 +120,8 @@ enum CardCulingCycle {
 			case .jcb: return .ame
 			case .ame: return .discover
 			case .discover: return .master
-			case .master: return .unrecognized
+			case .master: return .unionpay
+			case .unionpay: return .unrecognized
 		}
 	}
 
