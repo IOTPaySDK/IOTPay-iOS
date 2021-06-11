@@ -3,7 +3,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "IOTPayiOS"
-  spec.version      = "7.0.0"
+  spec.version      = "8.0.0"
   spec.summary      = "Online Credit Card Payment Framework for iOS."
 
   spec.description  = <<-DESC
