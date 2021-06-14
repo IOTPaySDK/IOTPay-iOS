@@ -213,7 +213,7 @@ Please don't forget to add "IOTCardInfoViewDelegate" in the previous step.<br />
 ```
 Swift:	
 // This Swift sample code is using extension, which should add at the end of the code out side ViewController class.
-extension ViewController: IOTNetworkPurchaseDelegate {	
+extension ViewController: IOTNetworkAddCardDelegate {	
 
 	func onDidAddCardSuccess(msg: String, desensitizedCardInfo: IOTDesensitizedCardInfo, redirectUrl: String) {
 		print("Request Successed! \n")
@@ -230,7 +230,7 @@ extension ViewController: IOTNetworkPurchaseDelegate {
 ```
 ```
 Objc: .h
-@interface ViewController : UIViewController <IOTCardInfoViewDelegate, IOTNetworkServiceDelegate>
+@interface ViewController : UIViewController <IOTCardInfoViewDelegate, IOTNetworkAddCardDelegate>
 
 .m
 - (void)onDidAddCardFailWithMsg:(NSString * _Nonnull)msg {
