@@ -323,14 +323,14 @@ Add following code in ViewController after viewDidLoad
 ```
 Swift:
 cardInfoView = IOTCardInfoViewSingleLineNCardIcon(action: .oneTimePurchase, style: .autoDarkModeSupport)
-cardInfoView.purchaseDelegate = self
+cardInfoView.delegate = self
 view.addSubview(cardInfoView)
 ```
 ```
 Objc: (in .m)
 self.cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase
 									 style: IOTCardInfoViewStyleRoundRect];
-self.cardInfoView.purchaseDelegate = self;
+self.cardInfoView.delegate = self;
 [self.view addSubview: self.cardInfoView];
 ```
 This will start the interface for the user to fill in the card info.<br />   
