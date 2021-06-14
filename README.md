@@ -265,13 +265,13 @@ After user filling the card info and tap on the "Add User" sending the request b
 ```
 Swift:
 let shard = IOTNetworkService.shared
-shard.delegate = self
+shard.addCardDelegate = self
 shard.sendRequest(secureId: "your secureId", cardInfoView: cardInfoView)
 ```
 ```
 Objc:
 IOTNetworkService *shard = IOTNetworkService.shared;
-shard.delegate = self;
+shard.addCardDelegate = self;
 [shard sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
 ```
 As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
@@ -316,14 +316,14 @@ Add following code in ViewController after viewDidLoad
 ```
 Swift:
 cardInfoView = IOTCardInfoViewSingleLine(action: .oneTimePurchase, style: .autoDarkModeSupport)
-cardInfoView.Delegate = self
+cardInfoView.purchaseDelegate = self
 view.addSubview(cardInfoView)
 ```
 ```
 Objc: (in .m)
 self.cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase
 									 style: IOTCardInfoViewStyleRoundRect];
-self.cardInfoView.delegate = self;
+self.cardInfoView.purchaseDelegate = self;
 [self.view addSubview: self.cardInfoView];
 ```
 This will start the interface for the user to fill in the card info.<br />   
