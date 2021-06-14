@@ -420,7 +420,7 @@ onDidPurchaseUnknowWithMsg may only happen in the extreme case, which doesn't ha
 After user filling the card info and tap on the "Add User" sending the request by:
 ```
 Swift:
-let shard = IOTNetworkManager.shared
+let shard = IOTNetworkService.shared
 shard.purchaseDelegate = self
 shard.sendRequest(secureId: "your secureId", cardInfoView: cardInfoView)
 ```
