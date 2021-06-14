@@ -311,7 +311,7 @@ The SDK only provide TestFields. Buttons and ViewControllers are for demo only. 
 Declare the view before viewDidLoad. This is not mandatory for displaying the view, but you will need this view's point to send a request in the next step.
 ```
 Swift:
-var cardInfoView: IOTCardInfoViewSingleLine!
+var cardInfoView: IOTCardInfoViewSingleLineNCardIcon!
 ```
 ```
 Objc: 
@@ -322,7 +322,7 @@ Objc:
 Add following code in ViewController after viewDidLoad
 ```
 Swift:
-cardInfoView = IOTCardInfoViewSingleLine(action: .oneTimePurchase, style: .autoDarkModeSupport)
+cardInfoView = IOTCardInfoViewSingleLineNCardIcon(action: .oneTimePurchase, style: .autoDarkModeSupport)
 cardInfoView.purchaseDelegate = self
 view.addSubview(cardInfoView)
 ```
