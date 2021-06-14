@@ -531,9 +531,10 @@ Register an IOTPay account to get the "Merchant Id", "Merchant Key" and "loginNa
 
 ### - Step 2: Get Temporary secureId
 
-For "Simple Purchase", please visit:   https://develop.iotpay.ca/new/v3dev/purchase.html   
+For "Recurring Purchase - Add card", please visit   https://develop.iotpay.ca/newdemo/card/v3/addcard.html
 
-For "Recurring Purchase - Add card", please visit   https://develop.iotpay.ca/new/v3dev/addcard.html    
+For "Simple Purchase", please visit:   https://develop.iotpay.ca/newdemo/card/v3/purchase.html  
+   
 
 Fill in the account info requested on the page, then press "Submit" button. Check the URL in the browser, it will looks like following: 
 
