@@ -279,6 +279,7 @@ The secureId is generated after your server connects with IOTPay server, please 
 
 <br   >
 #### 2.4.5 Response Data
+<br   >
 ```
 class IOTDesensitizedCardInfo: NSObject {
 	public let cardId: String
@@ -427,7 +428,7 @@ As you noted, we added the delegate again and set it to self in the above code. 
 The secureId is generated after your server connecting with IOTPay server, please check the Flow Chart above and IOTPayPhp for more info, or go to the end of this readme for method to get secureId for testing.
 	
 <br   >
-#### 2.5.5 Response Data
+#### 2.5.5 Response Data<br   >
 ```
 class IOTPurchaseReceipt: NSObject {
 	public let amount: Int   //Int in cent example: 134 //which is ($1.34)
