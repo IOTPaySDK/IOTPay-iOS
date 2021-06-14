@@ -280,7 +280,7 @@ The secureId is generated after your server connects with IOTPay server, please 
 <br   >
 #### 2.4.5 Response Data
 <br   >
-```
+```<br   >
 class IOTDesensitizedCardInfo: NSObject {
 	public let cardId: String
 	public let cardNumber: String
