@@ -288,7 +288,7 @@ class IOTDesensitizedCardInfo: NSObject {
 ```
 Use desensitizedCardInfo.info to easily log out the return data.
 Please check the AddCardSwiftExample or AddCardObjcExample in the examples folder for finished code.
-
+The SDK only provide TestFields. Buttons and ViewControllers are for demo only. It's highly recommended to use your own customized button for payment/addCard request and have a loading animation view ready while waiting for network response.
 	
 <a name="2.5"><a/>
 ### 2.5 "Simple Purchase" Option:
@@ -450,7 +450,7 @@ class IOTPurchaseReceipt: NSObject {
 ```
 Use purchaseReceipt.info to easily log out the return data.
 Please check the SimplePurchaseSwiftExample or SimplePurchaseObjcExample in the examples folder for finished code.
-
+The SDK only provide TestFields. Buttons and ViewControllers are for demo only. It's highly recommended to use your own customized button for payment/addCard request and have a loading animation view ready while waiting for network response.
 
 
 	
