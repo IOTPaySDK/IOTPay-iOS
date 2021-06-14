@@ -31,7 +31,7 @@ IOTNetworkService.shared.sendRequest(secureId: "Your secureId", cardInfoView: ca
 For Objc: 
 #import <IOTPayiOS/IOTPayiOS-Swift.h>
 	
-IOTCardInfoViewSingleLineNCardIcon *cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase 
+IOTCardInfoViewTripleLineNCardView *cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase 
 											       style:  IOTCardInfoViewStyleAutoDarkModeSupport];	
 [IOTNetworkService.shared sendRequestWithSecureId: @"Your secureId" cardInfoView: cardInfoView];
 ```
