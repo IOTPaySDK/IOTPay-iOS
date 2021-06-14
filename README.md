@@ -76,6 +76,7 @@ And finally, save and close the text editor, then enter the following command in
 pod install
 ```
 The cocoaPod will start installing the IOTPayiOS framework.
+The cocoaPod will also generate a .xcworkspace file same, this should be the root file to open the project in the futrue.
 <br />  <br />      
 
 
