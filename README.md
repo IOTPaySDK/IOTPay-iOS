@@ -434,8 +434,11 @@ As you noted, we added the delegate again and set it to self in the above code. 
 The secureId is generated after your server connecting with IOTPay server, please check the Flow Chart above and IOTPayPhp for more info, or go to the end of this readme for method to get secureId for testing.
 	
 <br   />
-#### 2.5.5 Response Data<br   />
+#### 2.5.5 Response Data
+<br   />
+
 ```
+
 class IOTPurchaseReceipt: NSObject {
 	let amount: Int   //Int in cent example: 134 //which is ($1.34)
 	let authorizationNumber: String
@@ -457,7 +460,10 @@ class IOTPurchaseReceipt: NSObject {
 	}
 
 }
+
 ```
+
+<br   />
 Use purchaseReceipt.info to easily log out the return data.
 Please check the SimplePurchaseSwiftExample or SimplePurchaseObjcExample in the examples folder for finished code.
 The SDK only provide TestFields. Buttons and ViewControllers are for demo only. It's highly recommended to use your own customized button for payment/addCard request and have a loading animation view ready while waiting for network response.
