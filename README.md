@@ -433,24 +433,24 @@ shard.delegate = self;
 As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
 The secureId is generated after your server connecting with IOTPay server, please check the Flow Chart above and IOTPayPhp for more info, or go to the end of this readme for method to get secureId for testing.
 	
-<br   >
-#### 2.5.5 Response Data<br   >
+<br   />
+#### 2.5.5 Response Data<br   />
 ```
 class IOTPurchaseReceipt: NSObject {
-	public let amount: Int   //Int in cent example: 134 //which is ($1.34)
-	public let authorizationNumber: String
-	public let cardNumber: String // desensitizated example: 424242XXXXXX4242
-	public let cardType: String  // V=Visa, M=Master, D=Interact
-	public let currency: String // example: "CAD"
-	public let invoiceNumber: String 
-	public let merchantOrderNumber: String
-	public let originalOrderId: String
-	public let payOrderId: String
-	public let paySuccessTime: String // example "2021-04-16 03:33:16";
-	public let payType: String // example pay;
-	public let refundable: Int   //Int in cent
-	public let status: Int   //example: 2.  (either 2 or 3)
-	public let transitionNumber: String
+	let amount: Int   //Int in cent example: 134 //which is ($1.34)
+	let authorizationNumber: String
+	let cardNumber: String // desensitizated example: 424242XXXXXX4242
+	let cardType: String  // V=Visa, M=Master, D=Interact
+	let currency: String // example: "CAD"
+	let invoiceNumber: String 
+	let merchantOrderNumber: String
+	let originalOrderId: String
+	let payOrderId: String
+	let paySuccessTime: String // example "2021-04-16 03:33:16";
+	let payType: String // example pay;
+	let refundable: Int   //Int in cent
+	let status: Int   //example: 2.  (either 2 or 3)
+	let transitionNumber: String
 
 	@objc
 	public var info: String {
