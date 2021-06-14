@@ -56,7 +56,7 @@ Once you have cocoaPod installed, open the Terminal (Mac command line/CLI) and s
 ```
 cd ~/Path/to/Folder/MyApp
 ```
-A easier way to do so is type cd, space, and drag the project folder to the Terminal, then input enter.
+A easier way to do so is type cd, space, and drag the project folder to the Terminal, then input enter. In this case, MyApp folder contains the .xcodeproj file.
 
 <br /> 
 
