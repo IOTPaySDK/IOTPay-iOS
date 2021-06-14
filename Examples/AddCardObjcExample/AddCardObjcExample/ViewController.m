@@ -74,40 +74,6 @@
 	[self.button setUserInteractionEnabled: true];
 }
 
-//- (void)onDidAddCardWithDesensitizedCardInfo:(IOTDesensitizedCardInfo * _Nonnull)
-//												desensitizedCardInfo redirectUrl:(NSString * _Nonnull)redirectUrl {
-//	/* .addCard action's network response if successd.
-//	There is a error checklist in the github guide to help you fix the error
-//	*/
-//	//NSLog(@"successed %@", desensitizedCardInfo.info);
-//}
-//
-
-//- (void)onDidPurchaseWithPurchaseReceipt:(IOTPurchaseReceipt * _Nonnull)purchaseReceipt
-//														 redirectUrl:(NSString * _Nonnull)redirectUrl {
-//
-//	NSLog(@"successed! /n");
-//	NSLog(@"amount: %zd", purchaseReceipt.amount);
-//	NSLog(@"authorizationNumber %@", purchaseReceipt.authorizationNumber);
-//	NSLog(@"cardNumber %@", purchaseReceipt.cardNumber);
-//	NSLog(@"cardType %@", purchaseReceipt.cardType);
-//	NSLog(@"currency %@", purchaseReceipt.currency);
-//	NSLog(@"invoiceNumber %@", purchaseReceipt.invoiceNumber);
-//	NSLog(@"merchantOrderNumber %@", purchaseReceipt.merchantOrderNumber);
-//	NSLog(@"originalOrderId %@", purchaseReceipt.originalOrderId);
-//	NSLog(@"payOrderId %@", purchaseReceipt.payOrderId);
-//	NSLog(@"paySuccessTime %@", purchaseReceipt.paySuccessTime);
-//	NSLog(@"payType %@", purchaseReceipt.payType);
-//	NSLog(@"refundable %zd", purchaseReceipt.refundable);
-//	NSLog(@"status %zd", purchaseReceipt.status);
-//	NSLog(@"transitionNumber %@", purchaseReceipt.transitionNumber);
-//
-//	/* .oneTimePurchase action's network response if successd.
-//	There is a error checklist in the github guide to help you fix the error
-//	*/
-//	//NSLog(@"successed %@", purchaseReceipt.info);
-//}
-
 
 // network Delegate
 - (void)onDidAddCardFailWithMsg:(NSString * _Nonnull)msg {
