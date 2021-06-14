@@ -272,7 +272,7 @@ shard.delegate = self;
 As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
 The secureId is generated after your server connects with IOTPay server, please check the Flow Chart above and IOTPayPhp for more info, or go to the end of this readme for a method to get secureId for testing.
 
-#### 2.4.4 Network Response
+
 
 	
 <a name="2.5"><a/>
@@ -360,7 +360,7 @@ extension ViewController: IOTNetworkPurchaseDelegate {
 ```
 ```
 Objc: in .h
-@interface ViewController : UIViewController <IOTCardInfoViewDelegate, IOTNetworkAddCardDelegate>
+@interface ViewController : UIViewController <IOTCardInfoViewDelegate, IOTNetworkPurchaseDelegate>
 
 in .m
 - (void)onDidPurchaseFailWithMsg:(NSString * _Nonnull)msg {
@@ -392,7 +392,7 @@ After user filling the card info and tap on the "Add User" sending the request b
 Swift:
 let shard = IOTNetworkManager.shared
 shard.delegate = self
-shard.sendRequest(secureId: "your secureId", cardInfoPrivder: cardInfoView)
+shard.sendRequest(secureId: "your secureId", cardInfoView: cardInfoView)
 ```
 ```
 Objc:
@@ -404,7 +404,7 @@ As you noted, we added the delegate again and set it to self in the above code. 
 The secureId is generated after your server connecting with IOTPay server, please check the Flow Chart above and IOTPayPhp for more info, or go to the end of this readme for method to get secureId for testing.
 	
 
-#### 2.5.5 Network Response:
+
 
 	
 <br   />     
