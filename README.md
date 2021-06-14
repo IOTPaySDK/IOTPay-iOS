@@ -32,7 +32,7 @@ For Objc: 
 #import <IOTPayiOS/IOTPayiOS-Swift.h>
 	
 IOTCardInfoViewSingleLineNCardIcon *cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase 
-											       style:  IOTCardInfoViewStyleRoundRect];	
+											       style:  IOTCardInfoViewStyleAutoDarkModeSupport];	
 [IOTNetworkService.shared sendRequestWithSecureId: @"Your secureId" cardInfoView: cardInfoView];
 ```
 <br /> 
@@ -67,9 +67,11 @@ pod init
 The pod init command will make a Podfile in your project folder. This text file is the manager of the framework and library for you app. Now let's try to editing it by tap on Podfile or type "open Podfile' in Terminal, then enter the following lines:
 ```
 target 'MyApp' do    
+	use_frameworks! 
 	pod 'IOTPayiOS', '~> 8.1.0'
 end
 ```
+"use_frameworks!" is required for objective-c.
 The first and last line is probably there already, so you will just need to fill in the middle line.<br />  
 And finally, save and close the text editor, then enter the following command in the Terminal.
 ```
