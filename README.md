@@ -50,7 +50,7 @@ https://guides.cocoapods.org/using/the-podfile.html
 
 Once you have cocoaPod installed, open the Terminal (Mac command line/CLI) and set the directory to your project, one level above the MyProject.xcodeproj file.
 ```
-cd ~/Path/to/Folder/MyProject
+cd ~/Path/to/Folder/MyApp
 ```
 A easier way to do so is type cd, space, and drag the project folder to the Terminal, then input enter.
 
