@@ -12,7 +12,7 @@ public typealias HTTPHeaders = [String: Any]?
 
 struct IOTHTTPNetworkRequest {
 
-	static func configureHTTPRequest(from route: IOTIOTHTTPNetworkRoute, with parameters: HTTPParameters, includes headers: HTTPHeaders, contains body: Data?, and method: IOTHTTPMethod) throws -> URLRequest {
+	static func configureHTTPRequest(from route: IOTHTTPNetworkRoute, with parameters: HTTPParameters, includes headers: HTTPHeaders, contains body: Data?, and method: IOTHTTPMethod) throws -> URLRequest {
 
 		guard let url = URL(string: IOTNetworkRequest.apiPrefix + route.route) else {
 			throw IOTHTTPNetworkError.missingURL

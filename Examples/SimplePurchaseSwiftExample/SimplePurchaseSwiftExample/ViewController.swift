@@ -31,7 +31,8 @@ class ViewController: UIViewController {
 		style: (enum) Choose any style fit your app.
 		For auto - Nightmode detection, please use .autoNightmode
 		*/
-		cardInfoView = IOTCardInfoViewTripleLineNCardView(action: .oneTimePurchase, style: .autoDarkModeSupport)
+		cardInfoView = IOTCardInfoViewTripleLineNCardView(action: .oneTimePurchase,
+																											style: .autoDarkModeSupport)
 		cardInfoView.frame.origin = CGPoint(x: 0.0, y: 50.0)
 		/* set delegate
 		this is the IOTCardInfoViewDelegate,
@@ -63,8 +64,8 @@ class ViewController: UIViewController {
 		https://github.com/IOTPaySDK/IOTPay-iOS
 		*/
 		let shared = IOTNetworkService.shared
-		shared.delegate = self
-		shared.sendRequest(secureId: "Your SecureId",
+		shared.purchaseDelegate = self
+		shared.sendRequest(secureId: "your secureId",
 											 cardInfoView: cardInfoView)
 	}
  }
@@ -77,19 +78,38 @@ extension ViewController: IOTCardInfoViewDelegate {
 	}
 }
 
-extension ViewController: IOTNetworkServiceDelegate {
-	func onDidAddCard(desensitizedCardInfo: IOTDesensitizedCardInfo, redirectUrl: String) {
-		/* .addCard action's network response if successd.
-		There is a error checklist in the github guide to help you fix the error
-		*/
-		print("successd", desensitizedCardInfo.info)
+extension ViewController: IOTNetworkPurchaseDelegate {
+	func onDidPurchaseSuccess(msg: String, purchaseReceipt: IOTPurchaseReceipt, redirectUrl: String) {
+		print("Request Successed! \n")
+		print("amount: \(purchaseReceipt.amount)")
+		print("authorizationNumber: \(purchaseReceipt.authorizationNumber)")
+		print("cardNumber: \(purchaseReceipt.cardNumber)")
+		print("cardType: \(purchaseReceipt.cardType)")
+		print("cardNumber: \(purchaseReceipt.cardNumber)")
+		print("currency: \(purchaseReceipt.currency)")
+		print("invoiceNumber: \(purchaseReceipt.invoiceNumber)")
+		print("merchantOrderNumber: \(purchaseReceipt.merchantOrderNumber)")
+		print("originalOrderId: \(purchaseReceipt.originalOrderId)")
+		print("payOrderId: \(purchaseReceipt.payOrderId)")
+		print("paySuccessTime: \(purchaseReceipt.paySuccessTime)")
+		print("payType: \(purchaseReceipt.payType)")
+		print("refundable: \(purchaseReceipt.refundable)")
+		print("status: \(purchaseReceipt.status)")
+		print("transitionNumber: \(purchaseReceipt.transitionNumber)")
+		print("redirectUrl: \(redirectUrl)")
 	}
 
-	func onDidPurchase(purchaseReceipt: IOTPurchaseReceipt, redirectUrl: String) {
-		/* .oneTimePurchase action's network response if successd.
-		There is a error checklist in the github guide to help you fix the error
-		*/
-		print("successd", purchaseReceipt.info)
+	func onDidPurchaseFail(msg: String) {
+		print("Request Failed! msg: \(msg)");
+	}
+
+	func onDidPurchaseUnknow(msg: String) {
+		print("Request Failed! msg: \(msg)");
+		print("""
+			This is a rarely happening case where bank's network may has problems. This transition
+			may or may NOT go thought. You should content with IOTPay customer service to get the
+			payment result."
+			""");
 	}
 }
 

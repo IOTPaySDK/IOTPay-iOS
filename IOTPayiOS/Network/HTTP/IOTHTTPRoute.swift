@@ -5,13 +5,13 @@
 //  Created by macbook on 2021-04-16.
 //
 
-public enum IOTIOTHTTPNetworkRoute: Int {
+public enum IOTHTTPNetworkRoute: Int {
 	case addCard = 0
 	case oneTimePurchase
 	case retryPurchase
 
 	public init(action: IOTNetworkRequestAction) {
-		self = IOTIOTHTTPNetworkRoute.init(rawValue: action.rawValue)!
+		self = IOTHTTPNetworkRoute.init(rawValue: action.rawValue)!
 	}
 
 	public var route: String {

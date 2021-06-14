@@ -12,7 +12,7 @@ import UIKit
 //}
 
 protocol IOTCardInfoComponentsTransportDelegate: IOTNetworkService { //IOTPay_iOS_nonFramework.//IOTNetworkManager
-	func transport(route: IOTIOTHTTPNetworkRoute, info: IOTCardInfo)
+	func transport(route: IOTHTTPNetworkRoute, info: IOTCardInfo)
 }
 
 protocol IOTCardInfoComponentsDelegate: AnyObject {
@@ -224,7 +224,7 @@ extension IOTCardInfoComponents {
 
 extension IOTCardInfoComponents {
 	func transport() {
-		let route = IOTIOTHTTPNetworkRoute(action: action)
+		let route = IOTHTTPNetworkRoute(action: action)
 		let info = IOTCardInfo(
 			cardNumber: textFields[IOTTextFieldSubject.cardNumber.rawValue].valueString!,
 			holderName: textFields[IOTTextFieldSubject.holderName.rawValue].valueString!,

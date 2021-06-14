@@ -62,12 +62,13 @@ class ViewController: UIViewController {
 		https://github.com/IOTPaySDK/IOTPay-iOS
 		*/
 		let shared = IOTNetworkService.shared
-		shared.delegate = self
-		let yourSecureId = "Your SecureId";
+		shared.addCardDelegate = self
+		let yourSecureId = "your SecureId";
 		shared.sendRequest(secureId: yourSecureId, cardInfoView: cardInfoView)
 	}
 }
 
+// textfiled delegates
 extension ViewController: IOTCardInfoViewDelegate {
 	func onDidCompleteValidate() {
 		// User did complete card info view Validate, we should enable the button
@@ -76,21 +77,20 @@ extension ViewController: IOTCardInfoViewDelegate {
 	}
 }
 
-extension ViewController: IOTNetworkServiceDelegate {
-	func onDidAddCard(desensitizedCardInfo: IOTDesensitizedCardInfo, redirectUrl: String) {
-		/* .addCard action's network response if successd.
-		There is a error checklist in the github guide to help you fix the error
-		*/
-		print("successd", desensitizedCardInfo.info)
+// network delegates
+extension ViewController: IOTNetworkAddCardDelegate {
+	func onDidAddCardSuccess(msg: String,
+													 desensitizedCardInfo: IOTDesensitizedCardInfo,
+													 redirectUrl: String) {
+		print("Request Successed! \n")
+		print("cardId: \(desensitizedCardInfo.cardId)")
+		print("cardNumber: \(desensitizedCardInfo.cardNumber)")
+		print("holderName: \(desensitizedCardInfo.holderName)")
+		print("redirectUrl: \(redirectUrl)")
 	}
 
-	func onDidPurchase(purchaseReceipt: IOTPurchaseReceipt, redirectUrl: String) {
-		/* .oneTimePurchase action's network response if successd.
-		There is a error checklist in the github guide to help you fix the error
-		*/
-		print("successd", purchaseReceipt.info)
+	func onDidAddCardFail(msg: String) {
+		NSLog("Request Failed! msg: \(msg)");
 	}
-
-
 }
 

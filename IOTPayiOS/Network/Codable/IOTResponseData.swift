@@ -15,7 +15,7 @@ struct IOTBaseResponseData: Codable {
 
 struct IOTAddCardResponseData: Codable {
 	let retData: IOTAddCardRetData
-	let retCode: String
+	let retCode: IOTRetCode
 	let retMsg: String?
 }
 
@@ -72,23 +72,37 @@ struct IOTPurchaseRetData: Codable {
 
 @objc
 public class IOTPurchaseReceipt: NSObject {
-	let amount: Int   //Int in cent
-	let	authorizationNumber: String
-	let	cardNumber: String // desensitizated   424242XXXXXX4242
-	let	cardType: String  // V=Visa, M=Master, D=Interact
-	let	currency: String //
+	@objc
+	public let amount: Int   //Int in cent
+	@objc
+	public let	authorizationNumber: String
+	@objc
+	public let	cardNumber: String // desensitizated   424242XXXXXX4242
+	@objc
+	public let	cardType: String  // V=Visa, M=Master, D=Interact
+	@objc
+	public let	currency: String //
 	//let	expiryDate: String // 1122;
-	let invoiceNumber: String // 832828793487
+	@objc
+	public let invoiceNumber: String // 832828793487
 	//let mchId: String// 10000576;
-	let merchantOrderNumber: String// 1618569175;
-	let originalOrderId: String // "";
-	let payOrderId: String //CS20210416103255832828793487;
-	let paySuccessTime: String// "2021-04-16 03:33:16";
-	let payType: String// pay;
+	@objc
+	public let merchantOrderNumber: String// 1618569175;
+	@objc
+	public let originalOrderId: String // "";
+	@objc
+	public let payOrderId: String //CS20210416103255832828793487;
+	@objc
+	public let paySuccessTime: String// "2021-04-16 03:33:16";
+	@objc
+	public let payType: String// pay;
 	//let redirectUrl: String
-	let refundable: Int   //Int in cent
-	let status: Int   //2
-	let transitionNumber: String   //Int= 000108583539;
+	@objc
+	public let refundable: Int   //Int in cent
+	@objc
+	public let status: Int   //2
+	@objc
+	public let transitionNumber: String   //Int= 000108583539;
 
 	init(amount: Int, authorizationNumber: String, cardNumber: String, cardType: String,
 			 currency: String, invoiceNumber: String, merchantOrderNumber: String,
@@ -131,6 +145,21 @@ enum IOTRetCode: String, Codable {
 		else if retCode == "FAIL" { self = .FAIL}
 		else { fatalError() }
 	}
+
+	var isSuccess: Bool { self == .SUCCESS ? true : false }
+}
+
+@objc
+public enum IOTResultStatus: Int {
+	case SUCCESS, FAIL, UNKNOW
+	
+	init(retCode: String) {
+		if retCode == "SUCCESS" { self = .SUCCESS }
+		else if retCode == "FAIL" { self = .FAIL}
+		else { self = .UNKNOW }
+	}
+
+	var isSuccess: Bool { self == .SUCCESS ? true : false }
 }
 
 struct IOTNetworkResponse: Codable {

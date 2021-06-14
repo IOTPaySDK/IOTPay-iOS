@@ -6,8 +6,8 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
+(
+@interface ViewController: ViewController ()
 
 
 @end
@@ -60,35 +60,70 @@
 
 -(void)onButton {
 	IOTNetworkService *shard = IOTNetworkService.shared;
-	shard.delegate = self;
-	[shard sendRequestWithSecureId: @"d8d17792ed741d906b2477e72808e6c6a53f069f89c3428e9512752b91285975" cardInfoView: self.cardInfoView];
+	shard.addCardDelegate = self;
+	[shard sendRequestWithSecureId: @"your SecureId"
+										cardInfoView: self.cardInfoView];
 	[self.button setTitle: @"Add Card" forState: UIControlStateNormal];
 	[self.button setUserInteractionEnabled: true];
 }
 
-
+//text field delegate
 - (void)onDidCompleteValidate {
 	// User did complete card info view Validate, we should enable the button
 	[self.button setTitle: @"Add Card" forState: UIControlStateNormal];
 	[self.button setUserInteractionEnabled: true];
 }
 
-- (void)onDidAddCardWithDesensitizedCardInfo:(IOTDesensitizedCardInfo * _Nonnull)
-												desensitizedCardInfo redirectUrl:(NSString * _Nonnull)redirectUrl {
-	/* .addCard action's network response if successd.
-	There is a error checklist in the github guide to help you fix the error
-	*/
-	NSLog(@"successed %@", desensitizedCardInfo.info);
+//- (void)onDidAddCardWithDesensitizedCardInfo:(IOTDesensitizedCardInfo * _Nonnull)
+//												desensitizedCardInfo redirectUrl:(NSString * _Nonnull)redirectUrl {
+//	/* .addCard action's network response if successd.
+//	There is a error checklist in the github guide to help you fix the error
+//	*/
+//	//NSLog(@"successed %@", desensitizedCardInfo.info);
+//}
+//
+
+//- (void)onDidPurchaseWithPurchaseReceipt:(IOTPurchaseReceipt * _Nonnull)purchaseReceipt
+//														 redirectUrl:(NSString * _Nonnull)redirectUrl {
+//
+//	NSLog(@"successed! /n");
+//	NSLog(@"amount: %zd", purchaseReceipt.amount);
+//	NSLog(@"authorizationNumber %@", purchaseReceipt.authorizationNumber);
+//	NSLog(@"cardNumber %@", purchaseReceipt.cardNumber);
+//	NSLog(@"cardType %@", purchaseReceipt.cardType);
+//	NSLog(@"currency %@", purchaseReceipt.currency);
+//	NSLog(@"invoiceNumber %@", purchaseReceipt.invoiceNumber);
+//	NSLog(@"merchantOrderNumber %@", purchaseReceipt.merchantOrderNumber);
+//	NSLog(@"originalOrderId %@", purchaseReceipt.originalOrderId);
+//	NSLog(@"payOrderId %@", purchaseReceipt.payOrderId);
+//	NSLog(@"paySuccessTime %@", purchaseReceipt.paySuccessTime);
+//	NSLog(@"payType %@", purchaseReceipt.payType);
+//	NSLog(@"refundable %zd", purchaseReceipt.refundable);
+//	NSLog(@"status %zd", purchaseReceipt.status);
+//	NSLog(@"transitionNumber %@", purchaseReceipt.transitionNumber);
+//
+//	/* .oneTimePurchase action's network response if successd.
+//	There is a error checklist in the github guide to help you fix the error
+//	*/
+//	//NSLog(@"successed %@", purchaseReceipt.info);
+//}
+
+
+// network Delegate
+- (void)onDidAddCardFailWithMsg:(NSString * _Nonnull)msg {
+	NSLog(@"Request Failed! msg: %@", msg);
 }
 
-- (void)onDidPurchaseWithPurchaseReceipt:(IOTPurchaseReceipt * _Nonnull)purchaseReceipt
-												redirectUrl:(NSString * _Nonnull)redirectUrl {
-	/* .oneTimePurchase action's network response if successd.
-	There is a error checklist in the github guide to help you fix the error
-	*/
-	NSLog(@"successed %@", purchaseReceipt.info);
-}
+- (void)onDidAddCardSuccessWithMsg:(NSString * _Nonnull)msg
+							desensitizedCardInfo:(IOTDesensitizedCardInfo * _Nonnull)desensitizedCardInfo
+											 redirectUrl:(NSString * _Nonnull)redirectUrl {
 
+	NSLog(@"Request Successed! \n");
+	NSLog(@"cardId: %@", desensitizedCardInfo.cardId);
+	NSLog(@"cardNumber %@", desensitizedCardInfo.cardNumber);
+	NSLog(@"holderName %@", desensitizedCardInfo.holderName);
+	NSLog(@"redirectUrl %@", redirectUrl);
+}
 
 
 @end

@@ -16,8 +16,8 @@ public enum IOTNetworkRequestAction: Int {
 
 	var apiSuffix: String {
 		switch self {
-			case .addCard: return IOTIOTHTTPNetworkRoute.addCard.route // "v3/cc_pfadduser"
-			case .oneTimePurchase: return IOTIOTHTTPNetworkRoute.oneTimePurchase.route
+			case .addCard: return IOTHTTPNetworkRoute.addCard.route // "v3/cc_pfadduser"
+			case .oneTimePurchase: return IOTHTTPNetworkRoute.oneTimePurchase.route
 			//case .retryPurchase: return IOTHTTPNetworkRoute.retryPurchase.rawValue
 		}
 	}
@@ -34,14 +34,14 @@ public final class IOTNetworkRequest {
 	static let testPrefix: String = "https://ccdev.iotpaycloud.com/"
 
 	// init constant
-	let route: IOTIOTHTTPNetworkRoute
+	let route: IOTHTTPNetworkRoute
 	let cardInfo: IOTRequestCardData
 
 	private var apiSuffix: String { route.route }
 	private var url: URL { URL(string: IOTNetworkRequest.apiPrefix + apiSuffix)! }
 	var urlRequest: URLRequest { URLRequest(url: url) }
 
-	init(secureId: String, route: IOTIOTHTTPNetworkRoute, cardInfo: IOTCardInfo) {
+	init(secureId: String, route: IOTHTTPNetworkRoute, cardInfo: IOTCardInfo) {
 		self.route = route
 		self.cardInfo = IOTRequestCardData(secureId: secureId, cardInfo: cardInfo)
 	}

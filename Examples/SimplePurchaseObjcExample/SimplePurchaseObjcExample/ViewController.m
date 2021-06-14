@@ -62,8 +62,8 @@
 
 -(void)onButton {
 	IOTNetworkService *shard = IOTNetworkService.shared;
-	shard.delegate = self;
-	[shard sendRequestWithSecureId: @"Your SecureId" cardInfoView:self.cardInfoView];
+	shard.purchaseDelegate = self;
+	[shard sendRequestWithSecureId: @"your SecureId" cardInfoView:self.cardInfoView];
 	[self.button setTitle: @"Please enter card info" forState: UIControlStateNormal];
 	[self.button setUserInteractionEnabled: true];
 }
@@ -75,23 +75,53 @@
 	[self.button setUserInteractionEnabled: true];
 }
 
-- (void)onDidAddCardWithDesensitizedCardInfo:(IOTDesensitizedCardInfo * _Nonnull)
-												desensitizedCardInfo redirectUrl:(NSString * _Nonnull)redirectUrl {
-	/* .addCard action's network response if successd.
-	There is a error checklist in the github guide to help you fix the error
-	*/
-	NSLog(@"successed %@", desensitizedCardInfo.info);
+
+	//	NSLog(@"successed! /n");
+	//	NSLog(@"amount: %zd", purchaseReceipt.amount);
+	//	NSLog(@"authorizationNumber %@", purchaseReceipt.authorizationNumber);
+	//	NSLog(@"cardNumber %@", purchaseReceipt.cardNumber);
+	//	NSLog(@"cardType %@", purchaseReceipt.cardType);
+	//	NSLog(@"currency %@", purchaseReceipt.currency);
+	//	NSLog(@"invoiceNumber %@", purchaseReceipt.invoiceNumber);
+	//	NSLog(@"merchantOrderNumber %@", purchaseReceipt.merchantOrderNumber);
+	//	NSLog(@"originalOrderId %@", purchaseReceipt.originalOrderId);
+	//	NSLog(@"payOrderId %@", purchaseReceipt.payOrderId);
+	//	NSLog(@"paySuccessTime %@", purchaseReceipt.paySuccessTime);
+	//	NSLog(@"payType %@", purchaseReceipt.payType);
+	//	NSLog(@"refundable %zd", purchaseReceipt.refundable);
+	//	NSLog(@"status %zd", purchaseReceipt.status);
+	//	NSLog(@"transitionNumber %@", purchaseReceipt.transitionNumber);
+
+- (void)onDidPurchaseFailWithMsg:(NSString * _Nonnull)msg {
+	NSLog(@"Request Failed! msg: %@", msg);
 }
 
-- (void)onDidPurchaseWithPurchaseReceipt:(IOTPurchaseReceipt * _Nonnull)purchaseReceipt
-												redirectUrl:(NSString * _Nonnull)redirectUrl {
-	/* .oneTimePurchase action's network response if successd.
-	There is a error checklist in the github guide to help you fix the error
-	*/
-	NSLog(@"successed %@", purchaseReceipt.info);
+- (void)onDidPurchaseSuccessWithMsg:(NSString * _Nonnull)msg purchaseReceipt:(IOTPurchaseReceipt * _Nonnull)purchaseReceipt redirectUrl:(NSString * _Nonnull)redirectUrl {
+	NSLog(@"Request Successed! \n");
+	NSLog(@"amount: %zd", purchaseReceipt.amount);
+	NSLog(@"authorizationNumber %@", purchaseReceipt.authorizationNumber);
+	NSLog(@"cardNumber %@", purchaseReceipt.cardNumber);
+	NSLog(@"cardType %@", purchaseReceipt.cardType);
+	NSLog(@"currency %@", purchaseReceipt.currency);
+	NSLog(@"invoiceNumber %@", purchaseReceipt.invoiceNumber);
+	NSLog(@"merchantOrderNumber %@", purchaseReceipt.merchantOrderNumber);
+	NSLog(@"originalOrderId %@", purchaseReceipt.originalOrderId);
+	NSLog(@"payOrderId %@", purchaseReceipt.payOrderId);
+	NSLog(@"paySuccessTime %@", purchaseReceipt.paySuccessTime);
+	NSLog(@"payType %@", purchaseReceipt.payType);
+	NSLog(@"refundable %zd", purchaseReceipt.refundable);
+	NSLog(@"status %zd", purchaseReceipt.status);
+	NSLog(@"transitionNumber %@", purchaseReceipt.transitionNumber);
+	NSLog(@"aa %@", purchaseReceipt.info);
 }
 
-
+- (void)onDidPurchaseUnknowWithMsg:(NSString * _Nonnull)msg {
+	NSLog(@"Request Failed! msg: %@", msg);
+	NSString *str = @"This is a rarely happening case where bank's network may has problems. "
+									 "This transition may or may NOT go thought. You should content with IOTPay "
+									 "customer service to get the details of this transition";
+	NSLog(@"%@", str);
+}
 
 @end
 

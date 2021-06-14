@@ -17,9 +17,12 @@ struct IOTCardInfo {
 
 @objc
 public class IOTDesensitizedCardInfo: NSObject {
-	let cardId: String
-	let cardNumber: String
-	let holderName: String
+	@objc
+	public let cardId: String
+	@objc
+	public let cardNumber: String
+	@objc
+	public let holderName: String
 
 	@objc
 	init(cardId: String, cardNumber: String, holderName: String) {
