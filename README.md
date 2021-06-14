@@ -22,14 +22,16 @@
 Quick Start:<br />   
 ```
 For Swift:
-let cardInfoView = IOTCardInfoViewSingleLine(action: .addCard, style: .autoDarkModeSupport)  
+import IOTPayiOS
+	
+let cardInfoView = IOTCardInfoViewSingleLineNCardIcon(action: .addCard, style: .autoDarkModeSupport)  
 IOTNetworkService.shared.sendRequest(secureId: "Your secureId", cardInfoView: cardInfoView)
 ```
 ```
 For Objc: 
-IOTCardInfoViewSingleLine *cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase 
+IOTCardInfoViewSingleLineNCardIcon *cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase 
 											       style:  IOTCardInfoViewStyleRoundRect];	
-[IOTNetworkService.shared sendRequestWithSecureId: @"Your secureId" cardInfoView: self.cardInfoView];
+[IOTNetworkService.shared sendRequestWithSecureId: @"Your secureId" cardInfoView: cardInfoView];
 ```
 <br /> 
 <br />  
