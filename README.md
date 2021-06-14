@@ -63,7 +63,7 @@ pod init
 The pod init command will make a Podfile in your project folder. This text file is the manager of the framework and library for you app. Now let's try to editing it by tap on Podfile or type "open Podfile' in Terminal, then enter the following lines:
 ```
 target 'MyApp' do    
-	pod 'IOTPayiOS', '~> 7.0.0'
+	pod 'IOTPayiOS', '~> 8.1.0'
 end
 ```
 The first and last line is probably there already, so you will just need to fill in the middle line.<br />  
