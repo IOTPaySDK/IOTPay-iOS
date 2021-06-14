@@ -421,13 +421,13 @@ After user filling the card info and tap on the "Add User" sending the request b
 ```
 Swift:
 let shard = IOTNetworkManager.shared
-shard.delegate = self
+shard.purchaseDelegate = self
 shard.sendRequest(secureId: "your secureId", cardInfoView: cardInfoView)
 ```
 ```
 Objc:
 IOTNetworkService *shard = IOTNetworkService.shared;
-shard.delegate = self;
+shard.purchaseDelegate = self;
 [shard sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
 ```
 As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
