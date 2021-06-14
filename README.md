@@ -22,7 +22,7 @@
 Quick Start:<br />   
 ```
 For Swift:
-cardInfoView = IOTCardInfoViewSingleLine(action: .addCard, style: .autoDarkModeSupport)  
+let cardInfoView = IOTCardInfoViewSingleLine(action: .addCard, style: .autoDarkModeSupport)  
 IOTNetworkService.shared.sendRequest(secureId: "Your secureId", cardInfoView: cardInfoView)
 ```
 ```
