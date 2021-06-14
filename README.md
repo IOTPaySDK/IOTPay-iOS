@@ -275,7 +275,7 @@ shard.addCardDelegate = self;
 [shard sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
 ```
 As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
-The secureId is generated after your server connects with IOTPay server, please check the Flow Chart above and IOTPayPhp for more info, or go to the end of this readme for a method to get secureId for testing.
+The secureId is generated after your server connects with IOTPay server, please check the Flow Chart above and IOTPayPhp (https://github.com/IOTPaySDK/IOTPay-PHP) for more info regarding how to get the "secureId".
 
 <br   />
 	
@@ -431,7 +431,8 @@ shard.delegate = self;
 [shard sendRequestWithSecureId: @"Your secureId" cardInfoView:self.cardInfoView];
 ```
 As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
-The secureId is generated after your server connecting with IOTPay server, please check the Flow Chart above and IOTPayPhp for more info, or go to the end of this readme for method to get secureId for testing.
+The secureId is generated after your server connects with IOTPay server, please check the Flow Chart above and IOTPayPhp (https://github.com/IOTPaySDK/IOTPay-PHP) for more info regarding how to get the "secureId".
+	
 	
 <br   />
 #### 2.5.5 Response Data
