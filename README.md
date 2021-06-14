@@ -213,22 +213,18 @@ Please don't forget to add "IOTCardInfoViewDelegate" in the previous step.<br />
 ```
 Swift:	
 // This Swift sample code is using extension, which should add at the end of the code out side ViewController class.
-extension ViewController: IOTNetworkServiceDelegate {	
-func onDidAddCard(desensitizedCardInfo: IOTDesensitizedCardInfo, redirectUrl: String) {		
-	/* 
-	.addCard action's network response if successed.		
-	There is a error checklist in the github guide to help you fix the error		
-	*/
-	print("successed", desensitizedCardInfo.info)	
-}
-	
-func onDidPurchase(purchaseReceipt: IOTPurchaseReceipt, redirectUrl: String) {	
-	/* 
-	This is for Simple Purchase event, it has nothing to do with "purchase with token" in the next step. 
-	You can lease this blank for addCard Event.	
-	*/
+extension ViewController: IOTNetworkPurchaseDelegate {	
 
-	print("successed", purchaseReceipt.info)	
+	func onDidAddCardSuccess(msg: String, desensitizedCardInfo: IOTDesensitizedCardInfo, redirectUrl: String) {
+		print("Request Successed! \n")
+		print("cardId: \(desensitizedCardInfo.cardId)")
+		print("cardNumber: \(desensitizedCardInfo.cardNumber)")
+		print("holderName: \(desensitizedCardInfo.holderName)")
+		print("redirectUrl: \(redirectUrl)")
+	}
+
+	func onDidAddCardFail(msg: String) {
+		NSLog("Request Failed! msg: \(msg)");
 	}
 }
 ```
@@ -237,15 +233,22 @@ Objc: .h
 @interface ViewController : UIViewController <IOTCardInfoViewDelegate, IOTNetworkServiceDelegate>
 
 .m
-- (void)onDidAddCardWithDesensitizedCardInfo:(IOTDesensitizedCardInfo * _Nonnull) desensitizedCardInfo 				 
-				 redirectUrl:(NSString * _Nonnull)redirectUrl {	
-				 // This is for the addCard event. You can lease this blank for simplePurchase Event.
+- (void)onDidAddCardFailWithMsg:(NSString * _Nonnull)msg {
+	NSLog(@"Request Failed! msg: %@", msg);
 }
 
-- (void)onDidPurchaseWithPurchaseReceipt:(IOTPurchaseReceipt * _Nonnull) purchaseReceipt
-  			     redirectUrl:(NSString * _Nonnull)redirectUrl {	
-	NSLog(@"successed %@", purchaseReceipt.info);
+- (void)onDidAddCardSuccessWithMsg:(NSString * _Nonnull)msg 
+	      desensitizedCardInfo:(IOTDesensitizedCardInfo * _Nonnull) desensitizedCardInfo
+		       redirectUrl:(NSString * _Nonnull)redirectUrl {
+
+	NSLog(@"Request Successed! \n");
+	NSLog(@"cardId: %@", desensitizedCardInfo.cardId);
+	NSLog(@"cardNumber %@", desensitizedCardInfo.cardNumber);
+	NSLog(@"holderName %@", desensitizedCardInfo.holderName);
+	NSLog(@"redirectUrl %@", redirectUrl);
 }
+
+
 ```
 You should record some of that info to associate the user account/device to your Merchant Server. The future purchase should use "purchase with token" from now on, except your user wants to add or pay with a new card.
 Please check the AddUserSwiftExample or AddUserObjcExample in the examples folder for finished code.
@@ -258,7 +261,7 @@ After user filling the card info and tap on the "Add User" sending the request b
 Swift:
 let shard = IOTNetworkService.shared
 shard.delegate = self
-shard.sendRequest(secureId: "your secureId", cardInfoPrivder: cardInfoView)
+shard.sendRequest(secureId: "your secureId", cardInfoView: cardInfoView)
 ```
 ```
 Objc:
