@@ -60,7 +60,7 @@ A easier way to do so is type cd, space, and drag the project folder to the Term
 
 <br /> 
 
-Next, enter the follow line to initiate the pod:
+Next, enter the follow line in Terminal to initiate the pod:
 ```
 pod init
 ```
