@@ -294,7 +294,8 @@ Add following code in ViewController after viewDidLoad
 ```
 Swift:
 cardInfoView = IOTCardInfoViewSingleLine(action: .oneTimePurchase, style: .autoDarkModeSupport)
-cardInfoView.Delegate = selfview.addSubview(cardInfoView)
+cardInfoView.Delegate = self
+view.addSubview(cardInfoView)
 ```
 ```
 Objc: (in .m)
@@ -334,37 +335,52 @@ Please don't forget to add "IOTCardInfoViewDelegate" in the previous step.<br />
 #### 2.5.3 NetworkService Response Delegate:
 ```
 Swift:
-extension ViewController: IOTNetworkServiceDelegate {	
-	func onDidAddCard(desensitizedCardInfo: IOTDesensitizedCardInfo, redirectUrl: String) {		
-		// This is for the AddCard event. You can lease this blank for simplePurchase Event.	
+extension ViewController: IOTNetworkPurchaseDelegate {	
+	func onDidPurchaseSuccess(msg: String, purchaseReceipt: IOTPurchaseReceipt, redirectUrl: String) {
+		print("Request Successed! \n")
+		print(purchaseReceipt.info)
+		print("redirectUrl: \(redirectUrl)")
 	}
-	
-	func onDidPurchase(purchaseReceipt: IOTPurchaseReceipt, redirectUrl: String) {		
-		/* 
-		.simplePurchase action's network response if succeeded.		
-		There is a error checklist in the github guide to help you fix the error		
-		*/		
-		print("succeeded", purchaseReceipt.info)	
+
+
+	func onDidPurchaseFail(msg: String) {
+		print("Request Failed! msg: \(msg)");
 	}
+
+	func onDidPurchaseUnknow(msg: String) {
+		print("Request Failed! msg: \(msg)");
+		print("""
+			This is a rarely happening case where bank's network may has problems. This transition
+			may or may NOT go thought. You should content with IOTPay customer service to get the
+			payment result."
+			""");
+	}
+
 }
 ```
 ```
 Objc: in .h
-@interface ViewController : UIViewController <IOTCardInfoViewDelegate, IOTNetworkServiceDelegate>
+@interface ViewController : UIViewController <IOTCardInfoViewDelegate, IOTNetworkAddCardDelegate>
 
 in .m
-- (void)onDidAddCardWithDesensitizedCardInfo:(IOTDesensitizedCardInfo * _Nonnull) desensitizedCardInfo  
-				 redirectUrl:(NSString * _Nonnull)redirectUrl {	
-	// This is for the AddCard event. You can lease this blank for simplePurchase Event.
+- (void)onDidPurchaseFailWithMsg:(NSString * _Nonnull)msg {
+	NSLog(@"Request Failed! msg: %@", msg);
 }
 
-- (void)onDidPurchaseWithPurchaseReceipt:(IOTPurchaseReceipt * _Nonnull) purchaseReceipt  			     
-			     redirectUrl:(NSString * _Nonnull)redirectUrl {	
-	/* 
-	.simplePurchase action's network response if succeeded. 
-	There is a error checklist in the github guide to help you fix the error
-	*/
-	NSLog(@"successed %@", purchaseReceipt.info);
+- (void)onDidPurchaseSuccessWithMsg:(NSString * _Nonnull)msg 
+		    purchaseReceipt:(IOTPurchaseReceipt * _Nonnull)purchaseReceipt 
+			redirectUrl:(NSString * _Nonnull)redirectUrl {
+	NSLog(@"Request Successed! \n");
+	NSLog(@"%@", purchaseReceipt.info);
+
+}
+
+- (void)onDidPurchaseUnknowWithMsg:(NSString * _Nonnull)msg {
+	NSLog(@"Request Failed! msg: %@", msg);
+	NSString *str = @"This is a rarely happening case where bank's network may has problems. "
+			 "This transition may or may NOT go thought. You should content with IOTPay "
+			 "customer service to get the details of this transition";
+	NSLog(@"%@", str);
 }
 ```
 Please check the SimplePurchaseSwiftExample or SimplePurchaseObjcExample in the examples folder for finished code.
