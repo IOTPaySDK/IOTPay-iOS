@@ -452,7 +452,6 @@ class IOTPurchaseReceipt: NSObject {
 	let status: Int   //example: 2.  (either 2 or 3)
 	let transitionNumber: String
 
-	@objc
 	public var info: String {
 		// print the whole data as a single String
 	}
