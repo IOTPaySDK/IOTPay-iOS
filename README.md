@@ -142,7 +142,8 @@ Once the add card event is done, this SDK is end of duty, and future purchase re
 
 IMPORTANT: In another word, in this route the SDK only prived users to be added to the "recurring purchase" list, unlike "simple purchase option", there is no "purchase" action happening with the SDK in this option.
 	
-
+(Please check the AddCardSwiftExample or AddCardObjcExample in the examples folder for finished code.)
+	
 #### 2.4.1 Setup Card Info View:
 
 Declare the view before viewDidLoad. 
@@ -272,12 +273,29 @@ shard.delegate = self;
 As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
 The secureId is generated after your server connects with IOTPay server, please check the Flow Chart above and IOTPayPhp for more info, or go to the end of this readme for a method to get secureId for testing.
 
-
+<br   >
+#### 2.4.5 Response Data
+```
+class IOTDesensitizedCardInfo: NSObject {
+	public let cardId: String
+	public let cardNumber: String
+	public let holderName: String
+	
+	public var info: String {
+		return "cardId: \(cardId), cardNumber: \(cardNumber), holderName: \(holderName)"
+	}
+}
+```
+Use desensitizedCardInfo.info to easily log out the return data.
+Please check the AddCardSwiftExample or AddCardObjcExample in the examples folder for finished code.
 
 	
 <a name="2.5"><a/>
 ### 2.5 "Simple Purchase" Option:
 
+(Please check the SimplePurchaseSwiftExample or SimplePurchaseObjcExample in the examples folder for finished code.)
+	
+	
 #### 2.5.1 Setup Card Info View:
 Declare the view before viewDidLoad. This is not mandatory for displaying the view, but you will need this view's point to send a request in the next step.
 ```
@@ -383,7 +401,8 @@ in .m
 	NSLog(@"%@", str);
 }
 ```
-Please check the SimplePurchaseSwiftExample or SimplePurchaseObjcExample in the examples folder for finished code.
+onDidPurchaseUnknowWithMsg may only happen in the extreme case, which doesn't have a result to indicate if the transition is done.
+
 
 	
 #### 2.5.4 Send the Request
@@ -403,6 +422,34 @@ shard.delegate = self;
 As you noted, we added the delegate again and set it to self in the above code. This time, the delegate will help you to receive the server response.
 The secureId is generated after your server connecting with IOTPay server, please check the Flow Chart above and IOTPayPhp for more info, or go to the end of this readme for method to get secureId for testing.
 	
+<br   >
+#### 2.5.5 Response Data
+```
+class IOTPurchaseReceipt: NSObject {
+	public let amount: Int   //Int in cent example: 134 //which is ($1.34)
+	public let authorizationNumber: String
+	public let cardNumber: String // desensitizated example: 424242XXXXXX4242
+	public let cardType: String  // V=Visa, M=Master, D=Interact
+	public let currency: String // example: "CAD"
+	public let invoiceNumber: String 
+	public let merchantOrderNumber: String
+	public let originalOrderId: String
+	public let payOrderId: String
+	public let paySuccessTime: String // example "2021-04-16 03:33:16";
+	public let payType: String // example pay;
+	public let refundable: Int   //Int in cent
+	public let status: Int   //example: 2.  (either 2 or 3)
+	public let transitionNumber: String
+
+	@objc
+	public var info: String {
+		// print the whole data as a single String
+	}
+
+}
+```
+Use purchaseReceipt.info to easily log out the return data.
+Please check the SimplePurchaseSwiftExample or SimplePurchaseObjcExample in the examples folder for finished code.
 
 
 
