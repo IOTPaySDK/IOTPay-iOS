@@ -332,7 +332,7 @@ view.addSubview(cardInfoView)
 ```
 Objc: (in .m)
 self.cardInfoView = [[IOTCardInfoViewTripleLineNCardView alloc] initWithAction: IOTNetworkRequestActionOneTimePurchase
-									 style: IOTCardInfoViewStyleRoundRect];
+									 style: IOTCardInfoViewStyleAutoDarkModeSupport];
 self.cardInfoView.delegate = self;
 [self.view addSubview: self.cardInfoView];
 ```
