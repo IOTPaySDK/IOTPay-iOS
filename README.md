@@ -126,9 +126,7 @@ To start the next step, you will need:
 - A Merchant account from IOTPay (Register @ https://iotpay.ca/1666-2/)
 - Merchant Server (refer to https://develop.iotpay.ca)	
 <br /> 
-| :exclamation: important:   |
-|-----------------------------------------|
-Merchant/client should build their own "Merchant Server", which will generate the "secureId". This should be done before try to install the iOS or Android SDK, otherwise, there won't be a vilad "secureId" for network request.
+ :exclamation: important: Merchant/client should build their own "Merchant Server", which will generate the "secureId". This should be done before try to install the iOS or Android SDK, otherwise, there won't be a vilad "secureId" for network request.
 <br />  
 
 
