@@ -124,7 +124,7 @@ https://develop.iotpay.ca/credit_card_v3.html
 To start the next step, you will need:
 - IOTPayiOS Framework Installed  (Refer to the first part in this guide)
 - A Merchant account from IOTPay (Register @ https://iotpay.ca/1666-2/)
-- Merchant Server (refer to https://develop.iotpay.ca)	
+- Merchant Server (refer to https://develop.iotpay.ca/credit_card_v3.html#sign-generate-and-check)	
 <br /> 
  :exclamation: important: Merchant/client should build their own "Merchant Server", which will generate the "secureId". This should be done before try to install the iOS or Android SDK, otherwise, there won't be a vilad "secureId" for network request.
 <br />  
