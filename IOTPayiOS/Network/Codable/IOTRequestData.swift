@@ -77,13 +77,6 @@ struct IOTRequestCardData {
 	}
 
 	var params: [String: String] {
-//		[ "cvv": "123",
-//			"holder": "Dafs",
-//		 "expiryDate": "1122",
-//		 "secureId": "2078365b415995a5423c35e53cb6e357745902213341537355910514c3d233bc",
-//		 "cardNum": "4242424242424242",
-//		// "loginName": "abcde",
-//		]
 		[ "cvv": cvv,
 			"holder": holder,
 		 "expiryDate": expiryDate,
